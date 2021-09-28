@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    --unfocused-color: #2eafff;
+    --focused-color: #ee7326;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+body {
+    background: #eaeaea;
+
+    position: relative;
+}
+
+.container {
+    width: min(20em, 350px);
+    height: min(20em, 400px);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: white;
+}
