@@ -10,8 +10,13 @@
 <body>
     <div class="container">
         <form action="../includes/login.inc.php">
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="username">
+            <label for="email">Email adress:</label>
+            <input type="email" name="email" id="email">
+
+            <label for="password">Wachtwoord:</label>
+            <input type="password" name="password" id="password">
+
+            <input type="submit" value="submit">
         </form>
     </div>
 </body>
