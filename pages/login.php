@@ -8,8 +8,11 @@
     <title>Login</title>
 </head>
 <body>
-    <form action="../includes/login.inc.php">
-        <input type="text" name="username" id="username">
-    </form>
+    <div class="container">
+        <form action="../includes/login.inc.php">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username">
+        </form>
+    </div>
 </body>
 </html>
