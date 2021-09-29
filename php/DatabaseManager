@@ -27,12 +27,12 @@ class Database {
     //get functions
     public function getTableByName ($tableName) {
         $query = "SELECT * FROM $tableName";
-        $tableArray = array();
+        $records = array();
 
         foreach ($this->databaseHandle()->query($query) as $row) {
-            $tableArray[] = $row;
+            $records[] = $row;
         }
-        return $tableArray;
+        return $records;
     }
 
     
