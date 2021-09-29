@@ -15,7 +15,7 @@
 
             <input type="email" name="email" placeholder="Email" id="email">
             <input type="password" name="password" placeholder="Wachtwoord" id="pwd">
-            <input type="submit" value="submit" id="submit">
+            <input type="submit" value="submit" class="submitenabled" id="submit">
         </form>
         <?php
             if(isset($_SESSION["error"])) {

@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_COOKIE["user"])) {
-    header("Location: page/home");
+    header("Location: ./pages/home");
 } else {
-    header("Location: page/login");
+    header("Location: ./pages/login");
 }
