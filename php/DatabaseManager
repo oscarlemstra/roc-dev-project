@@ -1,6 +1,6 @@
 <?php
 
-class Database {
+class DatabaseManager {
     private $host = "localhost";
     private $dbname = "roc-dev-project";
     private $port = "3306";
