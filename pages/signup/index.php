@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../style/login-register-style.css">
+    <link rel="stylesheet" href="../../style/login-signup-style.css">
     <title>registreren</title>
 </head>
 <body>
     <div class="container">
-        <form action="../../includes/register.inc.php">
+        <form action="../../includes/signup.inc.php">
             <h1>Account registreren</h1>
             <a href="./login">Inloggen</a>
 
