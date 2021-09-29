@@ -63,8 +63,8 @@ function checkPwdValidity() {
     }
 
     // check if password contains the email name
-    let email = emailElement.value;
-    let name = email.substring(0, email.lastIndexOf("@"))
+    let email = emailElement.value.toLowerCase()
+    let name = email.substring(0, email.lastIndexOf("@")).toLowerCase()
     
     if (name !== '') {
         if (passwordElement.value.includes(name) && !error) {
