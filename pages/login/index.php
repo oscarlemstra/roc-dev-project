@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="../../includes/login.inc.php">
+        <form action="../../includes/login.inc.php" method="post">
             <h1>Inloggen</h1>
             <a href="./signup">account registreren</a>
 
