@@ -11,7 +11,7 @@
     <div class="container">
         <form action="../../includes/login.inc.php" method="post">
             <h1>Inloggen</h1>
-            <a href="./signup">account registreren</a>
+            <a href="../signup">account registreren</a>
 
             <input type="email" name="email" placeholder="Email">
             <input type="password" name="password" placeholder="Wachtwoord">
