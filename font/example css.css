@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'eau';
+  src: url('/path-to/eau.woff2') format('woff2'),
+       url('/path-to/eau.woff') format('woff'),
+       url('/path-to/eau.ttf')  format('truetype');
+}
+
+body {
+  font-family: 'eau', sans-serif;
+}
