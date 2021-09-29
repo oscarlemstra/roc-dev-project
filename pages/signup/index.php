@@ -14,16 +14,18 @@
             <a href="../login">Inloggen</a>
 
             <input type="email" name="email" placeholder="Email">
+            <input type="email" name="confirmEmail" placeholder="Confirm Email">
             <input type="password" name="password" placeholder="Wachtwoord">
+            <input type="password" name="confirmPassword" placeholder="Confirm Wachtwoord">
             <input type="submit" value="submit">
         </form>
-        <div>
-            <?php
-                if(isset($_SESSION["error"])) {
-                    echo "<div class='error'>" . $_SESSION["error"] . "</div>";
-                }
-            ?>
-        </div>
+        <div class='error displayNone' id='error'></div>
+        <?php
+            if(isset($_SESSION["error"])) {
+                echo "<div class='error' id='error2>" . $_SESSION["error"] . "</div>";
+            }
+        ?>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
