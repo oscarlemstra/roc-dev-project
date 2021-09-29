@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="../../includes/signup.inc.php" method="post">
+        <form action="../../includes/signup.inc.php" method="post" id="form">
             <h1>Account registreren</h1>
             <a href="../login">Inloggen</a>
 
@@ -19,7 +19,7 @@
             <input type="password" name="password" placeholder="Wachtwoord" id="pwd">
             <input type="password" name="confirmPassword" placeholder="Confirm Wachtwoord" id="pwd2">
 
-            <input type="submit" value="submit" id="submit" class="inputDisabled">
+            <input type="submit" value="submit" class="submitdisabled" id="submit">
         </form>
         <div class='error displayNone' id='error'></div>
         <?php
