@@ -1,3 +1,19 @@
+
+<!--
+// =================================================================== //
+//
+// Code by: Thijn
+//
+// external source's:
+// login-signup-style.css
+// path: ../style/login-signup-style.css
+//
+// Copyright (c) Thijn Douwma
+// fuck you get your own code
+// 
+// =================================================================== //
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

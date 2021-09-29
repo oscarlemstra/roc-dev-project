@@ -1,3 +1,16 @@
+
+// =================================================================== //
+//
+// Code by: Thijn
+//
+// used for: Signup
+// usage path: pages/signup/index.php
+//
+// Copyright (c) Thijn Douwma
+// fuck you get your own code
+// 
+// =================================================================== //
+
 const emailElement = document.getElementById('email');
 const emailElement2 = document.getElementById('email2');
 const passwordElement = document.getElementById('pwd');
