@@ -53,6 +53,7 @@ form h1 {
 form a {
     text-decoration: none;
     color: rgb(66, 0, 219);
+    font-size: 80%;
 }
 
 input[type = 'email'], input[type = 'password'] {
