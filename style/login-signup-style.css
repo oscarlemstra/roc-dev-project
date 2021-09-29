@@ -84,9 +84,9 @@ input[type = 'submit'] {
     background: none;
     display: block;
 
-    margin: 25px auto;
+    margin: auto;
     padding: 14px 10px;
-
+ 
     width: 50%;
     min-width: 100px;
 
