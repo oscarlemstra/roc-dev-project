@@ -25,7 +25,7 @@ class DatabaseManager {
 
 
     //get functions
-    public function getTableByName ($tableName) {
+    public function getAllRecordsFromTable ($tableName) {
         $query = "SELECT * FROM $tableName";
         $records = array();
 
