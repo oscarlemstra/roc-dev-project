@@ -13,17 +13,17 @@
             <h1>Inloggen</h1>
             <a href="../signup">account registreren</a>
 
-            <input type="email" name="email" placeholder="Email">
-            <input type="password" name="password" placeholder="Wachtwoord">
-            <input type="submit" value="submit">
+            <input type="email" name="email" placeholder="Email" id="email">
+            <input type="password" name="password" placeholder="Wachtwoord" id="pwd">
+            <input type="submit" value="submit" id="submit">
         </form>
-        <div>
-            <?php
-                if(isset($_SESSION["error"])) {
-                    echo "<div class='error'>" . $_SESSION["error"] . "</div>";
-                }
-            ?>
-        </div>
+        <div class='error displayNone' id='error'></div>
+        <?php
+            if(isset($_SESSION["error"])) {
+                echo "<div class='error'>" . $_SESSION["error"] . "</div>";
+            }
+        ?>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
