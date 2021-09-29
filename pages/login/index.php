@@ -17,6 +17,13 @@
             <input type="password" name="password" placeholder="Wachtwoord">
             <input type="submit" value="submit">
         </form>
+        <div>
+            <?php
+                if(isset($_SESSION["error"])) {
+                    echo "<div class='error'>" . $_SESSION["error"] . "</div>";
+                }
+            ?>
+        </div>
     </div>
 </body>
 </html>
