@@ -14,6 +14,11 @@ if (document.getElementById('error2')) {
 let error = false;
 let errorMessage = '';
 
+let isEmailValid = false;
+let isPasswordValid = false;
+
+submitButton.disabled = true;
+
 emailElement.addEventListener('input', checkEmailValidity);
 emailElement2.addEventListener('input', checkEmailValidity);
 passwordElement.addEventListener('input', checkPwdValidity);
@@ -77,11 +82,13 @@ function checkPwdValidity() {
     if (error) {
         errorElement.classList.remove('displayNone')
         errorElement.innerHTML = errorMessage;
+        isPasswordValid = false;
     } else {
         errorElement.classList.add('displayNone')
         errorElement.innerHTML = '';
+        isPasswordValid = true;
     }
-    
+    checkButtonClickable();
 }
 
 function checkEmailValidity() {
@@ -96,8 +103,28 @@ function checkEmailValidity() {
     if (error) {
         errorElement.classList.remove('displayNone')
         errorElement.innerHTML = errorMessage;
+        isEmailValid = false;
     } else {
         errorElement.classList.add('displayNone')
         errorElement.innerHTML = '';
+        isEmailValid = true;
+    }
+    checkButtonClickable();
+}
+
+function checkButtonClickable() {
+    // action="../../includes/signup.inc.php"
+
+    if (isEmailValid && isPasswordValid) {
+        submitButton.classList.remove('submitdisabled')
+        submitButton.classList.add('submitenabled')
+
+        submitButton.disabled = false;
+
+    } else {
+        submitButton.classList.add('submitdisabled')
+        submitButton.classList.remove('submitenabled')
+
+        submitButton.disabled = true;
     }
 }
