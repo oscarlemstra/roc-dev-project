@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../style/login-register-style.css">
-    <title>Login</title>
+    <title>registreren</title>
 </head>
 <body>
     <div class="container">
-        <form action="../../includes/login.inc.php">
-            <h1>Inloggen</h1>
-            <a href="./register">account registreren</a>
+        <form action="../../includes/register.inc.php">
+            <h1>Account registreren</h1>
+            <a href="./login">Inloggen</a>
 
             <input type="email" name="email" placeholder="Email">
             <input type="password" name="password" placeholder="Wachtwoord">
