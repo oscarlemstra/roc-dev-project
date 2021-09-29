@@ -13,11 +13,13 @@
             <h1>Account registreren</h1>
             <a href="../login">Inloggen</a>
 
-            <input type="email" name="email" placeholder="Email">
-            <input type="email" name="confirmEmail" placeholder="Confirm Email">
-            <input type="password" name="password" placeholder="Wachtwoord">
-            <input type="password" name="confirmPassword" placeholder="Confirm Wachtwoord">
-            <input type="submit" value="submit">
+            <input type="email" name="email" placeholder="Email" id="email">
+            <input type="email" name="confirmEmail" placeholder="Confirm Email" id="email2">
+
+            <input type="password" name="password" placeholder="Wachtwoord" id="pwd">
+            <input type="password" name="confirmPassword" placeholder="Confirm Wachtwoord" id="pwd2">
+
+            <input type="submit" value="submit" id="submit" class="inputDisabled">
         </form>
         <div class='error displayNone' id='error'></div>
         <?php
@@ -26,6 +28,6 @@
             }
         ?>
     </div>
-    <script src="script.js"></script>
+    <script src="../../javascript/signup.js"></script>
 </body>
 </html>

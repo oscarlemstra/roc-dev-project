@@ -1,5 +1,7 @@
-const emailElement = document.getElementById('email')
+const emailElement = document.getElementById('email');
+const emailElement2 = document.getElementById('email2');
 const passwordElement = document.getElementById('pwd');
+const passwordElement2 = document.getElementById('pwd2');
 const submitButton = document.getElementById('submit');
 
 let errorElement;
@@ -12,10 +14,12 @@ if (document.getElementById('error2')) {
 let error = false;
 let errorMessage = '';
 
-emailElement.addEventListener('input', checkValidity);
-passwordElement.addEventListener('input', checkValidity);
+emailElement.addEventListener('input', checkEmailValidity);
+emailElement2.addEventListener('input', checkEmailValidity);
+passwordElement.addEventListener('input', checkPwdValidity);
+passwordElement2.addEventListener('input', checkPwdValidity);
 
-function checkValidity() {
+function checkPwdValidity() {
     // check if password field has a value
     if (passwordElement.value === '') {
         errorElement.classList.add('displayNone')
@@ -64,6 +68,11 @@ function checkValidity() {
         }
     }
 
+    if ((passwordElement.value !== passwordElement2.value) && !error) {
+        error = true;
+        errorMessage = 'password needs to be the same';
+    }
+
 
     if (error) {
         errorElement.classList.remove('displayNone')
@@ -73,4 +82,22 @@ function checkValidity() {
         errorElement.innerHTML = '';
     }
     
+}
+
+function checkEmailValidity() {
+    error = false;
+
+    if ((emailElement.value !== emailElement2.value) && !error) {
+        error = true;
+        errorMessage = 'email needs to be the same';
+    }
+
+
+    if (error) {
+        errorElement.classList.remove('displayNone')
+        errorElement.innerHTML = errorMessage;
+    } else {
+        errorElement.classList.add('displayNone')
+        errorElement.innerHTML = '';
+    }
 }

@@ -103,6 +103,9 @@ input[type = 'submit']:hover {
     background-color: var(--unfocused-color);
     color: white;
 }
+.inputDisabled {
+    background-color: #6d6d6d;
+}
 
 .error {
     text-align: center;
