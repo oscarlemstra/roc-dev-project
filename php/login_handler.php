@@ -1,6 +1,6 @@
 <?php 
 
-require_once '../php/DatabaseManager.php';
+require_once '../includes/DatabaseManager.inc.php';
 $dbm = new DatabaseManager();
 
 

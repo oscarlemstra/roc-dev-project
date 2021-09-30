@@ -25,7 +25,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="../../includes/login.inc.php" method="post">
+        <form action="../../php/login_handler.php" method="post">
             <h1>Inloggen</h1>
             <a href="../signup">account registreren</a>
 
