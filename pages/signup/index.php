@@ -38,12 +38,12 @@
             <input type="password" name="password" placeholder="Wachtwoord" id="pwd">
             <input type="password" name="confirmPassword" placeholder="Confirm Wachtwoord" id="pwd2">
 
-            <input type="submit" value="submit" class="submitdisabled" id="submit">
+            <input type="submit" value="submit" class="submitenabled" id="submit">
         </form>
         <div class='error displayNone' id='error'></div>
         <?php
-            if(isset($_SESSION["error"])) {
-                echo "<div class='error' id='error2>" . $_SESSION["error"] . "</div>";
+            if (isset($_GET['error'])) {
+                echo "<div class='error' id='error2'>" . $_GET['error'] . "</div>";
             }
         ?>
     </div>

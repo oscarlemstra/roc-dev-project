@@ -34,8 +34,8 @@
             <input type="submit" value="submit" class="submitenabled" id="submit">
         </form>
         <?php
-            if(isset($_SESSION["error"])) {
-                echo "<div class='error' id='error2>" . $_SESSION["error"] . "</div>";
+            if(isset($_GET["error"])) {
+                echo "<div class='error' id='error2>" . $_GET["error"] . "</div>";
             }
         ?>
     </div>

@@ -30,10 +30,10 @@ fuck you get your own code
     padding: 0;
     box-sizing: border-box;
 
-    --unfocused-color: #2eafff;
+    --unfocused-color: rgba(238, 115, 38);
     --focused-color: #ee7326;
 
-    --error-background: #ff6464;
+    --error-background: #ec6666;
     --error-color: white;
 }
 html, body {
