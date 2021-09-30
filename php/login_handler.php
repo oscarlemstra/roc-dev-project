@@ -5,4 +5,9 @@ $dbm = new DatabaseManager();
 
 echo print_r($_POST);
 
-$dbm->insertRecordToUser(1, $_POST['email'], $_POST['password']);
+
+$record = $dbm->getRecordsFromTable("user", "email", $_POST['email']);
+
+echo "<br><br><br><pre>";
+echo print_r($record);
+echo "</pre>";
