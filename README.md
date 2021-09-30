@@ -6,7 +6,7 @@ Hacket
 <br>
 
 ### Huis style
-- [flow style guide](https://rocvf.flowstyleguide.nl/)
+[flow style guide](https://rocvf.flowstyleguide.nl/)
 
 <br>
 
