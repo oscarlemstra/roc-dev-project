@@ -20,11 +20,6 @@ function emailCheck($email, $confirmEmail) {
     $error = false;
     $errorMessage = '';
 
-    if ($email === '' || $confirmEmail === '') {
-        $error = true;
-        $errorMessage = 'email is leeg';
-    }
-
     // split email at '@' and check if last array item is not 'student.rocvf.nl'
     $splitEmail = explode('@', $email);
     if ($splitEmail[count($splitEmail) - 1] !== "student.rocvf.nl" && !$error) {
@@ -37,7 +32,7 @@ function emailCheck($email, $confirmEmail) {
         $errorMessage = 'emails zijn niet hetzelfde';
     }
 
-    if (isset($error)) {
+    if ($error) {
         return $errorMessage;
     } else {
         return false;
@@ -48,11 +43,6 @@ function emailCheck($email, $confirmEmail) {
 function pwdCheck($pwd, $confirmpwd, $email) {
     $error = false;
     $errorMessage = '';
-
-    if ($pwd === '' || $confirmpwd === '') {
-        $error = true;
-        $errorMessage = 'wachtwoord is leeg';
-    }
 
     if (strlen($pwd) < 8 && !$error) {
         $error = true;
@@ -87,7 +77,7 @@ function pwdCheck($pwd, $confirmpwd, $email) {
         $errorMessage = 'wachtwoorden moeten hetzelfde zijn';
     }
 
-    if (isset($error)) {
+    if ($error) {
         return $errorMessage;
     } else {
         return false;

@@ -28,6 +28,12 @@ $pwd = $_POST['password'];
 $confirmpwd = $_POST['confirmPassword'];
 
 
+// these 2 functions check if the email and password (pwd) are valid inside the signup-error-handling.inc.php
+// if they function is returns any value
+//      send the user to signup page with a error message
+//
+// if the functions returns false
+//      continue with the rest of the code
 $result = emailCheck($email, $confirmEmail);
 if ( $result ) {
     $result = str_replace(" ", "%20", $result);

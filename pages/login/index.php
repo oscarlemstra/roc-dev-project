@@ -29,8 +29,8 @@
             <h1>Inloggen</h1>
             <a href="../signup">account registreren</a>
 
-            <input type="email" name="email" placeholder="Email" id="email">
-            <input type="password" name="password" placeholder="Wachtwoord" id="pwd">
+            <input type="email" name="email" placeholder="Email" id="email" required>
+            <input type="password" name="password" placeholder="Wachtwoord" id="pwd" required>
             <input type="submit" value="submit" class="submitenabled" id="submit">
         </form>
         <?php
