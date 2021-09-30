@@ -2,7 +2,7 @@
 
 class DatabaseManager {
     private $host = "localhost";
-    private $dbname = "roc-dev-project";
+    private $dbname = "roc_dev";
     private $port = "3306";
     private $user = "root";
     private $pass = "";
