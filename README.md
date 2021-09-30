@@ -6,7 +6,7 @@ Hacket
 <br>
 
 ### Huis style
-[flow style guide](https://rocvf.flowstyleguide.nl/)
+[Flow style guide](https://rocvf.flowstyleguide.nl/)
 
 <br>
 
@@ -16,6 +16,12 @@ Hacket
 <br>
 
 ### Code standaard:
-- file structure:          [bem](https://en.bem.info/methodology/filestructure/)
-- php:                     [symfony](https://symfony.com/doc/current/contributing/code/standards.html)
-- html, css, javascript:   [ckan](https://docs.ckan.org/en/ckan-2.7.3/contributing/css.html) 
+- File structure:          [bem](https://en.bem.info/methodology/filestructure/)
+- PHP:                     [symfony](https://symfony.com/doc/current/contributing/code/standards.html)
+- HTML, CSS, JavaScript:   [ckan](https://docs.ckan.org/en/ckan-2.7.3/contributing/css.html) 
+
+<br>
+
+**Database structuur:** zorg er voor dat de database naamgeving gebaseerd is op de foto hier onder.
+
+![database voorbeeld](https://user-images.githubusercontent.com/61353780/135430073-4db18a85-21e2-4b62-9123-4b39eb2bd5e9.png)
