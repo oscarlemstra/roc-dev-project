@@ -63,5 +63,14 @@ class DatabaseManager {
     }
 
 
-    // required include functions
+
+    //insert functions
+    //
+    //insert user
+    public function insertRecordToUser ($user_role_id, $email, $hashed_password) {
+        $qeury = "INSERT INTO user (user_role_id, email, hashed_password)
+                  VALUES ('$user_role_id', '$email', '$hashed_password')";
+
+        $this->databaseHandle()->query($qeury);
+    }
 }
