@@ -1,5 +1,24 @@
 <?php
 
+// =================================================================== //
+//
+// Code by: Thijn
+//
+// used for:
+// signup/index.php
+//
+// path:
+// ../pages/signup/index.php
+//
+// external source's:
+// signup-error-handling.php
+// path: ../includes/signup-error-handling.php
+//
+// Copyright (c) Thijn Douwma
+// fuck you get your own code
+// 
+// =================================================================== //
+
 require_once('signup-error-handling.inc.php');
 
 $email = $_POST['email'];

@@ -1,5 +1,20 @@
 <?php
 
+// =================================================================== //
+//
+// Code by: Thijn
+//
+// used for:
+// signup.inc.php
+//
+// path:
+// ../includes/signup.inc.php
+//
+// Copyright (c) Thijn Douwma
+// fuck you get your own code
+// 
+// =================================================================== //
+
 
 function emailCheck($email, $confirmEmail) {
     $error = false;
