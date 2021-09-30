@@ -61,4 +61,7 @@ class DatabaseManager {
 
         $this->databaseHandle()->query($query);
     }
+
+
+    // required include functions
 }
