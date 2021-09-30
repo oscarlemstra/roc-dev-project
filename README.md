@@ -3,6 +3,12 @@
 ### Groep naam:
 Hacket
 
+<br>
+
+### Huis style
+- [flow style guide](https://rocvf.flowstyleguide.nl/)
+
+<br>
 
 ### Planner:
 - Trello: [roc-dev project](https://trello.com/invite/b/jr9MKQZu/c60c5fdcd709f2eb7b0fdfcf2e414e0e/roc-dev-project)
