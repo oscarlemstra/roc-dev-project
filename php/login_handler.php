@@ -3,11 +3,12 @@
 require_once '../includes/DatabaseManager.php';
 $dbm = new DatabaseManager();
 
-echo print_r($_POST);
-
 
 $record = $dbm->getRecordsFromTable("user", "email", $_POST['email']);
 
-echo "<br><br><br><pre>";
-echo print_r($record);
-echo "</pre>";
+if ($record && hash("sha3-512", $_POST['password']) === $record[0]['hashed_password']) {
+    header("location: ../pages/home");
+}
+else {
+    header("location: ../pages/login");
+}
