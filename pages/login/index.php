@@ -9,7 +9,6 @@
 // path: ../style/login-signup-style.css
 //
 // Copyright (c) Thijn Douwma
-// fuck you get your own code
 // 
 // =================================================================== //
 -->
