@@ -1,4 +1,4 @@
-<?php 
+<?php session_start();
 
 require_once '../includes/DatabaseManager.php';
 $dbm = new DatabaseManager();
@@ -10,5 +10,6 @@ if ($record && hash("sha3-512", $_POST['password']) === $record[0]['hashed_passw
     header("location: ../pages/home");
 }
 else {
-    header("location: ../pages/login?error=Gevevens zijn fout");
+    $_SESSION['errorMessage'] = "Gegevens zijn incorrect";
+    header("location: ../pages/login");
 }
