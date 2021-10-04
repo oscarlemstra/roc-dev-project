@@ -48,8 +48,8 @@ class DatabaseManager {
 
 
     //update function
-    public function updateRecordsFromTable ($tableName, $columnName, $newColumnValue, $searchColumn, $searchColumnValue) {
-        $query = "UPDATE $tableName SET $columnName = '$newColumnValue' WHERE $searchColumn = '$searchColumnValue'";
+    public function updateRecordsFromTable ($tableName, $oldColumnValue, $newColumnValue, $searchColumn, $searchColumnValue) {
+        $query = "UPDATE $tableName SET $oldColumnValue = '$newColumnValue' WHERE $searchColumn = '$searchColumnValue'";
 
         $this->databaseHandle()->query($query);
     }
