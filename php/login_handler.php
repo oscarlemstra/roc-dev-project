@@ -10,5 +10,5 @@ if ($record && hash("sha3-512", $_POST['password']) === $record[0]['hashed_passw
     header("location: ../pages/home");
 }
 else {
-    header("location: ../pages/login");
+    header("location: ../pages/login?error=Gevevens zijn fout");
 }

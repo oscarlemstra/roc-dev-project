@@ -34,7 +34,7 @@
         </form>
         <?php
             if(isset($_GET["error"])) {
-                echo "<div class='error' id='error2>" . $_GET["error"] . "</div>";
+                echo "<div class='error' id='error2'>" . $_GET["error"] . "</div>";
             }
         ?>
     </div>
