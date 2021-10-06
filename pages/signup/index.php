@@ -31,6 +31,6 @@
             }
         ?>
     </div>
-    <script src="../../javascript/signup.jsa"></script>
+    <script src="../../javascript/signup.js"></script>
 </body>
 </html>
