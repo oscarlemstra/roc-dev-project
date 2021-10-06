@@ -50,7 +50,7 @@ function checkEmailValidity() {
 
     emailAdress = emailElement.value.split('@')
     arrayLength = emailAdress.length;
-    if (emailAdress[arrayLength - 1] !== 'talnet.nl' && !error) {
+    if (emailAdress[arrayLength - 1] !== 'student.rocvf.nl' && !error) {
         error = true;
         errorMessage = 'email is niet een school email adress'
     }

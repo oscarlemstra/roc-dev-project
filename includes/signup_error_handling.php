@@ -6,7 +6,7 @@ function emailCheck($email, $confirmEmail) {
 
     // split email at '@' and check if last array item is not 'student.rocvf.nl'
     $splitEmail = explode('@', $email);
-    if ($splitEmail[count($splitEmail) - 1] !== "talnet.nl" && !$error) {
+    if ($splitEmail[count($splitEmail) - 1] !== "student.rocvf.nl" && !$error) {
         $error = true;
         $errorMessage = 'email is niet een school email adress';
     }
