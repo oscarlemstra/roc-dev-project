@@ -1,20 +1,4 @@
-
-<!--
-// =================================================================== //
-//
-// Code by: Thijn
-//
-// external source's:
-// signup.js
-// path: ../javascript/signup.js
-//
-// login-signup-style.css
-// path: ../style/login-signup-style.css
-//
-// Copyright (c) Thijn Douwma
-// 
-// =================================================================== //
--->
+<?php session_start() ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,6 +30,6 @@
             }
         ?>
     </div>
-    <script src="../../javascript/signup.js"></script>
+    <script src="../../javascript/signup.jsa"></script>
 </body>
 </html>

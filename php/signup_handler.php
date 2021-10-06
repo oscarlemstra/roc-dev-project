@@ -1,24 +1,5 @@
 <?php
 
-// =================================================================== //
-//
-// Code by: Thijn
-//
-// used for:
-// signup/index.php
-//
-// path:
-// ../pages/signup/index.php
-//
-// external source's:
-// signup-error-handling.php
-// path: ../includes/signup-error-handling.php
-//
-// Copyright (c) Thijn Douwma
-// fuck you get your own code
-// 
-// =================================================================== //
-
 require_once('../includes/DatabaseManager.php');
 $dbm = new DatabaseManager();
 
@@ -43,6 +24,7 @@ $result = emailCheck($email, $confirmEmail);
 if ($result) {
     $result = str_replace(" ", "%20", $result);
     header('location: ../pages/signup/?error=' . $result);
+    exit();
 }
 
 
@@ -50,10 +32,11 @@ $result = pwdCheck($pwd, $confirmpwd, $email);
 if ($result) {
     $result = str_replace(" ", "%20", $result);
     header('location: ../pages/signup/?error=' . $result);
+    exit();
 }
 
 
-//$hashedPassword = hash("sha3-512", $_POST['password']);
-//$dbm->insertRecordToUser("1", $_POST['email'], $hashedPassword);
+$hashedPassword = hash("sha3-512", $_POST['password']);
+$dbm->insertRecordToUser("1", $_POST['email'], $hashedPassword);
 
-//header('location: ../pages/login');
+header('location: ../pages/login');
