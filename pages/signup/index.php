@@ -25,8 +25,9 @@
         </form>
         <div class='error displayNone' id='error'></div>
         <?php
-            if (isset($_GET['error'])) {
-                echo "<div class='error' id='error2'>" . $_GET['error'] . "</div>";
+            if (isset($_SESSION['errorMessage'])) {
+                echo "<div class='error' id='error2'>" . $_SESSION['errorMessage'] . "</div>";
+                unset($_SESSION['errorMessage']);
             }
         ?>
     </div>

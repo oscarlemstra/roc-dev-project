@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 
 require_once('../includes/DatabaseManager.php');
 $dbm = new DatabaseManager();
@@ -22,16 +22,16 @@ $confirmpwd = $_POST['confirmPassword'];
 //      continue with the rest of the code
 $result = emailCheck($email, $confirmEmail);
 if ($result) {
-    $result = str_replace(" ", "%20", $result);
-    header('location: ../pages/signup/?error=' . $result);
+    $_SESSION['errorMessage'] = $result;
+    header('location: ../pages/signup');
     exit();
 }
 
 
 $result = pwdCheck($pwd, $confirmpwd, $email);
 if ($result) {
-    $result = str_replace(" ", "%20", $result);
-    header('location: ../pages/signup/?error=' . $result);
+    $_SESSION['errorMessage'] = $result;
+    header('location: ../pages/signup');
     exit();
 }
 
