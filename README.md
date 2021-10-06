@@ -11,7 +11,7 @@ Hacket
 <br>
 
 ### Design tool
-[wireframe](https://wireframe.cc/52s9HK)
+[figma](https://www.figma.com/files/project/39803788/Team-project?fuid=1027477325359059824)
 
 <br>
 
