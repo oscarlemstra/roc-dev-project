@@ -4,9 +4,21 @@ function emailCheck($email, $confirmEmail) {
     $error = false;
     $errorMessage = '';
 
-    // split email at '@' and check if last array item is not 'student.rocvf.nl'
+    if ($email === '' || $confirmEmail === '') {
+        $error = true;
+        $errorMessage = 'email vak is niet ingevuld';
+    }
+
+    // split email at '@' and check if there are more than 2 items in the array
+    // indicating that 2 or more '@' has been used
     $splitEmail = explode('@', $email);
-    if ($splitEmail[count($splitEmail) - 1] !== "talnet.nl" && !$error) {
+    if (count($splitEmail) > 2 && !$error) {
+        $error = true;
+        $errorMessage = 'email vak heeft geen email formaat erin';
+    }
+    
+    // check if email ends with 'talnet.nl' or 'student.rocvf.com'
+    if ( in_array($splitEmail[count($splitEmail) - 1], array("talnet.nl", "student.rocvf.nl") ) && !$error) {
         $error = true;
         $errorMessage = 'email is niet een school email adress';
     }
@@ -27,6 +39,11 @@ function emailCheck($email, $confirmEmail) {
 function pwdCheck($pwd, $confirmpwd, $email) {
     $error = false;
     $errorMessage = '';
+
+    if ($pwd === '' || $confirmpwd === '') {
+        $error = true;
+        $errorMessage = 'wachtwoord vak is niet ingevuld';
+    }
 
     if (strlen($pwd) < 8 && !$error) {
         $error = true;
