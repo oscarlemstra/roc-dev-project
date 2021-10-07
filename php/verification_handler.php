@@ -3,7 +3,6 @@
 require_once('../includes/DatabaseManager.php');
 $dbm = new DatabaseManager();
 
-// a .inc.php file is a file that is put inside the includes folder
 // includes are .php files that are require'd in another file. such as this one
 require_once('../includes/verification_code_error_handling.php');
 
