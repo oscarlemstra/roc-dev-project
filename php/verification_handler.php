@@ -10,8 +10,8 @@ require_once('../includes/verification_code_error_handling.php');
 $verification_code = $_POST['verification_code'];
 
 
-// these 2 functions check if the email and password (pwd) are valid inside the signup-error-handling.php
-// if the function is returns any value
+// this function will check if the code is a valid format
+// if the function returns any value
 //      send the user to signup page with a error message
 //
 // if the functions returns false
