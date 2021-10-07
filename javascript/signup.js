@@ -5,9 +5,6 @@
 //
 // used for: Signup
 // usage path: pages/signup/index.php
-//
-// Copyright (c) Thijn Douwma
-// fuck you get your own code
 // 
 // =================================================================== //
 
