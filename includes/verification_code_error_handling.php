@@ -6,7 +6,7 @@ function codeCheck($code) {
 
     if ($code === '') {
         $error = true;
-        $errorMessage = 'code vake is leeg';
+        $errorMessage = 'code vak is leeg';
     }
 
     if (strlen($code) !== 6 && !$error) {
