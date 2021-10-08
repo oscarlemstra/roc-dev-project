@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'reference' => 'e8af99aabe1d899e381979098b1c6e30f999f3b4',
+        'name' => '__root__',
+        'dev' => true,
+    ),
+    'versions' => array(
+        '__root__' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => 'e8af99aabe1d899e381979098b1c6e30f999f3b4',
+            'dev_requirement' => false,
+        ),
+        'paragonie/random_compat' => array(
+            'pretty_version' => 'v2.0.20',
+            'version' => '2.0.20.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../paragonie/random_compat',
+            'aliases' => array(),
+            'reference' => '0f1f60250fccffeaf5dda91eea1c018aed1adc2a',
+            'dev_requirement' => false,
+        ),
+        'sonata-project/google-authenticator' => array(
+            'pretty_version' => '1.1.0',
+            'version' => '1.1.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../sonata-project/google-authenticator',
+            'aliases' => array(),
+            'reference' => 'ccf7ecb68e875562c70b28a470fe0daf48625b39',
+            'dev_requirement' => false,
+        ),
+    ),
+);
