@@ -76,7 +76,7 @@ form a {
     font-size: 80%;
 }
 
-input[type = 'email'], input[type = 'password'] {
+input[type = 'email'], input[type = 'password'], input[type = 'text'] {
     background: none;
     display: block;
 

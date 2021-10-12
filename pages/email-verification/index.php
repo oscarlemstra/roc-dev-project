@@ -14,7 +14,7 @@
         <form action="../../php/verification_handler.php" method="post">
             <h1>Email verificatie</h1>
 
-            <input type="password" name="verification_code" placeholder="Verificatie code" id="verification_code" required>
+            <input type="text" name="verification_code" placeholder="Verificatie code" id="verification_code" required>
             <input type="submit" value="submit" class="submitenabled" id="submit">
         </form>
         <div class='error displayNone' id='error'></div>
