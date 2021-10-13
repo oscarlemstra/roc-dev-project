@@ -4,10 +4,14 @@
     <title>Test Email</title>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+
+            font-family: 'Montserrat', sans-serif;
         }
         html, body {
             width: 100%;
@@ -29,10 +33,13 @@
 
             background-color: white;
         }
-        header {
-            
+        header > * {
+            float: left;
         }
-        header > div > img {
+        header > h4 {
+
+        }
+        header > img {
             width: 150px;
         }
 
@@ -41,13 +48,8 @@
 <body>
     <div class="container">
         <header>
-            <div>
-                <img src="https://rocvf.flowstyleguide.nl/wp-content/uploads/2018/09/ROCvF_logo_LIJN_RGB_home.png" alt="">
-                <h4>[CLASS-NAME]</h4>
-            </div>
-            <div>
-
-            </div>
+            <img src="https://rocvf.flowstyleguide.nl/wp-content/uploads/2018/09/ROCvF_logo_LIJN_RGB_home.png" alt="">
+            <h4>[CLASS-NAME]</h4>
         </header>
     </div>
 </body>
