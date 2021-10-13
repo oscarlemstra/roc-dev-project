@@ -18,7 +18,7 @@ function emailCheck($email, $confirmEmail) {
     }
     
     // check if email ends with 'talnet.nl' or 'student.rocvf.com'
-    if ( in_array($splitEmail[count($splitEmail) - 1], array("talnet.nl", "student.rocvf.nl") ) && !$error) {
+    if ($splitEmail[count($splitEmail) - 1] !== "talnet.nl" && !$error) {
         $error = true;
         $errorMessage = 'email is niet een school email adress';
     }
