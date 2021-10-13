@@ -28,5 +28,11 @@ Trello: [roc-dev project](https://trello.com/invite/b/jr9MKQZu/c60c5fdcd709f2eb7
 <br>
 
 **Database structuur:** zorg er voor dat de database naamgeving gebaseerd is op de foto hier onder.
-
 ![database voorbeeld](https://user-images.githubusercontent.com/61353780/135430073-4db18a85-21e2-4b62-9123-4b39eb2bd5e9.png)
+
+<br>
+
+### Uitleg over hoe je een email kunt sturen via je localhost
+[Email via localhost guide](https://applerinquest.com/how-to-send-an-email-using-smtp-in-localhost-with-wamp/) <br>
+Gebruik bij de smtp server deze naam: **smtp-mail.outlook.com**
+
