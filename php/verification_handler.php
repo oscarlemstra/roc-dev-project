@@ -19,7 +19,7 @@ $headers = 'From: 2026970@talnet.nl' . "\r\n" .
     'Reply-To: olemstra@roc-dev.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
-$result = mail("olemstra@roc-dev.nl", "test", "wow het werkt", $headers);
+$result = mail("olemstra@roc-dev.com", "test", "wow het werkt", $headers);
 
 if ($result) {
     echo "email is verzonden";
