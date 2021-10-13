@@ -1,3 +1,5 @@
+<?php
+
 declare(strict_types=1);
 
 /*
@@ -22,7 +24,7 @@ interface GoogleAuthenticatorInterface
     /**
      * NEXT_MAJOR: add the interface typehint to $time and remove deprecation.
      *
-     * @param string $secret
+     * @param string                                   $secret
      * @param float|string|int|\DateTimeInterface|null $time
      */
     public function getCode($secret, /* \DateTimeInterface */ $time = null): string;

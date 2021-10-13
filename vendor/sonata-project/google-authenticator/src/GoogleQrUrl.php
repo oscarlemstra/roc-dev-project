@@ -31,8 +31,32 @@ final class GoogleQrUrl
     {
     }
 
-
-    public static function generate(string $accountName, string $secret, string $issuer, int $size = 200): string
+    /**
+     * Generates a URL that is used to show a QR code.
+     *
+     * Account names may not contain a double colon (:). Valid account name
+     * examples:
+     *  - "John.Doe@gmail.com"
+     *  - "John Doe"
+     *  - "John_Doe_976"
+     *
+     * The Issuer may not contain a double colon (:). The issuer is recommended
+     * to pass along. If used, it will also be appended before the accountName.
+     *
+     * The previous examples with the issuer "Acme inc" would result in label:
+     *  - "Acme inc:John.Doe@gmail.com"
+     *  - "Acme inc:John Doe"
+     *  - "Acme inc:John_Doe_976"
+     *
+     * The contents of the label, issuer and secret will be encoded to generate
+     * a valid URL.
+     *
+     * @param string      $accountName The account name to show and identify
+     * @param string      $secret      The secret is the generated secret unique to that user
+     * @param string|null $issuer      Where you log in to
+     * @param int         $size        Image size in pixels, 200 will make it 200x200
+     */
+    public static function generate(string $accountName, string $secret, ?string $issuer = null, int $size = 200): string
     {
         if ('' === $accountName || false !== strpos($accountName, ':')) {
             throw RuntimeException::InvalidAccountName($accountName);

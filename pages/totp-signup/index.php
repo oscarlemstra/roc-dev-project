@@ -1,20 +1,17 @@
 <?php
 
-require_once "./vendor/autoload.php";
-require_once "./vendor/sonata-project/google-authenticator/src/FixedBitNotation.php";
-require_once "./vendor/sonata-project/google-authenticator/src/GoogleAuthenticator.php";
-require_once "./vendor/sonata-project/google-authenticator/src/GoogleQrUrl.php";
+require_once "../../vendor/autoload.php";
+require_once "../../vendor/sonata-project/google-authenticator/src/FixedBitNotation.php";
+require_once "../../vendor/sonata-project/google-authenticator/src/GoogleAuthenticator.php";
+require_once "../../vendor/sonata-project/google-authenticator/src/GoogleQrUrl.php";
 
 
-//include_once __DIR__.'/../src/FixedBitNotation.php';
-//include_once __DIR__.'/../src/GoogleAuthenticator.php';
-//include_once __DIR__.'/../src/GoogleQrUrl.php';
 $g = new \Google\Authenticator\GoogleAuthenticator();
-//$link = new Sonata\GoogleAuthenticator\GoogleAuthenticator();
-echo getcwd();
-$secret = 'XVQ2UIGO75XRUKJO';
+//$secret = 'XVQ2UIGO75XRUKJO';
+$secret = $g->generateSecret();
 $link = Sonata\GoogleAuthenticator\GoogleQrUrl::generate('JSC', $secret, 'JSC-OdJ');
 JSC($_POST);
+echo $secret;
 if(isset($_POST['submit'])){
     JSC($_POST['pass-code']);
     JSC($g->getCode($secret));
@@ -37,8 +34,6 @@ JSC($g);
     <title>totp</title>
 </head>
 <body>
-<h1>Hello World!</h1>
-<a href="<?php echo $link?>" target="_blank">KLIK HIER!!!</a>
 <img src="<?php echo $link?>">
 
 <br>
