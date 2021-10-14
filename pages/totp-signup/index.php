@@ -5,23 +5,13 @@ require_once "../../vendor/sonata-project/google-authenticator/src/FixedBitNotat
 require_once "../../vendor/sonata-project/google-authenticator/src/GoogleAuthenticator.php";
 require_once "../../vendor/sonata-project/google-authenticator/src/GoogleQrUrl.php";
 
+$user = "STUDENTNR"; //studentnr from database
 
 $g = new \Google\Authenticator\GoogleAuthenticator();
-//$secret = 'XVQ2UIGO75XRUKJO';
 $secret = $g->generateSecret();
-$link = Sonata\GoogleAuthenticator\GoogleQrUrl::generate('JSC', $secret, 'roc-dev');
-echo $secret."<br>";
-if(isset($_POST['submit'])){
-    JSC("post: ".$_POST['pass-code']);
-    JSC("code: ".$g->getCode($secret));
-    echo ($g->checkCode($secret, $_POST['pass-code'])) ? 'JAAAAAA!' : 'NEEEEE';
-}
+$link = Sonata\GoogleAuthenticator\GoogleQrUrl::generate($user, $secret, 'roc-dev');
 
-function JSC($input){
-    echo "<pre>";
-    print_r($input);
-    echo "</pre>";
-}
+echo $secret."<br>"; // - DEBUG
 ?>
 
 <!DOCTYPE html>
@@ -31,12 +21,8 @@ function JSC($input){
     <title>totp signup</title>
 </head>
 <body>
+
 <img src="<?php echo $link?>">
 
-<br>
-<form action="index.php" method="post">
-    <input type="text" name="pass-code">
-    <button type="submit" name="submit">CLICK!</button>
-</form>
 </body>
 </html>
