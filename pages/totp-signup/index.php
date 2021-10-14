@@ -9,12 +9,11 @@ require_once "../../vendor/sonata-project/google-authenticator/src/GoogleQrUrl.p
 $g = new \Google\Authenticator\GoogleAuthenticator();
 //$secret = 'XVQ2UIGO75XRUKJO';
 $secret = $g->generateSecret();
-$link = Sonata\GoogleAuthenticator\GoogleQrUrl::generate('JSC', $secret, 'JSC-OdJ');
-JSC($_POST);
-echo $secret;
+$link = Sonata\GoogleAuthenticator\GoogleQrUrl::generate('JSC', $secret, 'roc-dev');
+echo $secret."<br>";
 if(isset($_POST['submit'])){
-    JSC($_POST['pass-code']);
-    JSC($g->getCode($secret));
+    JSC("post: ".$_POST['pass-code']);
+    JSC("code: ".$g->getCode($secret));
     echo ($g->checkCode($secret, $_POST['pass-code'])) ? 'JAAAAAA!' : 'NEEEEE';
 }
 
@@ -23,15 +22,13 @@ function JSC($input){
     print_r($input);
     echo "</pre>";
 }
-
-JSC($g);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>totp</title>
+    <title>totp signup</title>
 </head>
 <body>
 <img src="<?php echo $link?>">
