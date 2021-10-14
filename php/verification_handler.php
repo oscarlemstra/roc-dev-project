@@ -15,11 +15,31 @@ if ($result) {
     header('location: ../pages/email-verification');
     exit();
 }*/
-$headers = 'From: 2026970@talnet.nl' . "\r\n" .
-    'Reply-To: olemstra@roc-dev.com' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
 
-$result = mail("olemstra@roc-dev.com", "email check", "je test code voor email verificatie 203198", $headers);
+//--------------------------------------------------------------------------------------
+//je test code voor de email verificatie is 203198
+
+$code = "910012";
+
+$to = "olemstra@roc-dev.com";
+$subject = "Email verificatie";
+$message = "
+<html>
+<head>
+    <title>Email verificatie</title>
+</head>
+<body>
+    <p>Je test code voor de email verificatie is ". $code ."</p>
+</body>
+</html>
+";
+
+
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+$headers .= 'From: 2026970@talnet.nl' . "\r\n" . 'Reply-To: olemstra@roc-dev.com' . "\r\n";
+
+$result = mail($to, $subject, $message, $headers);
 
 if ($result) {
     echo "email is verzonden";
@@ -27,6 +47,9 @@ if ($result) {
 else {
     echo "email is niet verzonden";
 }
+
+
+//--------------------------------------------------------------------------------------
 
 //$hashedPassword = hash("sha3-512", $_POST['password']);
 //$dbm->insertRecordToUser("1", $_POST['email'], $hashedPassword);
