@@ -1,7 +1,8 @@
 <?php
 
 function sendVerificationEmail($email) {
-    $code = "";
+
+
 
     $to = $email;
     $subject = "Email verificatie";
@@ -10,7 +11,7 @@ function sendVerificationEmail($email) {
     $message = str_replace("[DESTINATION]", "" /* <- destination url here */, $message);
 
 
-    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers  = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
     $headers .= 'From: 2026970@talnet.nl' . "\r\n" . 'Reply-To: olemstra@roc-dev.com' . "\r\n";
 

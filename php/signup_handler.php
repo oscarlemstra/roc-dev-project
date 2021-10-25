@@ -37,6 +37,7 @@ if ($result) {
 }
 
 
+
 if( sendVerificationEmail($email) ) {
     
 };
