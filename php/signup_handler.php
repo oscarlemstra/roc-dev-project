@@ -38,7 +38,7 @@ if ($result) {
 
 
 
-if( sendVerificationEmail($email) ) {
+if( sendEmail($email) ) {
     
 };
 
