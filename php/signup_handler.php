@@ -6,7 +6,7 @@ $dbm = new DatabaseManager();
 // a .inc.php file is a file that is put inside the includes folder
 // includes are .php files that are require'd in another file. such as this one
 require_once('../includes/signup_error_handling.php');
-require_once('../includes/verification_email_send.php');
+require_once('../includes/email_send.php');
 
 $email = $_POST['email'];
 $confirmEmail = $_POST['confirmEmail'];
@@ -38,7 +38,7 @@ if ($result) {
 
 
 
-if( sendEmail($email) ) {
+if( sendEmail($email, 'verification') ) {
     
 };
 
