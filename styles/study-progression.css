@@ -32,3 +32,12 @@ html {
     background-color: white;
     align-content: center;
 }
+
+.header {
+    width: 360px;
+    height: 106px;
+}
+
+.logo {
+    width: 50%;
+}
