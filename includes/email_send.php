@@ -15,7 +15,7 @@ function sendEmail($email ,$emailType) {
     $message = str_replace("[USERNAME]", "test name" /* <- Username here */, $message);
 
     // verification changes
-    $message = str_replace("[DESTINATION]", "test location" /* <- destination url here */, $message);
+    $message = str_replace("[DESTINATION]", "https://test_url.test/" /* <- destination url here */, $message);
 
     // 6 code changes
     $message = str_replace("[NUM1]", "1" /* <- number here */, $message);
