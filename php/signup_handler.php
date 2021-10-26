@@ -39,7 +39,7 @@ if ($result) {
 
 
 if( !sendEmail($email, 'verification') ) {
-    $_SESSION['errorMessage'] = 'het stuuren van een email heeft gefaald. neem alstublieft contact op met site-eigenaar';
+    $_SESSION['errorMessage'] = 'het stuuren van een email heeft gefaald. neem alstublieft contact op met de site-eigenaar';
     header('location: ../pages/signup');
     exit();
 };
