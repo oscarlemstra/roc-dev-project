@@ -1,6 +1,6 @@
 <?php
 
-function emailCheck($email, $confirmEmail) {
+function emailCheck($email, $confirmEmail, $dbm) {
     $error = false;
     $errorMessage = '';
 
@@ -26,6 +26,11 @@ function emailCheck($email, $confirmEmail) {
     if ($email !== $confirmEmail && !$error) {
         $error = true;
         $errorMessage = 'emails zijn niet hetzelfde';
+    }
+
+    if ($dbm->getRecordsFromTable("user", "email", $email)) {
+        $error = true;
+        $errorMessage = 'email adres is al in gebruik';
     }
 
     if ($error) {
