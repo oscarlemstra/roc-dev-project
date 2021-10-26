@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test Email</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            font-family: 'Montserrat', sans-serif;
+
+            --background: #F9F9F9;
+            --roc-color: #ee7326;
+            --header-bg-color: #343333;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            background: var(--background);
+            position: relative;
+        }
+
+        .container {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            width: 100%;
+            min-width: 400px;
+            max-width: 800px;
+
+            background-color: white;
+        }
+        header {
+            height: fit-content;
+            width: 100%;
+            align-items: center;
+
+            background-color: var(--header-bg-color);
+            color: white;
+
+            display: flex;
+        }
+        header > img {
+            width: 150px;
+            margin-right: 2em;
+        }
+
+        .main {
+            width: 100%;
+            padding: 2em;
+        }
+
+        .main > h4 {
+            margin-bottom: 1.5em;
+        }
+
+        .main > a {
+            display: block;
+            margin: 2em auto 4em auto;
+            width: 25%;
+        }
+        .main > a > button {
+            width: 100%;
+            padding: 1em;
+
+            border: 0;
+            background-color: var(--roc-color);
+            color: white;
+        }
+        .main > .footer {
+            width: 100%;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://rocvf.flowstyleguide.nl/wp-content/uploads/2013/12/03_ROCvF_logo_LIJN_RGB-e1479821464666.png" alt="">
+        </header>
+        <div class="main">
+            <h4>Hey, [USERNAME]</h4>
+            <p>
+                U kunt uw email verifiëren met de knop beneden, als u niet een account heb gemaakt, kunt u deze email negeren.
+            </p>
+            <a href="[DESTINATION]">
+                <button>email verifiëren</button>
+            </a>
+            <p class="footer"><small>
+                gestuurd door ROC Almere Buiten • [CONTACT US]
+            </small></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+
+/*
+=================================================================== //
+
+Code by: Thijn
+
+used for:
+- login
+- signup
+
+Path:
+../pages/login/index.php
+../pages/signup/index.php
+
+Copyright (c) Thijn Douwma
+fuck you get your own code
+ 
+=================================================================== //
+*/
+
+@font-face {
+    font-family: 'eau';
+    src: url('../font/eau.woff2') format('woff2'),
+         url('../font/eau.woff') format('woff'),
+         url('../font/eau.ttf')  format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    --unfocused-color: rgba(238, 115, 38);
+    --focused-color: #ee7326;
+
+    --error-background: #ec6666;
+    --error-color: white;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+body {
+    background: #eaeaea;
+    font-family: 'eau', sans-serif;
+
+    position: relative;
+}
+
+.container {
+    width: 25%;
+    min-width: 350px;
+    height: fit-content;
+
+    padding: 3em;
+
+    border-radius: 24px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: white;
+    text-align: center;
+}
+
+form h1 {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+form a {
+    text-decoration: none;
+    color: rgb(66, 0, 219);
+    font-size: 80%;
+}
+
+input[type = 'email'], input[type = 'password'], input[type = 'text'] {
+    background: none;
+    display: block;
+
+    margin: 25px auto;
+    padding: 14px 10px;
+
+    width: 70%;
+    min-width: 100px;
+
+    text-align: center;
+
+    border: 2px solid var(--unfocused-color);
+    border-radius: 24px;
+    outline: none;
+    color: black;
+
+    transition: 0.25s;
+}
+input[type = 'email']:focus, input[type = 'password']:focus {
+    width: 90%;
+    border: 2px solid var(--focused-color);
+}
+
+input[type = 'submit'] {
+    background: none;
+    display: block;
+
+    margin: auto;
+    padding: 14px 10px;
+ 
+    width: 50%;
+    min-width: 100px;
+
+    text-align: center;
+
+    border: 2px solid var(--unfocused-color);
+    border-radius: 24px;
+    outline: none;
+    color: black;
+
+    transition: 0.25s;
+}
+form .submitenabled:hover {
+    background-color: var(--unfocused-color);
+    color: white;
+}
+form .submitdisabled {
+    color: white;
+    border: 2px solid #6d6d6d;
+    background-color: #6d6d6d;
+}
+
+.error {
+    text-align: center;
+    font-size: 80%;
+
+    display: block;
+    margin: 30px auto 0px auto;
+    padding: 4px;
+
+    width: 100%;
+    height: 20%;
+
+    background-color: var(--error-background);
+    color: var(--error-color);
+
+    border-radius: 24px;
+}
+.displayNone {
+    display: none;
+}
