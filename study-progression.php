@@ -17,7 +17,7 @@ session_start();
 <div class="container">
 <div class="header color-roc-orange">
     <img class="logo" alt="ROC Logo" src="images/02_ROCvF_logo_PLAT_RGB%201.png">
-
+    <img class="hamburger" alt="hamburger" src="images/hamburger.png">
 
 </div>
 
