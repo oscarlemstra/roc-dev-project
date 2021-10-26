@@ -4,9 +4,12 @@ require_once "../../vendor/autoload.php";
 require_once "../../vendor/sonata-project/google-authenticator/src/FixedBitNotation.php";
 require_once "../../vendor/sonata-project/google-authenticator/src/GoogleAuthenticator.php";
 require_once "../../vendor/sonata-project/google-authenticator/src/GoogleQrUrl.php";
+require_once('../../includes/DatabaseManager.php');
 
+$dbm = new DatabaseManager();
 $g = new \Google\Authenticator\GoogleAuthenticator();
-$secret = ""; //from database
+
+$secret = $dbm->getRecordsFromTable("user", "studentnr", $studentnr);
 
 if (isset($_POST['submit'])) {
     //show on-screen - DEBUG
@@ -15,10 +18,10 @@ if (isset($_POST['submit'])) {
 
     //check code
     if ($g->checkCode($secret, $_POST['pass-code'])) {
-//if correct passcode
+        //if correct passcode
         echo "yes!";
     } else {
-//if incorrect passcode
+        //if incorrect passcode
         echo "no!";
     }
 

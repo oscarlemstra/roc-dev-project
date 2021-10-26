@@ -4,14 +4,14 @@
 // Code by: Thijn
 //
 // used for: email verification
-// usage path: pages/email-verification/index.php
+// usage path: pages/email-verification/totp-recovery.php
 // 
 // =================================================================== //
 
 const inputElement = document.getElementById('verification_code');
 const submitButton = document.getElementById('submit');
 
-// in the email-verification/index.php there is a couple lines of PHP code
+// in the email-verification/totp-recovery.php there is a couple lines of PHP code
 // this code will make another error message when it see's a error in the $_SESSION variable
 // to avoid multiple error messages this will check if a error made by PHP code is already made
 // and then get the right element
