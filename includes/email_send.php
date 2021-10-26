@@ -12,18 +12,18 @@ function sendEmail($email ,$emailType) {
     if ($emailType === 'pwdReset')     $message = file_get_contents("../template/pwd-reset.html");
 
     // general changes
-    $message = str_replace("[USERNAME]", "" /* <- Username here */, $message);
+    $message = str_replace("[USERNAME]", "test name" /* <- Username here */, $message);
 
     // verification changes
-    $message = str_replace("[DESTINATION]", "" /* <- destination url here */, $message);
+    $message = str_replace("[DESTINATION]", "test location" /* <- destination url here */, $message);
 
     // 6 code changes
-    $message = str_replace("[NUM1]", "" /* <- number here */, $message);
-    $message = str_replace("[NUM2]", "" /* <- number here */, $message);
-    $message = str_replace("[NUM3]", "" /* <- number here */, $message);
-    $message = str_replace("[NUM4]", "" /* <- number here */, $message);
-    $message = str_replace("[NUM5]", "" /* <- number here */, $message);
-    $message = str_replace("[NUM6]", "" /* <- number here */, $message);
+    $message = str_replace("[NUM1]", "1" /* <- number here */, $message);
+    $message = str_replace("[NUM2]", "2" /* <- number here */, $message);
+    $message = str_replace("[NUM3]", "3" /* <- number here */, $message);
+    $message = str_replace("[NUM4]", "4" /* <- number here */, $message);
+    $message = str_replace("[NUM5]", "5" /* <- number here */, $message);
+    $message = str_replace("[NUM6]", "6" /* <- number here */, $message);
 
 
     $headers  = "MIME-Version: 1.0" . "\r\n";
