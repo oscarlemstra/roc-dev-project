@@ -39,7 +39,7 @@ function JSC($input) {
 </head>
 <body>
 <form action="index.php" method="post">
-    <   input type="text" name="pass-code">
+    <input type="text" name="pass-code">
     <button type="submit" name="submit">submit</button>
 </form>
 </body>
