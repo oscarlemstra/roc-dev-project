@@ -1,12 +1,15 @@
 <?php
 
-function sendEmail($email) {
+function sendEmail($email ,$emailType) {
 
 
 
     $to = $email;
     $subject = "Email verificatie";
-    $message = file_get_contents("../template/6code.html");
+
+    if ($emailType === 'verification') $message = file_get_contents("../template/email-verification.html");
+    if ($emailType === '6code')        $message = file_get_contents("../template/6code.html");
+    if ($emailType === 'pwdReset')     $message = file_get_contents("../template/pwd-reset.html");
 
     $message = str_replace("[USERNAME]", "" /* <- Username here */, $message);
     $message = str_replace("[DESTINATION]", "" /* <- destination url here */, $message);
