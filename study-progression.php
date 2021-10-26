@@ -10,7 +10,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="" /> <!--needs a favicon here (roc-dev logo or software dev opleiding logo)-->
-    <link rel="stylesheet" href="styles/universal.css">
+    <link rel="stylesheet" href="styles/study-progression.css">
     <title>Study Progression</title>
 </head>
 <body>
