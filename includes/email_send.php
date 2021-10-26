@@ -32,10 +32,7 @@ function sendEmail($email ,$emailType) {
 
     $result = mail($to, $subject, $message, $headers);
 
-    if ($result) {
-        echo "email is verzonden";
-    }
-    else {
-        echo "email is niet verzonden";
+    if (!$result) {
+        return false;
     }
 }
