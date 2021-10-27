@@ -48,8 +48,8 @@ class DatabaseManager {
 
 
     //update function
-    public function updateRecordsFromTable ($tableName, $oldColumnValue, $newColumnValue, $searchColumn, $searchColumnValue) {
-        $query = "UPDATE $tableName SET $oldColumnValue = '$newColumnValue' WHERE $searchColumn = '$searchColumnValue'";
+    public function updateRecordsFromTable ($tableName, $columnName, $newColumnValue, $searchColumn, $searchColumnValue) {
+        $query = "UPDATE $tableName SET $columnName = '$newColumnValue' WHERE $searchColumn = '$searchColumnValue'";
 
         $this->databaseHandle()->query($query);
     }
@@ -68,9 +68,9 @@ class DatabaseManager {
     //
     //insert user
     public function insertRecordToUser ($user_role_id, $email, $hashed_password) {
-        $qeury = "INSERT INTO user (user_role_id, email, hashed_password)
+        $query = "INSERT INTO user (user_role_id, email, hashed_password)
                   VALUES ('$user_role_id', '$email', '$hashed_password')";
 
-        $this->databaseHandle()->query($qeury);
+        $this->databaseHandle()->query($query);
     }
 }
