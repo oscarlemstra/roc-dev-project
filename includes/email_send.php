@@ -31,7 +31,7 @@ function sendEmail($email ,$emailType) {
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
     
     // Additional headers 
-    $headers .= 'From: Thijn Douwma<2134301@talnet.nl>' . "\r\n"; 
+    $headers .= 'From: ROC DEV <ROC-DEV-TEST@outlook.com>' . "\r\n"; 
 
     $result = mail($to, $subject, $message, $headers);
 
