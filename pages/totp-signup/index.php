@@ -35,6 +35,7 @@ echo $secret."<br>"; // - DEBUG
 <body>
 
 <img src="<?php echo $link?>">
+<a href="../totp-login">click here after scanning qr-code</a>
 
 </body>
 </html>

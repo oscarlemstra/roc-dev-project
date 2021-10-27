@@ -49,5 +49,6 @@ function JSC($input) {
     <input type="text" name="pass-code">
     <button type="submit" name="submit">submit</button>
 </form>
+<a href="../totp-signup">generate new qr code?</a>
 </body>
 </html>
