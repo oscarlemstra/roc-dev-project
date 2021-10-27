@@ -16,8 +16,8 @@ const submitButton = document.getElementById('submit');
 
 // in the signup/index.php there is a couple lines of PHP code
 // this code will make another error message when it see's a error in the $_SESSION variable
-// to avoid multiple error messages this will check if a error made by PHP code is already made
-// and then get the right element
+// to avoid multiple error messages this will check if a error made by PHP code is already exists
+// and then store that element
 let errorElement;
 if (document.getElementById('error2')) {
     errorElement = document.getElementById('error2');
