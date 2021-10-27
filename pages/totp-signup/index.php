@@ -1,15 +1,27 @@
 <?php
+session_start();
 
 require_once "../../vendor/autoload.php";
 require_once "../../vendor/sonata-project/google-authenticator/src/FixedBitNotation.php";
 require_once "../../vendor/sonata-project/google-authenticator/src/GoogleAuthenticator.php";
 require_once "../../vendor/sonata-project/google-authenticator/src/GoogleQrUrl.php";
+require_once "../../includes/DatabaseManager.php";
 
-$user = "STUDENTNR"; //studentnr from database
-
+//connections
+$dbm = new DatabaseManager();
 $g = new \Google\Authenticator\GoogleAuthenticator();
+
+//get record of user from DB
+$record = $dbm->getRecordsFromTable("user", "email", $_SESSION['email']);
+
+//generate secret for user
 $secret = $g->generateSecret();
-$link = Sonata\GoogleAuthenticator\GoogleQrUrl::generate($user, $secret, 'roc-dev');
+
+//store secret in DB
+$dbm->updateRecordsFromTable("user", "secret", $secret, "email", $_SESSION['email']);
+
+//generate qr code with secret
+$link = Sonata\GoogleAuthenticator\GoogleQrUrl::generate($record[0]["email"], $secret, 'roc-dev');
 
 echo $secret."<br>"; // - DEBUG
 ?>

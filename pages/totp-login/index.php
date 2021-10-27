@@ -1,23 +1,27 @@
 <?php
+session_start();
 
 require_once "../../vendor/autoload.php";
 require_once "../../vendor/sonata-project/google-authenticator/src/FixedBitNotation.php";
 require_once "../../vendor/sonata-project/google-authenticator/src/GoogleAuthenticator.php";
 require_once "../../vendor/sonata-project/google-authenticator/src/GoogleQrUrl.php";
-require_once('../../includes/DatabaseManager.php');
+require_once "../../includes/DatabaseManager.php";
 
+//connections
 $dbm = new DatabaseManager();
 $g = new \Google\Authenticator\GoogleAuthenticator();
 
-$secret = $dbm->getRecordsFromTable("user", "email", $emailfromsession);
+//get record of user from DB
+$record = $dbm->getRecordsFromTable("user", "email", $_SESSION['email']);
 
+//SUBMIT is pressed
 if (isset($_POST['submit'])) {
     //show on-screen - DEBUG
     JSC("submitted code: ".$_POST['pass-code']);
-    JSC("correct code: ".$g->getCode($secret[0][email]));
+    JSC("correct code: ".$g->getCode($record[0]["secret"]));
 
     //check code
-    if ($g->checkCode($secret, $_POST['pass-code'])) {
+    if ($g->checkCode($record[0]["secret"], $_POST['pass-code'])) {
         //if correct passcode
         echo "yes!";
     } else {
@@ -26,7 +30,7 @@ if (isset($_POST['submit'])) {
     }
 
 }
-
+//for debugging
 function JSC($input) {
     echo "<pre>";
     print_r($input);
