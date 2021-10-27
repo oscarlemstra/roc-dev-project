@@ -64,7 +64,7 @@ a {
 .planning {
     width: 339px;
     height: 462px;
-    margin: 21px 0 21px 10px;
+    margin: 21px 0 0 10px;
     border: black solid 1px;
     border-radius: 10px;
 }
@@ -83,5 +83,30 @@ a {
 .text-align-middle {
     margin: 0;
     padding: 1.5em 1.5em;
+    text-align: center;
+}
+
+.subjects {
+     margin-top: 21px;
+}
+
+.subject-container {
+    width: 256px;
+    height: 132px;
+    margin: 20px auto 0 auto;
+    padding-top: 20px;
+    background-color: #F8F9FA;
+    border-radius: 10px;
+}
+
+.subject-color-container {
+    width: 53px;
+    height: 13px;
+    margin: 0 0 0 15px;
+    border-radius: 200px;
+}
+
+.subject-text-center {
+
     text-align: center;
 }
