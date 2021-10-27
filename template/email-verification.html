@@ -20,8 +20,6 @@
             box-sizing: border-box;
 
             font-family: 'Montserrat', sans-serif;
-
-            -ms-text-size-adjust: 100%;
         }
         html, body {
             margin: 0 auto !important;
@@ -67,6 +65,7 @@
             display: flex;
         }
         header > img {
+            width: 150px;
             margin-right: 2em;
         }
 
@@ -79,44 +78,51 @@
             margin-bottom: 1.5em;
         }
 
-        .main > a {
-            display: block;
-            margin: 2em auto 4em auto;
-            width: 25%;
-        }
-        .main > a > button {
-            width: 100%;
-            padding: 1em;
-
-            border: 0;
-            background-color: #ee7326;
-            color: white;
-        }
         .main > .footer {
             width: 100%;
             text-align: center;
         }
 
+        .code-box {
+            margin: 2em 0 4em 0;
+            display: flex;
+            justify-content: center;
+        }
+        .code-box > div {
+            font-family: monospace;
+            background-color: rgb(240, 240, 240);
+            padding: 0.3em;
+            border-radius: 8px;
+            box-shadow: 0 3px #343333;
+        }
+
     </style>
+
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/auth0/kbd/gh-pages/kbd.css">
 
 </head>
 <body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly;">
-    <main class="container">
+    <div class="container">
         <header>
-            <img style="width: 150px; height: auto;" src="https://rocvf.flowstyleguide.nl/wp-content/uploads/2013/12/03_ROCvF_logo_LIJN_RGB-e1479821464666.png" alt="LOGO">
+            <img src="https://rocvf.flowstyleguide.nl/wp-content/uploads/2013/12/03_ROCvF_logo_LIJN_RGB-e1479821464666.png" alt="">
         </header>
-        <section class="main">
+        <div class="main">
             <h4>Hey, [USERNAME]</h4>
             <p>
                 U kunt uw email verifiëren met de knop beneden, als u niet een account heb gemaakt, kunt u deze email negeren.
             </p>
-            <a href="[DESTINATION]">
-                <button>email verifiëren</button>
-            </a>
+            <div class="code-box">
+                <div>[NUM1]</div>
+                <div>[NUM2]</div>
+                <div>[NUM3]</div>
+                <div>[NUM4]</div>
+                <div>[NUM5]</div>
+                <div>[NUM6]</div>
+            </div>
             <p class="footer"><small>
                 gestuurd door ROC Almere Buiten • [CONTACT US]
             </small></p>
-        </section>
-    </main>
+        </div>
+    </div>
 </body>
 </html>
