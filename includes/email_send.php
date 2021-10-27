@@ -5,7 +5,7 @@ function sendEmail($email ,$emailType) {
 
 
     $to = $email;
-    $subject = "Email verificatie";
+    $subject = "Email verificatie 2";
 
     if ($emailType === 'verification') $message = file_get_contents("../template/email-verification.html");
     if ($emailType === '6code')        $message = file_get_contents("../template/6code.html");
@@ -31,7 +31,7 @@ function sendEmail($email ,$emailType) {
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
     
     // Additional headers
-    $headers .= 'From: Jopie <ROC-DEV-TEST@outlook.com>' . "\r\n";
+    $headers .= 'From: roc-dev test <ROC-DEV-TEST@outlook.com>' . "\r\n";
 
     $result = mail($to, $subject, $message, $headers);
 
