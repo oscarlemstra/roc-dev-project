@@ -4,7 +4,7 @@
 // Code by: Thijn
 //
 // used for: Signup
-// usage path: pages/signup/totp-recovery.php
+// usage path: pages/signup/index.php
 // 
 // =================================================================== //
 
@@ -14,7 +14,7 @@ const passwordElement = document.getElementById('pwd');
 const passwordElement2 = document.getElementById('pwd2');
 const submitButton = document.getElementById('submit');
 
-// in the signup/totp-recovery.php there is a couple lines of PHP code
+// in the signup/index.php there is a couple lines of PHP code
 // this code will make another error message when it see's a error in the $_SESSION variable
 // to avoid multiple error messages this will check if a error made by PHP code is already made
 // and then get the right element

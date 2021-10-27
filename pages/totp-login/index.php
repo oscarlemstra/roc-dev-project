@@ -9,12 +9,12 @@ require_once('../../includes/DatabaseManager.php');
 $dbm = new DatabaseManager();
 $g = new \Google\Authenticator\GoogleAuthenticator();
 
-$secret = $dbm->getRecordsFromTable("user", "studentnr", $studentnr);
+$secret = $dbm->getRecordsFromTable("user", "email", $emailfromsession);
 
 if (isset($_POST['submit'])) {
     //show on-screen - DEBUG
     JSC("submitted code: ".$_POST['pass-code']);
-    JSC("correct code: ".$g->getCode($secret));
+    JSC("correct code: ".$g->getCode($secret[0][email]));
 
     //check code
     if ($g->checkCode($secret, $_POST['pass-code'])) {
