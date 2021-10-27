@@ -34,11 +34,12 @@ session_start();
     </div>
 
     <div class="subjects">
-    <!--dit is een template voor de vakcontainer-->
+    <!--dit is een template voor de vakcontainer
+    zodra hierbij php gebruikt gaat worden raad ik aan om het op teroepen en echo-en met een foreach-->
         <div class="subject-container">
-            <div class="subject-color-container color-kerntaak-frontend">
-            </div>
+            <div class="subject-color-container color-kerntaak-frontend"></div>
             <h2 class="subject-text-center">HTML</h2>
+            <p class="subject-text-center">5 Weken<br>Programmeren<br>(Frontend)</p>
         </div>
         <div class="subject-container"></div>
     </div>

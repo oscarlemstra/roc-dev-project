@@ -112,3 +112,7 @@ p {
 .subject-text-center {
   text-align: center;
 }
+
+.subject-text-lower {
+    padding-top: 35px;
+}
