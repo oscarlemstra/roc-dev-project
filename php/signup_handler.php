@@ -37,12 +37,6 @@ if ($result) {
 }
 
 
-//DEZE CODE IS VOOR TESTEN
-//
-//$hashedPassword = hash("sha3-512", $_POST['password']);
-//$dbm->insertRecordToUser("1", $_POST['email'], $hashedPassword);
-
-
 if( !sendEmail($email, 'verification') ) {
     $_SESSION['errorMessage'] = 'het sturen van een email heeft gefaald. neem alstublieft contact op met de site-eigenaar';
     header('location: ../pages/signup');
