@@ -1,13 +1,24 @@
+/*
+CSS door Sander Borgman
+ */
 
-
-body {
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
 .color-roc-orange {
     background-color: #EE7326;
+}
+
+.color-roc-orange-text {
+    color: #EE7326;
 }
 
 .color-roc-black {
@@ -36,7 +47,6 @@ body {
 }
 
 .header {
-    /*width: 100vw;*/
     height: 106px;
 }
 
@@ -49,4 +59,29 @@ body {
     float: right;
     margin: 25px 25px 0 0;
 
+}
+
+.planning {
+    width: 339px;
+    height: 462px;
+    margin: 21px 0 21px 10px;
+    border: black solid 1px;
+    border-radius: 10px;
+}
+
+.planning h2, h3, p {
+    margin: 10px 0 0 10px
+}
+
+.planning-create-button {
+    margin: 20px auto 0 auto;
+    width: 204px;
+    height: 69px;
+    border-radius: 10px;
+}
+
+.text-align-middle {
+    margin: 0;
+    padding: 1.5em 1.5em;
+    text-align: center;
 }

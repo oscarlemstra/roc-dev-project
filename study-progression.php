@@ -15,12 +15,23 @@ session_start();
 </head>
 <body>
 <div class="container">
+
 <div class="header color-roc-orange">
     <img class="logo" alt="ROC Logo" src="images/02_ROCvF_logo_PLAT_RGB%201.png">
     <img class="hamburger" alt="hamburger" src="images/hamburger.png">
-
 </div>
 
+    <div class="planning">
+        <h2 class="color-roc-orange-text">Planning van vandaag</h2>
+        <h3>Datum: <?php //hier komt de datum van de planning wat er nu staat is gewoon testtext ?> 27/10/2021</h3>
+        <br>
+        <?php //dit is het punt dat we de tickets uit de database zouden moeten halen
+              //en dan het op een rijtje onderelkaar echo-en
+              //dus bvb: <tr>ticket 1</tr> <tr>ticket 2</tr> etc.
+              //als er teveel ruimte is echo maar een <br> erbij of voeg wat padding/margin toe   ?>
+        <p>Rekenen - H1 - 3 pnt</p><p>Databases ontwerpen - DeeBeeTrain - 6pnt</p><p>roc-dev-project - study progression - 6pnt</p>
+        <a href="#"><div class="color-roc-orange planning-create-button"><p class="text-align-middle">Edit/Create Planning</p></div></a>
+    </div>
 
 </div>
 </body>
