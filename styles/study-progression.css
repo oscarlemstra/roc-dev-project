@@ -3,110 +3,112 @@ CSS door Sander Borgman
  */
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 a {
-    text-decoration: none;
-    color: #000000;
+  text-decoration: none;
+  color: #000000;
 }
 
 .color-roc-orange {
-    background-color: #EE7326;
+  background-color: #ee7326;
 }
 
 .color-roc-orange-text {
-    color: #EE7326;
+  color: #ee7326;
 }
 
 .color-roc-black {
-    background-color: black;
+  background-color: black;
 }
 
 .color-kerntaak-frontend {
-    background-color: #04D900;
+  background-color: #04d900;
 }
 
 .color-kerntaak-backend {
-    background-color: #0090CD;
+  background-color: #0090cd;
 }
 
 .color-kerntaak-regulier {
-    background-color: #FFFF00;
+  background-color: #ffff00;
 }
 
 .color-kerntaak-keuzedeel {
-    background-color: #DF0000;
+  background-color: #df0000;
 }
 
 .container {
-    background-color: white;
-    align-content: center;
+  background-color: white;
+  align-content: center;
 }
 
 .header {
-    height: 106px;
+  height: 106px;
 }
 
 .logo {
-    width: 75%;
-    height: 100%;
+  width: 75%;
+  height: 100%;
 }
 
 .hamburger {
-    float: right;
-    margin: 25px 25px 0 0;
-
+  float: right;
+  margin: 25px 25px 0 0;
 }
 
 .planning {
-    width: 339px;
-    height: 462px;
-    margin: 21px 0 0 10px;
-    border: black solid 1px;
-    border-radius: 10px;
+  width: 339px;
+  height: 462px;
+  margin: 21px 0 0 10px;
+  border: black solid 1px;
+  border-radius: 10px;
 }
 
-.planning h2, h3, p {
-    margin: 10px 0 0 10px
+.planning h2,
+h3,
+p {
+  margin: 10px 0 0 10px;
 }
 
 .planning-create-button {
-    margin: 20px auto 0 auto;
-    width: 204px;
-    height: 69px;
-    border-radius: 10px;
+  margin: 20px auto 0 auto;
+  width: 204px;
+  height: 69px;
+  border-radius: 10px;
 }
 
 .text-align-middle {
-    margin: 0;
-    padding: 1.5em 1.5em;
-    text-align: center;
+  margin: 0;
+  padding: 1.5em 1.5em;
+  text-align: center;
 }
 
 .subjects {
-     margin-top: 21px;
+  margin-top: 21px;
 }
 
 .subject-container {
-    width: 256px;
-    height: 132px;
-    margin: 20px auto 0 auto;
-    padding-top: 20px;
-    background-color: #F8F9FA;
-    border-radius: 10px;
+  display: flex;
+  gap: 25px;
+  width: 256px;
+  height: 132px;
+  margin: 20px auto 0 auto;
+  padding-top: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
 }
 
 .subject-color-container {
-    width: 53px;
-    height: 13px;
-    margin: 0 0 0 15px;
-    border-radius: 200px;
+  width: 53px;
+  height: 13px;
+  margin: 7px 0 0 15px;
+  border-radius: 200px;
 }
 
 .subject-text-center {
-
-    text-align: center;
+  text-align: center;
 }

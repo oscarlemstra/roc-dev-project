@@ -35,11 +35,13 @@ session_start();
 
     <div class="subjects">
     <!--dit is een template voor de vakcontainer-->
-        <div class="subject-container"><div class="subject-color-container color-kerntaak-frontend"></div><h2 class="subject-text-center">HTML</h2></div>
+        <div class="subject-container">
+            <div class="subject-color-container color-kerntaak-frontend">
+            </div>
+            <h2 class="subject-text-center">HTML</h2>
+        </div>
         <div class="subject-container"></div>
-
     </div>
-
 </div>
 </body>
 </html>
