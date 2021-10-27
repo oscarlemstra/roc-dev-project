@@ -21,7 +21,7 @@ $confirmpwd = $_POST['confirmPassword'];
 //
 // if the functions returns false
 //      continue with the rest of the code
-$result = emailCheck($email, $confirmEmail);
+$result = emailCheck($email, $confirmEmail, $dbm);
 if ($result) {
     $_SESSION['errorMessage'] = $result;
     header('location: ../pages/signup');
@@ -37,17 +37,14 @@ if ($result) {
 }
 
 
+//DEZE CODE IS VOOR TESTEN
+//
+//$hashedPassword = hash("sha3-512", $_POST['password']);
+//$dbm->insertRecordToUser("1", $_POST['email'], $hashedPassword);
+
 
 if( !sendEmail($email, 'verification') ) {
-    $_SESSION['errorMessage'] = 'het stuuren van een email heeft gefaald. neem alstublieft contact op met de site-eigenaar';
+    $_SESSION['errorMessage'] = 'het sturen van een email heeft gefaald. neem alstublieft contact op met de site-eigenaar';
     header('location: ../pages/signup');
     exit();
 };
-
-
-/*
-$hashedPassword = hash("sha3-512", $_POST['password']);
-$dbm->insertRecordToUser("1", $_POST['email'], $hashedPassword);
-
-header('location: ../pages/login');
-*/

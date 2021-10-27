@@ -26,9 +26,12 @@ function sendEmail($email ,$emailType) {
     $message = str_replace("[NUM6]", "6" /* <- number here */, $message);
 
 
-    $headers  = "MIME-Version: 1.0" . "\r\n";
-    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $headers .= 'From: 2026970@talnet.nl' . "\r\n" . 'Reply-To: olemstra@roc-dev.com' . "\r\n";
+    // Set content-type header for sending HTML email 
+    $headers  = "MIME-Version: 1.0" . "\r\n"; 
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
+    
+    // Additional headers 
+    $headers .= 'From: Thijn Douwma<2134301@talnet.nl>' . "\r\n"; 
 
     $result = mail($to, $subject, $message, $headers);
 
