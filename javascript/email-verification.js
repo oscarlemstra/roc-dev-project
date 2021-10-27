@@ -4,7 +4,7 @@
 // Code by: Thijn
 //
 // used for: email verification
-// usage path: pages/email-verification/index.php
+// usage path: pages/6code-verification/index.php
 // 
 // =================================================================== //
 
