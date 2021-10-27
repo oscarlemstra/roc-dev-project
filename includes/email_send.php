@@ -35,7 +35,9 @@ function sendEmail($email ,$emailType) {
 
     $result = mail($to, $subject, $message, $headers);
 
-    if (!$result) {
+    if ($result) {
+        return true;
+    } else {
         return false;
     }
 }
