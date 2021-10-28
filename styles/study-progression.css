@@ -8,6 +8,10 @@ CSS door Sander Borgman en Kenny
   box-sizing: border-box;
 }
 
+body {
+  font-family: sans-serif;
+}
+
 a {
   text-decoration: none;
   color: #000000;
@@ -60,11 +64,12 @@ a {
 
 .header {
   height: 106px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.199);
 }
 
 .logo {
-  width: 75%;
-  height: 100%;
+  width: 242px;
+  height: 106px;
 }
 
 .hamburger {
@@ -88,7 +93,7 @@ a {
   width: 320px;
   height: 462px;
   margin: 21px auto 0 auto;
-  border: black solid 1px;
+  border: rgba(153, 153, 153, 0.322) solid 1px;
   border-radius: 10px;
 }
 
@@ -117,6 +122,7 @@ p {
 
 .subject-container {
   display: flex;
+  overflow: hidden;
   gap: 5px;
   width: 270px;
   min-height: 150px;
@@ -148,7 +154,7 @@ p {
   width: 320px;
   height: 462px;
   margin: 21px auto 0 auto;
-  border: black solid 1px;
+  border: rgba(153, 153, 153, 0.322) solid 1px;
   border-radius: 10px;
 }
 
