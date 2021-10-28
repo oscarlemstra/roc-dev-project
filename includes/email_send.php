@@ -12,12 +12,12 @@ function sendEmail($email ,$emailType) {
     // general changes
     $message = str_replace("[USERNAME]", "test name" /* <- Username here */, $message);
 
-    // verification changes
-    $message = str_replace("[DESTINATION]", "https://test_url.test/" /* <- destination url here */, $message);
-
-    // 6 code changes
+    // verification code
     $message = str_replace("[CODE]", "number" /* <- number here */, $message);
-
+    
+    // url destination changes
+    $message = str_replace("[DESTINATION]", "https://test_url.test/" /* <- destination url here */, $message);
+    
 
     // Set content-type header for sending HTML email 
     $headers  = "MIME-Version: 1.0" . "\r\n"; 
