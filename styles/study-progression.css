@@ -91,8 +91,8 @@ a {
 
 .planning {
   width: 320px;
-  height: 462px;
   margin: 21px auto 0 auto;
+  padding-bottom: 21px;
   border: rgba(153, 153, 153, 0.322) solid 1px;
   border-radius: 10px;
 }
@@ -124,7 +124,7 @@ p {
   display: flex;
   overflow: hidden;
   gap: 5px;
-  width: 270px;
+  width: 290px;
   min-height: 150px;
   margin: 20px auto 0 auto;
   padding-top: 20px;
@@ -152,8 +152,8 @@ p {
 
 .grades {
   width: 320px;
-  height: 462px;
-  margin: 21px auto 0 auto;
+  margin: 21px auto 21px auto;
+  padding-bottom: 21px;
   border: rgba(153, 153, 153, 0.322) solid 1px;
   border-radius: 10px;
 }
