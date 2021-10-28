@@ -21,7 +21,7 @@ $confirmpwd = $_POST['confirmPassword'];
 //
 // if the functions returns false
 //      continue with the rest of the code
-$result = emailCheck($email, $confirmEmail, $dbm);
+$result = emailCheck($email, $dbm);
 if ($result) {
     $_SESSION['errorMessage'] = $result;
     header('location: ../pages/signup');

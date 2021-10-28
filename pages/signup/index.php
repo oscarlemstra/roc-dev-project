@@ -16,7 +16,6 @@
             <a href="../login">Inloggen</a>
 
             <input type="email" name="email" placeholder="Email" id="email" required>
-            <input type="email" name="confirmEmail" placeholder="Confirm Email" id="email2" required>
 
             <input type="password" name="password" placeholder="Wachtwoord" id="pwd" required>
             <input type="password" name="confirmPassword" placeholder="Confirm Wachtwoord" id="pwd2" required>

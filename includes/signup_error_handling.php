@@ -1,6 +1,6 @@
 <?php
 
-function emailCheck($email, $confirmEmail, $dbm) {
+function emailCheck($email, $dbm) {
     $error = false;
     $errorMessage = '';
 
@@ -21,11 +21,6 @@ function emailCheck($email, $confirmEmail, $dbm) {
     if ($splitEmail[count($splitEmail) - 1] !== "talnet.nl" && !$error) {
         $error = true;
         $errorMessage = 'email is niet een school email adress';
-    }
-
-    if ($email !== $confirmEmail && !$error) {
-        $error = true;
-        $errorMessage = 'emails zijn niet hetzelfde';
     }
 
     if ($dbm->getRecordsFromTable("user", "email", $email)) {

@@ -9,7 +9,6 @@
 // =================================================================== //
 
 const emailElement = document.getElementById('email');
-const emailElement2 = document.getElementById('email2');
 const passwordElement = document.getElementById('pwd');
 const passwordElement2 = document.getElementById('pwd2');
 const submitButton = document.getElementById('submit');
@@ -38,7 +37,6 @@ submitButton.classList.remove('submitenabled')
 
 // event listeners
 emailElement.addEventListener('input', checkEmailValidity);
-emailElement2.addEventListener('input', checkEmailValidity);
 passwordElement.addEventListener('input', checkPwdValidity);
 passwordElement2.addEventListener('input', checkPwdValidity);
 
@@ -50,11 +48,6 @@ function checkEmailValidity() {
     if (emailAdress[arrayLength - 1] !== 'talnet.nl' && !error) {
         error = true;
         errorMessage = 'email is niet een school email adress'
-    }
-
-    if ((emailElement.value !== emailElement2.value) && !error) {
-        error = true;
-        errorMessage = 'emails zijn niet hetzelfde';
     }
 
 
