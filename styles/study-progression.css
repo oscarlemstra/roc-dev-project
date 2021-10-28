@@ -63,7 +63,7 @@ a {
 .planning {
   width: 339px;
   height: 462px;
-  margin: 21px 0 0 10px;
+  margin: 21px auto 0 auto;
   border: black solid 1px;
   border-radius: 10px;
 }
@@ -128,7 +128,7 @@ p {
 .grades {
   width: 339px;
   height: 462px;
-  margin: 21px 0 0 10px;
+  margin: 21px auto 0 auto;
   border: black solid 1px;
   border-radius: 10px;
 }
