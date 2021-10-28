@@ -9,7 +9,6 @@ require_once('../includes/signup_error_handling.php');
 require_once('../includes/email_send.php');
 
 $email = $_POST['email'];
-$confirmEmail = $_POST['confirmEmail'];
 
 $pwd = $_POST['password'];
 $confirmpwd = $_POST['confirmPassword'];
