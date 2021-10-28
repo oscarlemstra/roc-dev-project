@@ -1,5 +1,5 @@
 /*
-CSS door Sander Borgman
+CSS door Sander Borgman en Kenny
  */
 
 * {
@@ -11,6 +11,18 @@ CSS door Sander Borgman
 a {
   text-decoration: none;
   color: #000000;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-center-margin {
+  margin: 0 auto 0 auto;
+}
+
+.color-roc-white-text {
+  color: white;
 }
 
 .color-roc-orange {
@@ -58,6 +70,10 @@ a {
 .hamburger {
   float: right;
   margin: 25px 25px 0 0;
+}
+
+.hamburger-menu {
+  display: none;
 }
 
 .planning {
@@ -115,10 +131,6 @@ p {
   height: 13px;
   margin: 7px 0 0 15px;
   border-radius: 200px;
-}
-
-.subject-text-center {
-  text-align: center;
 }
 
 .subject-text-lower {

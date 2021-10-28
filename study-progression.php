@@ -21,6 +21,16 @@ session_start();
     <img class="hamburger" alt="hamburger" src="images/hamburger.png">
 </div>
 
+    <div class="hamburger-menu color-roc-orange">
+        <a class="color-roc-white-text text-center-margin" href="#">Stage</a>
+        <br>
+        <a class="color-roc-white-text" href="#">Studievoortgang</a>
+        <br>
+        <a class="color-roc-white-text" href="#">Cijfers</a>
+        <br>
+        <a class="color-roc-white-text" href="#">Vakken</a>
+    </div>
+
     <div class="planning">
         <h2 class="color-roc-orange-text">Planning van vandaag</h2>
         <h3>Datum: <?php //hier komt de datum van de planning. wat er nu staat is gewoon testtext ?> 27/10/2021</h3>
@@ -39,32 +49,32 @@ session_start();
         <div class="subject-container">
             <div class="subject-color-container color-kerntaak-frontend"></div>
             <div class="subject-container__text">
-                <h2 class="subject-text-center">HTML</h2>
-                <p class="subject-text-center">5 Weken<br>Programmeren<br>(Frontend)</p>
+                <h2 class="text-center">HTML</h2>
+                <p class="text-center">5 Weken<br>Programmeren<br>(Frontend)</p>
             </div>
         </div>
 
         <div class="subject-container">
             <div class="subject-color-container color-kerntaak-backend"></div>
             <div class="subject-container__text">
-                <h2 class="subject-text-center">PHP</h2>
-                <p class="subject-text-center">5 Weken<br>Programmeren<br>(Backend)</p>
+                <h2 class="text-center">PHP</h2>
+                <p class="text-center">5 Weken<br>Programmeren<br>(Backend)</p>
             </div>
         </div>
 
         <div class="subject-container">
             <div class="subject-color-container color-kerntaak-keuzedeel"></div>
             <div class="subject-container__text" >
-                <h2 class="subject-text-center">Verdieping Software</h2>
-                <p class="subject-text-center">5 Weken<br>Programmeren<br>(Keuzedeel)</p>
+                <h2 class="text-center">Verdieping Software</h2>
+                <p class="text-center">5 Weken<br>Programmeren<br>(Keuzedeel)</p>
             </div>
         </div>
 
         <div class="subject-container">
             <div class="subject-color-container color-kerntaak-regulier"></div>
             <div class="subject-container__text">
-                <h2 class="subject-text-center">Nederlands</h2>
-                <p class="subject-text-center">5 Weken<br>Regulier</p>
+                <h2 class="text-center">Nederlands</h2>
+                <p class="text-center">5 Weken<br>Regulier</p>
             </div>
         </div>
 
