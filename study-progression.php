@@ -38,11 +38,46 @@ session_start();
     zodra hierbij php gebruikt gaat worden raad ik aan om het op teroepen en echo-en met een foreach-->
         <div class="subject-container">
             <div class="subject-color-container color-kerntaak-frontend"></div>
-            <h2 class="subject-text-center">HTML</h2>
-            <p class="subject-text-center">5 Weken<br>Programmeren<br>(Frontend)</p>
+            <div class="subject-container__text">
+                <h2 class="subject-text-center">HTML</h2>
+                <p class="subject-text-center">5 Weken<br>Programmeren<br>(Frontend)</p>
+            </div>
         </div>
-        <div class="subject-container"></div>
+
+        <div class="subject-container">
+            <div class="subject-color-container color-kerntaak-backend"></div>
+            <div class="subject-container__text">
+                <h2 class="subject-text-center">PHP</h2>
+                <p class="subject-text-center">5 Weken<br>Programmeren<br>(Backend)</p>
+            </div>
+        </div>
+
+        <div class="subject-container">
+            <div class="subject-color-container color-kerntaak-keuzedeel"></div>
+            <div class="subject-container__text" >
+                <h2 class="subject-text-center">Verdieping Software</h2>
+                <p class="subject-text-center">5 Weken<br>Programmeren<br>(Keuzedeel)</p>
+            </div>
+        </div>
+
+        <div class="subject-container">
+            <div class="subject-color-container color-kerntaak-regulier"></div>
+            <div class="subject-container__text">
+                <h2 class="subject-text-center">Nederlands</h2>
+                <p class="subject-text-center">5 Weken<br>Regulier</p>
+            </div>
+        </div>
+
     </div>
+
+    <div class="Grades">
+        <h2 class="color-roc-orange-text">Cijfers</h2>
+
+        <br>
+        <?php //Hier komen de cijfers van alle vakken te staan dit kan makkelijk met een foreach ?>
+        <p>HTML :</p>
+    </div>
+
 </div>
 </body>
 </html>

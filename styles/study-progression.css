@@ -93,15 +93,23 @@ p {
 
 .subject-container {
   display: flex;
-  gap: 25px;
+  gap: 5px;
   width: 256px;
-  height: 132px;
+  min-height: 150px;
   margin: 20px auto 0 auto;
   padding-top: 20px;
   background-color: #f8f9fa;
   border-radius: 10px;
 }
+.subject-color-container {
 
+}
+.subject-container__text {
+  flex-grow: 1;
+}
+.subject-container > * {
+
+}
 .subject-color-container {
   width: 53px;
   height: 13px;
