@@ -75,7 +75,27 @@ class DatabaseManager {
     }
 
 
-    public function insertRecordToTable ($arrayRecord) {
+    public function insertRecordToTable ($tableName, $values) {
+        $arrayLength = count($values);
+        $counter = 1;
+        $columnNames = "";
+        $columnValues = "";
 
+        foreach ($values as $key => $value) {
+            if ($counter !== $arrayLength) {
+                $columnNames .= $key . ", ";
+                $columnValues .= "'" . $value . "', ";
+            }
+            else {
+                $columnNames .= $key;
+                $columnValues .= "'" . $value . "'";
+            }
+
+            $counter++;
+        }
+
+        $query = "INSERT INTO $tableName ($columnNames) VALUES ($columnValues)";
+
+        $this->databaseHandle()->query($query);
     }
 }
