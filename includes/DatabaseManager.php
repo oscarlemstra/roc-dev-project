@@ -63,13 +63,32 @@ class DatabaseManager {
     }
 
 
-
-    //insert functions
+    //insert function
     //
-    //insert user
-    public function insertRecordToUser ($user_role_id, $email, $hashed_password) {
-        $query = "INSERT INTO user (user_role_id, email, hashed_password)
-                  VALUES ('$user_role_id', '$email', '$hashed_password')";
+    //$tableName needs a string
+    //
+    //$values needs an associative array
+    //
+    public function insertRecordToTable ($tableName, $values) {
+        $arrayLength = count($values);
+        $counter = 1;
+        $columnNames = "";
+        $columnValues = "";
+
+        foreach ($values as $key => $value) {
+            if ($counter !== $arrayLength) {
+                $columnNames .= $key . ", ";
+                $columnValues .= "'" . $value . "', ";
+            }
+            else {
+                $columnNames .= $key;
+                $columnValues .= "'" . $value . "'";
+            }
+
+            $counter++;
+        }
+
+        $query = "INSERT INTO $tableName ($columnNames) VALUES ($columnValues)";
 
         $this->databaseHandle()->query($query);
     }
