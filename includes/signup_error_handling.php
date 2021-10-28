@@ -36,7 +36,7 @@ function emailCheck($email, $dbm) {
 }
 
 
-function pwdCheck($pwd, $email) {
+function pwdCheck($pwd, $confirmpwd, $email) {
     $error = false;
     $errorMessage = '';
 
