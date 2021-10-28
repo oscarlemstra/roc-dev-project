@@ -124,3 +124,11 @@ p {
 .subject-text-lower {
     padding-top: 35px;
 }
+
+.grades {
+  width: 339px;
+  height: 462px;
+  margin: 21px 0 0 10px;
+  border: black solid 1px;
+  border-radius: 10px;
+}

@@ -70,7 +70,7 @@ session_start();
 
     </div>
 
-    <div class="Grades">
+    <div class="grades">
         <h2 class="color-roc-orange-text">Cijfers</h2>
 
         <br>
