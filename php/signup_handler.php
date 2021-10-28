@@ -9,10 +9,8 @@ require_once('../includes/signup_error_handling.php');
 require_once('../includes/email_send.php');
 
 $email = $_POST['email'];
-$confirmEmail = $_POST['confirmEmail'];
 
 $pwd = $_POST['password'];
-$confirmpwd = $_POST['confirmPassword'];
 
 
 // these 2 functions check if the email and password (pwd) are valid inside the signup-error-handling.php
@@ -21,7 +19,7 @@ $confirmpwd = $_POST['confirmPassword'];
 //
 // if the functions returns false
 //      continue with the rest of the code
-$result = emailCheck($email, $confirmEmail, $dbm);
+$result = emailCheck($email, $dbm);
 if ($result) {
     $_SESSION['errorMessage'] = $result;
     header('location: ../pages/signup');
@@ -29,7 +27,7 @@ if ($result) {
 }
 
 
-$result = pwdCheck($pwd, $confirmpwd, $email);
+$result = pwdCheck($pwd, $email);
 if ($result) {
     $_SESSION['errorMessage'] = $result;
     header('location: ../pages/signup');
