@@ -73,4 +73,9 @@ class DatabaseManager {
 
         $this->databaseHandle()->query($query);
     }
+
+
+    public function insertRecordToTable ($arrayRecord) {
+
+    }
 }
