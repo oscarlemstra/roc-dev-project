@@ -36,3 +36,7 @@ Trello: [roc-dev project](https://trello.com/invite/b/jr9MKQZu/c60c5fdcd709f2eb7
 [Email via localhost guide](https://applerinquest.com/how-to-send-an-email-using-smtp-in-localhost-with-wamp/) <br>
 Gebruik bij de smtp server deze naam: **smtp-mail.outlook.com**
 
+<br>
+
+### Selenium auto testen
+- hier komt nog linkje
