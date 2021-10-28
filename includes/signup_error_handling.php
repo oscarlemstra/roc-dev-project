@@ -4,7 +4,7 @@ function emailCheck($email, $dbm) {
     $error = false;
     $errorMessage = '';
 
-    if ($email === '' || $confirmEmail === '') {
+    if ($email === '') {
         $error = true;
         $errorMessage = 'email vak is niet ingevuld';
     }
