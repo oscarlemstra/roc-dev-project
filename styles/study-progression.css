@@ -69,15 +69,23 @@ a {
 
 .hamburger {
   float: right;
-  margin: 25px 25px 0 0;
+  /* margin: 25px 25px 0 0; */
+  padding: 24px 15px;
+}
+
+.hamburger:active {
+  background-color: #d66822;
 }
 
 .hamburger-menu {
   display: none;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
 }
 
 .planning {
-  width: 339px;
+  width: 320px;
   height: 462px;
   margin: 21px auto 0 auto;
   border: black solid 1px;
@@ -110,21 +118,20 @@ p {
 .subject-container {
   display: flex;
   gap: 5px;
-  width: 256px;
+  width: 270px;
   min-height: 150px;
   margin: 20px auto 0 auto;
   padding-top: 20px;
   background-color: #f8f9fa;
   border-radius: 10px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .subject-color-container {
-
 }
 .subject-container__text {
   flex-grow: 1;
 }
 .subject-container > * {
-
 }
 .subject-color-container {
   width: 53px;
@@ -134,13 +141,26 @@ p {
 }
 
 .subject-text-lower {
-    padding-top: 35px;
+  padding-top: 35px;
 }
 
 .grades {
-  width: 339px;
+  width: 320px;
   height: 462px;
   margin: 21px auto 0 auto;
   border: black solid 1px;
   border-radius: 10px;
+}
+
+.grade-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.grade {
+  margin-right: 20px;
+}
+
+.grades h2 {
+  margin: 10px 0 0 10px;
 }

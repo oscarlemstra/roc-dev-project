@@ -1,15 +1,16 @@
-const hamburger = document.getElementsByClassName('hamburger');
-const hamburgerMenu = document.getElementsByClassName('hamburger-menu');
+const hamburger = document.querySelector(".hamburger");
+const hamburgerMenu = document.querySelector(".hamburger-menu");
 
-hamburger.addEventListener(openHamburgerMenu, 'click')
+hamburger.addEventListener("click", openHamburgerMenu);
+
 function openHamburgerMenu() {
-    hamburgerMenu.style.display = 'block';
-    hamburger.addEventListener(closeHamburgerMenu, 'click');
-    hamburger.removeEventListener(openHamburgerMenu, 'click');
+  hamburgerMenu.style.display = "flex";
+  hamburger.addEventListener("click", closeHamburgerMenu);
+  hamburger.removeEventListener("click", openHamburgerMenu);
 }
 
 function closeHamburgerMenu() {
-    hamburgerMenu.style.display = 'none';
-    hamburger.addEventListener(openHamburgerMenu, 'click');
-    hamburger.removeEventListener(closeHamburgerMenu, 'click');
+  hamburgerMenu.style.display = "none";
+  hamburger.addEventListener("click", openHamburgerMenu);
+  hamburger.removeEventListener("click", closeHamburgerMenu);
 }

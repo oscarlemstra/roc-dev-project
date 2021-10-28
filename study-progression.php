@@ -85,10 +85,22 @@ session_start();
 
         <br>
         <?php //Hier komen de cijfers van alle vakken te staan dit kan makkelijk met een foreach ?>
-        <p>HTML :</p>
+        <div class="grade-container">
+            <p>HTML :</p>
+            <p class="grade">G</p>
+        </div>
+        <div class="grade-container">
+            <p>Java :</p>
+            <p class="grade">V</p>
+        </div>
+        <div class="grade-container">
+            <p>JavaScript :</p>
+            <p class="grade">V</p>
+        </div>
     </div>
 
 </div>
+<script src="javascript/study-progression.js"></script>
 </body>
 </html>
 
