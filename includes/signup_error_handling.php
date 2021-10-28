@@ -1,10 +1,10 @@
 <?php
 
-function emailCheck($email, $dbm) {
+function emailCheck($email, $confirmEmail, $dbm) {
     $error = false;
     $errorMessage = '';
 
-    if ($email === '') {
+    if ($email === '' || $confirmEmail === '') {
         $error = true;
         $errorMessage = 'email vak is niet ingevuld';
     }
@@ -21,6 +21,11 @@ function emailCheck($email, $dbm) {
     if ($splitEmail[count($splitEmail) - 1] !== "talnet.nl" && !$error) {
         $error = true;
         $errorMessage = 'email is niet een school email adress';
+    }
+
+    if ($email !== $confirmEmail && !$error) {
+        $error = true;
+        $errorMessage = 'emails zijn niet hetzelfde';
     }
 
     if ($dbm->getRecordsFromTable("user", "email", $email)) {
@@ -40,7 +45,7 @@ function pwdCheck($pwd, $confirmpwd, $email) {
     $error = false;
     $errorMessage = '';
 
-    if ($pwd === '') {
+    if ($pwd === '' || $confirmpwd === '') {
         $error = true;
         $errorMessage = 'wachtwoord vak is niet ingevuld';
     }
@@ -71,6 +76,11 @@ function pwdCheck($pwd, $confirmpwd, $email) {
     if (strpos($lowercasePwd, $splitEmail) && !$error) {
         $error = true;
         $errorMessage = 'wachtwoord kan niet email naam bevatten';
+    }
+
+    if ($pwd !== $confirmpwd) {
+        $error = true;
+        $errorMessage = 'wachtwoorden moeten hetzelfde zijn';
     }
 
     if ($error) {

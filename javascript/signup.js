@@ -9,7 +9,9 @@
 // =================================================================== //
 
 const emailElement = document.getElementById('email');
+const emailElement2 = document.getElementById('email2');
 const passwordElement = document.getElementById('pwd');
+const passwordElement2 = document.getElementById('pwd2');
 const submitButton = document.getElementById('submit');
 
 // in the signup/index.php there is a couple lines of PHP code
@@ -36,7 +38,9 @@ submitButton.classList.remove('submitenabled')
 
 // event listeners
 emailElement.addEventListener('input', checkEmailValidity);
+emailElement2.addEventListener('input', checkEmailValidity);
 passwordElement.addEventListener('input', checkPwdValidity);
+passwordElement2.addEventListener('input', checkPwdValidity);
 
 function checkEmailValidity() {
     error = false;
@@ -46,6 +50,11 @@ function checkEmailValidity() {
     if (emailAdress[arrayLength - 1] !== 'talnet.nl' && !error) {
         error = true;
         errorMessage = 'email is niet een school email adress'
+    }
+
+    if ((emailElement.value !== emailElement2.value) && !error) {
+        error = true;
+        errorMessage = 'emails zijn niet hetzelfde';
     }
 
 
@@ -112,6 +121,11 @@ function checkPwdValidity() {
             error = true;
             errorMessage = 'wachtwoord kan niet email naam bevatten'
         }
+    }
+
+    if ((passwordElement.value !== passwordElement2.value) && !error) {
+        error = true;
+        errorMessage = 'wachtwoorden moeten hetzelfde zijn';
     }
 
 
