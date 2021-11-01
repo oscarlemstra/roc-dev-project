@@ -9,8 +9,7 @@ function emailCheck($email, $dbm) {
         $errorMessage = 'email vak is niet ingevuld';
     }
 
-    // split email at '@' and check if there are more than 2 items in the array
-    // indicating that 2 or more '@' has been used
+    // filter email to check if it has a valid email format
     if (filter_var($email, FILTER_VALIDATE_EMAIL) && !$error) {
         $error = true;
         $errorMessage = 'email vak heeft geen email formaat erin';
