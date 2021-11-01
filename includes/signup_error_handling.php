@@ -11,8 +11,7 @@ function emailCheck($email, $dbm) {
 
     // split email at '@' and check if there are more than 2 items in the array
     // indicating that 2 or more '@' has been used
-    $splitEmail = explode('@', $email);
-    if (count($splitEmail) > 2 && !$error) {
+    if (filter_var($email, FILTER_VALIDATE_EMAIL) && !$error) {
         $error = true;
         $errorMessage = 'email vak heeft geen email formaat erin';
     }
