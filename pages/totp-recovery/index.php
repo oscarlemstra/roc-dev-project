@@ -1,18 +1,25 @@
+//TODO: find recovery codes table (table relation etc)
 <?php
 session_start();
 
-require_once "../../vendor/autoload.php";
-require_once "../../vendor/sonata-project/google-authenticator/src/FixedBitNotation.php";
-require_once "../../vendor/sonata-project/google-authenticator/src/GoogleAuthenticator.php";
-require_once "../../vendor/sonata-project/google-authenticator/src/GoogleQrUrl.php";
 require_once "../../includes/DatabaseManager.php";
 
 //connections
 $dbm = new DatabaseManager();
-$g = new \Google\Authenticator\GoogleAuthenticator();
 
 //get record of user from DB
 $record = $dbm->getRecordsFromTable("user", "email", $_SESSION['email']);
+
+if (isset($_POST['submit'])) {
+    //check code
+    if ($record[0][recovery] === $_POST['recovery']) {
+        //if correct passcode
+        echo "yes!";
+    } else {
+        //if incorrect passcode
+        echo "no!";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +30,7 @@ $record = $dbm->getRecordsFromTable("user", "email", $_SESSION['email']);
 </head>
 <body>
 <form action="index.php" method="post">
-    <input type="text" name="pass-code">
+    <input type="text" name="recovery">
     <button type="submit" name="submit">submit</button>
 </form>
 </body>
