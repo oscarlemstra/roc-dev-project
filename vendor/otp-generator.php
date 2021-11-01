@@ -1,7 +1,7 @@
 <?php
 
 // Function to generate OTP
-function generateNumericOTP($n) {
+function generateNumericOTP($length) {
 
     // Take a generator string which consist of
     // all numeric digits
@@ -17,7 +17,7 @@ function generateNumericOTP($n) {
 
     $result = "";
 
-    for ($i = 1; $i <= $n; $i++) {
+    for ($i = 1; $i <= $length; $i++) {
         $result .= substr($generator, (rand()%(strlen($generator))), 1);
     }
 
@@ -25,8 +25,16 @@ function generateNumericOTP($n) {
     return $result;
 }
 
-// Main program
-$n = 6;
-print_r(generateNumericOTP($n));
+
+//function for generating more than one OTP. returns array.
+function generateNumericOTPs($length, $numberOfOTPs) {
+
+    $OTPArray = [];
+    for ($i = 0; $i <= $numberOfOTPs; $i++) {
+        $OTPArray[$i] = generateNumericOTP($length);
+    }
+
+    return $OTPArray;
+}
 
 ?>
