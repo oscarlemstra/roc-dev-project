@@ -9,17 +9,19 @@ function emailCheck($email, $dbm) {
         $errorMessage = 'email vak is niet ingevuld';
     }
 
+    /*
     // filter email to check if it has a valid email format
     if (filter_var($email, FILTER_VALIDATE_EMAIL) && !$error) {
         $error = true;
         $errorMessage = 'email vak heeft geen email formaat erin';
     }
     
-    // check if email ends with 'talnet.nl' or 'student.rocvf.com'
+    // check if email ends with 'talnet.nl' or 'student.rocvf.nl'
     if ($splitEmail[count($splitEmail) - 1] !== "talnet.nl" && !$error) {
         $error = true;
         $errorMessage = 'email is niet een school email adress';
     }
+    */
 
     if ($dbm->getRecordsFromTable("user", "email", $email)) {
         $error = true;
