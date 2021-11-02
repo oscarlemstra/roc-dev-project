@@ -154,6 +154,7 @@ p {
 
 .panel {
   padding: 0 18px;
+  text-align: center;
   background-color: #f8f9fa;
   width: 290px;
   max-height: 0;

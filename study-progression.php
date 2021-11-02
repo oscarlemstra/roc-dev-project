@@ -71,7 +71,7 @@ session_start();
                 <p class="text-center">5 Weken<br>Programmeren<br>(Keuzedeel)</p>
             </div>
         </div>
-        <div class="panel">test 3</div>
+        <div class="panel">test maar het heeft heel veel tekst maar echt hoor echt veel tekst moet je eens kijken naar dit</div>
 
         <div class="subject-container">
             <div class="subject-color-container color-kerntaak-regulier"></div>
