@@ -1,4 +1,4 @@
-//TODO: find recovery codes table (table relation etc)
+<!--//TODO: find recovery codes table (table relation etc)-->
 
 <?php
 session_start();
@@ -10,7 +10,7 @@ require_once "../../vendor/otp-generator.php";
 $dbm = new DatabaseManager();
 
 //get record of user from DB
-$record = $dbm->getRecordsFromTable("user", "email", $_SESSION['email']);
+//$record = $dbm->getRecordsFromTable("user", "email", $_SESSION['email']);
 
 //display values in array below each other
 function displayArray($arr) {
@@ -28,7 +28,7 @@ function displayArray($arr) {
     <title>recovery codes</title>
 </head>
 <body>
-<?php displayArray(generateNumericOTPs(6,6)); ?>
+<?php displayArray(generateNumericOTPs(10,6)); ?>
 <br>
 bewaar deze codes op een veilige plek!
 </body>

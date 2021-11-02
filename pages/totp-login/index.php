@@ -23,6 +23,7 @@ if (isset($_POST['submit'])) {
     //check code
     if ($g->checkCode($record[0]["secret"], $_POST['pass-code'])) {
         //if correct passcode
+        //check if user has recovery codes; if not, send to recovery codes page
         echo "yes!";
     } else {
         //if incorrect passcode

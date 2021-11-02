@@ -30,7 +30,8 @@ function generateNumericOTP($length) {
 function generateNumericOTPs($length, $numberOfOTPs) {
 
     $OTPArray = [];
-    for ($i = 0; $i <= $numberOfOTPs; $i++) {
+
+    for ($i = 0; $i < $numberOfOTPs; $i++) {
         $OTPArray[$i] = generateNumericOTP($length);
     }
 
