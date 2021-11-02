@@ -1,0 +1,38 @@
+<mjml>
+    <mj-head>
+        <mj-font name="Montserrat" href="https://fonts.googleapis.com/css2?family=Montserrat" />
+        <mj-attributes>
+            <mj-text font-family="Montserrat, sans-serif" font-size="14px" line-height="26px" padding="16px" />
+            <mj-image padding="0" />
+            <mj-section padding="0" />
+        </mj-attributes>
+    </mj-head>
+
+    <mj-body background-color="#F9F9F9">
+        <mj-section padding="16px">
+
+            <mj-column width="450px" background-color="#343333">
+                <mj-image src="https://rocvf.flowstyleguide.nl/wp-content/uploads/2013/12/03_ROCvF_logo_LIJN_RGB-e1479821464666.png" alt="LOGO" width="150px" align="left" />
+            </mj-column>
+
+            <mj-column width="450px" background-color="#ffffff">
+                <mj-text>
+                    U kunt uw email verifiëren met de code beneden, als u niet een account heb gemaakt, kunt u deze email negeren.
+                </mj-text>
+            </mj-column>
+
+            <mj-column width="450px" background-color="#ffffff" padding="16px 256px 16px 16px">
+                <mj-text container-background-color="#ee7326" color="#ffffff" align="center" font-size="32px">
+                    981812
+                </mj-text>
+            </mj-column>
+
+            <mj-column width="450px" background-color="#ffffff">
+                <mj-text align="center">
+                    gestuurd door ROC Almere Buiten • [CONTACT US]
+                </mj-text>
+            </mj-column>
+
+        </mj-section>
+    </mj-body>
+</mjml>
