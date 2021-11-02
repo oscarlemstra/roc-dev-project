@@ -16,7 +16,7 @@ function emailCheck($email, $dbm) {
         $errorMessage = 'email vak heeft geen email formaat erin';
     }
     
-    // check if email ends with 'talnet.nl' or 'student.rocvf.com'
+    // check if email ends with 'talnet.nl' or 'student.rocvf.nl'
     if ($splitEmail[count($splitEmail) - 1] !== "talnet.nl" && !$error) {
         $error = true;
         $errorMessage = 'email is niet een school email adress';

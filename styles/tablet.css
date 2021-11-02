@@ -1,0 +1,63 @@
+/*
+CSS door Sander Borgman en Kenny
+ */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-center-margin {
+    margin: 0 auto 0 auto;
+}
+
+.color-roc-white-text {
+    color: white;
+}
+
+.color-roc-orange {
+    background-color: #ee7326;
+}
+
+.color-roc-orange-text {
+    color: #ee7326;
+}
+
+.color-roc-black {
+    background-color: black;
+}
+
+.color-kerntaak-frontend {
+    background-color: #04d900;
+}
+
+.color-kerntaak-backend {
+    background-color: #0090cd;
+}
+
+.color-kerntaak-regulier {
+    background-color: #ffff00;
+}
+
+.color-kerntaak-keuzedeel {
+    background-color: #df0000;
+}
+
+.container {
+    background-color: white;
+    align-content: center;
+}

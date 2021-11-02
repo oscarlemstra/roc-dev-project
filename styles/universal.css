@@ -1,0 +1,197 @@
+/*
+CSS door Sander Borgman en Kenny
+ */
+
+
+/* Mobile */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-center-margin {
+    margin: 0 auto 0 auto;
+}
+
+.color-roc-white-text {
+    color: white;
+}
+
+.color-roc-orange {
+    background-color: #ee7326;
+}
+
+.color-roc-orange-text {
+    color: #ee7326;
+}
+
+.color-roc-black {
+    background-color: black;
+}
+
+.color-kerntaak-frontend {
+    background-color: #04d900;
+}
+
+.color-kerntaak-backend {
+    background-color: #0090cd;
+}
+
+.color-kerntaak-regulier {
+    background-color: #ffff00;
+}
+
+.color-kerntaak-keuzedeel {
+    background-color: #df0000;
+}
+
+.container {
+    background-color: white;
+    align-content: center;
+}
+
+.header {
+    height: 106px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.199);
+}
+
+.logo {
+    width: 242px;
+    height: 106px;
+}
+
+.hamburger {
+    float: right;
+    /* margin: 25px 25px 0 0; */
+    padding: 24px 15px;
+}
+
+.hamburger:active {
+    background-color: #d66822;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+.planning {
+    width: 320px;
+    margin: 21px auto 0 auto;
+    padding-bottom: 21px;
+    border: rgba(153, 153, 153, 0.322) solid 1px;
+    border-radius: 10px;
+}
+
+.planning h2,
+h3,
+p {
+    margin: 10px 0 0 10px;
+}
+
+.planning-create-button {
+    margin: 20px auto 0 auto;
+    width: 204px;
+    height: 69px;
+    border-radius: 10px;
+}
+
+.text-align-middle {
+    margin: 0;
+    padding: 1.5em 1.5em;
+    text-align: center;
+}
+
+.subjects {
+    margin-top: 21px;
+}
+
+.subject-container {
+    display: flex;
+    overflow: hidden;
+    cursor: pointer;
+    gap: 5px;
+    width: 290px;
+    min-height: 150px;
+    margin: 20px auto 0 auto;
+    padding-top: 20px;
+    background-color: #f8f9fa;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.subject-color-container {
+}
+.subject-container__text {
+    flex-grow: 1;
+}
+.subject-container > * {
+}
+.subject-color-container {
+    width: 53px;
+    height: 13px;
+    margin: 7px 0 0 15px;
+    border-radius: 200px;
+}
+
+.subject-text-lower {
+    padding-top: 35px;
+}
+
+.panel {
+    padding: 0 18px;
+    text-align: center;
+    background-color: #f8f9fa;
+    width: 290px;
+    max-height: 0;
+    margin: 0 auto 0 auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.grades {
+    width: 320px;
+    margin: 21px auto 21px auto;
+    padding-bottom: 21px;
+    border: rgba(153, 153, 153, 0.322) solid 1px;
+    border-radius: 10px;
+}
+
+.grade-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.grade {
+    margin-right: 20px;
+}
+
+.grades h2 {
+    margin: 10px 0 0 10px;
+}
+
+/* Tablet */
+
+
+
+/* Desktop */
+
