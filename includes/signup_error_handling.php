@@ -9,6 +9,7 @@ function emailCheck($email, $dbm) {
         $errorMessage = 'email vak is niet ingevuld';
     }
 
+    /*
     // filter email to check if it has a valid email format
     if (filter_var($email, FILTER_VALIDATE_EMAIL) && !$error) {
         $error = true;
@@ -20,6 +21,7 @@ function emailCheck($email, $dbm) {
         $error = true;
         $errorMessage = 'email is niet een school email adress';
     }
+    */
 
     if ($dbm->getRecordsFromTable("user", "email", $email)) {
         $error = true;
