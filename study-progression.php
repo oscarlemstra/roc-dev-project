@@ -53,6 +53,7 @@ session_start();
                 <p class="text-center">5 Weken<br>Programmeren<br>(Frontend)</p>
             </div>
         </div>
+        <div class="panel">test</div>
 
         <div class="subject-container">
             <div class="subject-color-container color-kerntaak-backend"></div>
@@ -61,6 +62,7 @@ session_start();
                 <p class="text-center">5 Weken<br>Programmeren<br>(Backend)</p>
             </div>
         </div>
+        <div class="panel">test 2</div>
 
         <div class="subject-container">
             <div class="subject-color-container color-kerntaak-keuzedeel"></div>
@@ -69,6 +71,7 @@ session_start();
                 <p class="text-center">5 Weken<br>Programmeren<br>(Keuzedeel)</p>
             </div>
         </div>
+        <div class="panel">test 3</div>
 
         <div class="subject-container">
             <div class="subject-color-container color-kerntaak-regulier"></div>
@@ -77,6 +80,7 @@ session_start();
                 <p class="text-center">5 Weken<br>Regulier</p>
             </div>
         </div>
+        <div class="panel">test<br>maar<br>met<br>breakpoints</div>
 
     </div>
 
