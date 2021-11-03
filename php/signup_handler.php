@@ -36,11 +36,13 @@ if ($result) {
 }
 
 
-// if(!sendEmail_emailVerificationCode($email, $dbm)) {
-//     $_SESSION['errorMessage'] = 'het sturen van een email heeft gefaald. neem alstublieft contact op met de site-eigenaar';
-//     header('location: ../pages/signup');
-//     exit();
-// }
+if(!sendEmail_emailVerificationCode($email, $dbm)) {
+    $_SESSION['errorMessage'] = 'het sturen van een email heeft gefaald. neem alstublieft contact op met de site-eigenaar';
+    header('location: ../pages/signup');
+    exit();
+}
+
+
 $signup = array("email"=>$_POST['email'], "password"=>$_POST['password']);
 $_SESSION['signup'] = $signup;
 
