@@ -103,12 +103,12 @@ session_start();
         </div>
     </div>
 
+    <div class="progression-meter-filler">
 
     <div class="progression-meter-empty">
 
-        <div class="progression-meter-filler">
         <p class="text-center">5%</p>
-    </div>
+        </div>
     </div>
 
 </div>
