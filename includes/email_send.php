@@ -1,7 +1,13 @@
 <?php
 
 //sends an email with a code to verify your email that you have given
-function sendEmail_emailVerificationCode($email) {
+function sendEmail_emailVerificationCode($email, $dbm) {
+
+    $code = rand(100000, 999999);
+    $date = date("Y-m-d");
+    $record = array("email"=>$email, "code"=>$code, "creation_date"=>$date);
+
+    $dbm->insertRecordToTable("email_verification_code", $record);
 
     $to = $email;
     $subject = "Email verificatie";
@@ -10,10 +16,10 @@ function sendEmail_emailVerificationCode($email) {
     $message = file_get_contents("../template/email-verification.html");
 
     // general changes
-    $message = str_replace("[USERNAME]", "test name" /* <- Username here */, $message);
+    $message = str_replace("[USERNAME]", "student" /* <- Username here */, $message);
 
     // verification code
-    $message = str_replace("[CODE]", "number" /* <- number here */, $message);
+    $message = str_replace("[CODE]", $code /* <- number here */, $message);
     
 
     // Set content-type header for sending HTML email 
