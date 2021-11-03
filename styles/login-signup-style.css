@@ -17,9 +17,9 @@ Path:
 
 @font-face {
     font-family: 'eau';
-    src: url('../font/eau.woff2') format('woff2'),
-         url('../font/eau.woff') format('woff'),
-         url('../font/eau.ttf')  format('truetype');
+    src: url('../fonts/eau.woff2') format('woff2'),
+         url('../fonts/eau.woff') format('woff'),
+         url('../fonts/eau.ttf')  format('truetype');
 }
 
 * {
