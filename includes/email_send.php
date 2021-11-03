@@ -7,7 +7,12 @@ function sendEmail_emailVerificationCode($email, $dbm) {
     $date = date("Y-m-d");
     $record = array("email"=>$email, "code"=>$code, "creation_date"=>$date);
 
-    $dbm->insertRecordToTable("email_verification_code", $record);
+    if (!$dbm->getRecordsFromTable("email_verification_code", "email", $email)) {
+        $dbm->insertRecordToTable("email_verification_code", $record);
+    }
+    else {
+        $dbm->updateRecordsFromTable("email_verification_code", "code", $code, "email", $email);
+    }
 
     $to = $email;
     $subject = "Email verificatie";
