@@ -1,6 +1,7 @@
 <?php
 
-function sendEmail($email) {
+//sends an email with a code to verify your email that you have given
+function sendEmail_emailVerificationCode($email) {
 
     $to = $email;
     $subject = "Email verificatie";
