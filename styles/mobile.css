@@ -186,3 +186,14 @@ p {
 .grades h2 {
   margin: 10px 0 0 10px;
 }
+
+.progression-meter-filler {
+  background-color: #ee7326;
+  width: 5vw;
+}
+
+.progression-meter-empty {
+  background-color: #B7B7B7;
+  width: 100vw;
+}
+

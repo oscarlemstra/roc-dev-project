@@ -103,6 +103,14 @@ session_start();
         </div>
     </div>
 
+
+    <div class="progression-meter-empty">
+
+        <div class="progression-meter-filler">
+        <p class="text-center">5%</p>
+    </div>
+    </div>
+
 </div>
 <script src="../../javascript/study-progression.js"></script>
 </body>
