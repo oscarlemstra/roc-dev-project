@@ -33,11 +33,9 @@ body {
 .container img {
     height: inherit;
 }
-.container img:nth-child(2) {
-    margin: 1em;
+.container div {
+    width: 60px;
+    height: 100%;
+    background-color: #ee7326;
     margin-left: auto;
-    background-color: rgb(200, 200, 200);
-    border-radius: 50%;
-    height: 3em;
-    width: 3em;
 }
