@@ -17,13 +17,13 @@
 
             <mj-column width="450px" background-color="#ffffff">
                 <mj-text>
-                    U kunt uw email verifiëren met de code beneden, als u niet een account heb gemaakt, kunt u deze email negeren.
+                    Hallo [USERNAME], U kunt uw email verifiëren met de code beneden, als u niet een account heb gemaakt, kunt u deze email negeren.
                 </mj-text>
             </mj-column>
 
             <mj-column width="450px" background-color="#ffffff" padding="16px 256px 16px 16px">
                 <mj-text container-background-color="#ee7326" color="#ffffff" align="center" font-size="32px">
-                    981812
+                    [CODE]
                 </mj-text>
             </mj-column>
 
