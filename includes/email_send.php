@@ -1,22 +1,18 @@
 <?php
 
-function sendEmail($email ,$emailType) {
+function sendEmail($email) {
 
     $to = $email;
     $subject = "Email verificatie";
 
     
-    if ($emailType === 'verification') $message = file_get_contents("../template/email-verification.html");
-    if ($emailType === 'pwdReset')     $message = file_get_contents("../template/pwd-reset.html");
+    $message = file_get_contents("../template/email-verification.html");
 
     // general changes
     $message = str_replace("[USERNAME]", "test name" /* <- Username here */, $message);
 
     // verification code
     $message = str_replace("[CODE]", "number" /* <- number here */, $message);
-    
-    // url destination changes
-    $message = str_replace("[DESTINATION]", "https://test_url.test/" /* <- destination url here */, $message);
     
 
     // Set content-type header for sending HTML email 
