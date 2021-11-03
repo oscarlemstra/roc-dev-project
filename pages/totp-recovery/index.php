@@ -1,4 +1,3 @@
-//TODO: find recovery codes table (table relation etc)
 <?php
 session_start();
 
@@ -8,19 +7,21 @@ require_once "../../includes/DatabaseManager.php";
 $dbm = new DatabaseManager();
 
 //get record of user from DB
-$record = $dbm->getRecordsFromTable("2fa_backup_codes", "email", $_SESSION['email']);
+$backupsRecord = $dbm->getRecordsFromTable("2fa_backup_codes", "email", $_SESSION['email']);
 
 if (isset($_POST['submit'])) {
     //check code in post for each code in DB
     for ($i = 1; $i < 7; $i++) {
-        if ($_POST['backup-code'] === $record[0]["code_".$i]) {
+        if ($_POST['backup-code'] === $backupsRecord[0]["code_".$i]) {
             //if correct backup code
-            echo "yes!";
+            echo '<a href="../totp-recovery-codes">genereer nieuwe backup codes?</a>';
+            echo '<a href="../home">naar homepage</a>';
         }
     }
     //if incorrect backup code
     echo "no!";
 }
+
 ?>
 
 <!DOCTYPE html>

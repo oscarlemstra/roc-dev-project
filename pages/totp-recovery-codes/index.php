@@ -7,12 +7,13 @@ require_once "../../vendor/otp-generator.php";
 //connections
 $dbm = new DatabaseManager();
 
-//get record of user codes from DB
-$record = $dbm->getRecordsFromTable("2fa_backup_codes", "email", $_SESSION['email']);
+//get record of backup codes from DB
+$backupsRecord = $dbm->getRecordsFromTable("2fa_backup_codes", "email", $_SESSION['email']);
 
+//generate codes
 $codes = generateNumericOTPs(10,6);
 
-if($record) {
+if($backupsRecord) {
     //if record exists in DB, update codes
     for ($i = 0; $i < 5; $i++) {
         $j = $i + 1;
@@ -28,7 +29,7 @@ if($record) {
         "code_3" => $codes[2],
         "code_4" => $codes[3],
         "code_5" => $codes[4],
-        "code_6" => $codes[5],
+        "code_6" => $codes[5]
     ];
 
     $dbm->insertRecordToTable("2fa_backup_codes", $insertArray);
@@ -54,5 +55,7 @@ function displayArray($arr) {
 <?php displayArray($codes); ?>
 <br>
 bewaar deze codes op een veilige plek!
+<br>
+<a href="../home">naar homepage</a>
 </body>
 </html>
