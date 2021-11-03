@@ -7,6 +7,7 @@ function sendEmail_emailVerificationCode($email, $dbm) {
     $date = date("Y-m-d");
     $record = array("email"=>$email, "code"=>$code, "creation_date"=>$date);
 
+    //checks if a code already exists, if not: make one, if yes: update the old one
     if (!$dbm->getRecordsFromTable("email_verification_code", "email", $email)) {
         $dbm->insertRecordToTable("email_verification_code", $record);
     }
