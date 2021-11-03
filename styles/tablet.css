@@ -149,10 +149,11 @@ p {
 
 .subjects {
     display: grid;
+    width: 620px;
     grid-template-columns: repeat(2, 300px);
     gap: 20px;
     grid-auto-rows: minmax(auto, auto);
-    margin: 21px 5% 0 5%;
+    margin: 21px auto 0 auto;
 }
 
 .subject-container {
