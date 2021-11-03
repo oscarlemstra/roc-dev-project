@@ -46,41 +46,53 @@ session_start();
     <div class="subjects">
         <!--dit is een template voor de vakcontainer
         zodra hierbij php gebruikt gaat worden raad ik aan om het op teroepen en echo-en met een foreach-->
-        <div class="subject-container">
-            <div class="subject-color-container color-kerntaak-frontend"></div>
-            <div class="subject-container__text">
-                <h2 class="text-center">HTML</h2>
-                <p class="text-center">5 Weken<br>Programmeren<br>(Frontend)</p>
-            </div>
-        </div>
-        <div class="panel">test</div>
+        <div>
 
-        <div class="subject-container">
-            <div class="subject-color-container color-kerntaak-backend"></div>
-            <div class="subject-container__text">
-                <h2 class="text-center">PHP</h2>
-                <p class="text-center">5 Weken<br>Programmeren<br>(Backend)</p>
+            <div class="subject-container">
+                <div class="subject-color-container color-kerntaak-frontend"></div>
+                <div class="subject-container__text">
+                    <h2 class="text-center">HTML</h2>
+                    <p class="text-center">5 Weken<br>Programmeren<br>(Frontend)</p>
+                </div>
             </div>
+            <div class="panel">test</div>
         </div>
-        <div class="panel">test 2</div>
 
-        <div class="subject-container">
-            <div class="subject-color-container color-kerntaak-keuzedeel"></div>
-            <div class="subject-container__text" >
-                <h2 class="text-center">Verdieping Software</h2>
-                <p class="text-center">5 Weken<br>Programmeren<br>(Keuzedeel)</p>
-            </div>
-        </div>
-        <div class="panel">test maar het heeft heel veel tekst maar echt hoor echt veel tekst moet je eens kijken naar dit</div>
+        <div>
 
-        <div class="subject-container">
-            <div class="subject-color-container color-kerntaak-regulier"></div>
-            <div class="subject-container__text">
-                <h2 class="text-center">Nederlands</h2>
-                <p class="text-center">5 Weken<br>Regulier</p>
+            <div class="subject-container">
+                <div class="subject-color-container color-kerntaak-backend"></div>
+                <div class="subject-container__text">
+                    <h2 class="text-center">PHP</h2>
+                    <p class="text-center">5 Weken<br>Programmeren<br>(Backend)</p>
+                </div>
             </div>
+            <div class="panel">test 2</div>
         </div>
-        <div class="panel">test<br>maar<br>met<br>breakpoints</div>
+
+        <div>
+
+            <div class="subject-container">
+                <div class="subject-color-container color-kerntaak-keuzedeel"></div>
+                <div class="subject-container__text" >
+                    <h2 class="text-center">Verdieping Software</h2>
+                    <p class="text-center">5 Weken<br>Programmeren<br>(Keuzedeel)</p>
+                </div>
+            </div>
+            <div class="panel">test maar het heeft heel veel tekst maar echt hoor echt veel tekst moet je eens kijken naar dit</div>
+        </div>
+
+        <div>
+
+            <div class="subject-container">
+                <div class="subject-color-container color-kerntaak-regulier"></div>
+                <div class="subject-container__text">
+                    <h2 class="text-center">Nederlands</h2>
+                    <p class="text-center">5 Weken<br>Regulier</p>
+                </div>
+            </div>
+            <div class="panel">test<br>maar<br>met<br>breakpoints</div>
+        </div>
 
     </div>
 
