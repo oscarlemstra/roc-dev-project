@@ -1,20 +1,4 @@
 
-/*
-=================================================================== //
-
-Code by: Thijn
-
-used for:
-- login
-- signup
-
-Path:
-../pages/login/index.php
-../pages/signup/index.php
- 
-=================================================================== //
-*/
-
 @font-face {
     font-family: 'eau';
     src: url('../fonts/eau.woff2') format('woff2'),
