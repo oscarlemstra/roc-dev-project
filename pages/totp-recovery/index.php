@@ -8,17 +8,18 @@ require_once "../../includes/DatabaseManager.php";
 $dbm = new DatabaseManager();
 
 //get record of user from DB
-$record = $dbm->getRecordsFromTable("user", "email", $_SESSION['email']);
+$record = $dbm->getRecordsFromTable("2fa_backup_codes", "email", $_SESSION['email']);
 
 if (isset($_POST['submit'])) {
-    //check code
-    if ($record[0][recovery] === $_POST['recovery']) {
-        //if correct passcode
-        echo "yes!";
-    } else {
-        //if incorrect passcode
-        echo "no!";
+    //check code in post for each code in DB
+    for ($i = 1; $i < 7; $i++) {
+        if ($_POST['backup-code'] === $record[0]["code_".$i]) {
+            //if correct backup code
+            echo "yes!";
+        }
     }
+    //if incorrect backup code
+    echo "no!";
 }
 ?>
 
@@ -30,7 +31,7 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
 <form action="index.php" method="post">
-    <input type="text" name="recovery">
+    <input type="text" name="backup-code">
     <button type="submit" name="submit">submit</button>
 </form>
 </body>

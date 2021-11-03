@@ -1,5 +1,3 @@
-<!--//TODO: find recovery codes table (table relation etc)-->
-
 <?php
 session_start();
 
@@ -9,8 +7,33 @@ require_once "../../vendor/otp-generator.php";
 //connections
 $dbm = new DatabaseManager();
 
-//get record of user from DB
-//$record = $dbm->getRecordsFromTable("user", "email", $_SESSION['email']);
+//get record of user codes from DB
+$record = $dbm->getRecordsFromTable("2fa_backup_codes", "email", $_SESSION['email']);
+
+$codes = generateNumericOTPs(10,6);
+
+if($record) {
+    //if record exists in DB, update codes
+    for ($i = 0; $i < 5; $i++) {
+        $j = $i + 1;
+        $dbm->updateRecordsFromTable("2fa_backup-codes", "code_".$j, $codes[$i], "email", $_SESSION['email']);
+    }
+} else {
+    //if record does not exist in DB, insert
+
+    $insertArray = [
+        "email" => $_SESSION['email'],
+        "code_1" => $codes[0],
+        "code_2" => $codes[1],
+        "code_3" => $codes[2],
+        "code_4" => $codes[3],
+        "code_5" => $codes[4],
+        "code_6" => $codes[5],
+    ];
+
+    $dbm->insertRecordToTable("2fa_backup_codes", $insertArray);
+}
+
 
 //display values in array below each other
 function displayArray($arr) {
@@ -28,7 +51,7 @@ function displayArray($arr) {
     <title>recovery codes</title>
 </head>
 <body>
-<?php displayArray(generateNumericOTPs(10,6)); ?>
+<?php displayArray($codes); ?>
 <br>
 bewaar deze codes op een veilige plek!
 </body>
