@@ -1,9 +1,8 @@
 <?php
 
-use Google\Authenticator\GoogleAuthenticator;
-
 session_start();
 
+use Google\Authenticator\GoogleAuthenticator;
 require_once "../../vendor/autoload.php";
 require_once "../../vendor/sonata-project/google-authenticator/src/FixedBitNotation.php";
 require_once "../../vendor/sonata-project/google-authenticator/src/GoogleAuthenticator.php";
@@ -20,12 +19,21 @@ $backupsRecord = $dbm->getRecordsFromTable("2fa_backup_codes", "email", $_SESSIO
 
 //SUBMIT is pressed
 if (isset($_POST['submit'])) {
+
+    //use secret from DB if it exists, else use secret from session
+    if ($userRecord) {
+        $secret = $userRecord[0]['secret'];
+    } else {
+        $secret = $_SESSION['secret'];
+    }
+
     //show on-screen - DEBUG
-    JSC("submitted code: ".$_POST['pass-code']);
-    JSC("correct code: ".$g->getCode($userRecord[0]["secret"]));
+    JSC("submitted code: " . $_POST['pass-code']);
+    JSC("correct code: " . $g->getCode($secret));
+
 
     //check code
-    if ($g->checkCode($userRecord[0]["secret"], $_POST['pass-code'])) {
+    if ($g->checkCode($secret, $_POST['pass-code'])) {
         //if correct passcode
 
         if ($backupsRecord) {
@@ -48,6 +56,7 @@ function JSC($input) {
     print_r($input);
     echo "</pre>";
 }
+
 ?>
 
 <!DOCTYPE html>

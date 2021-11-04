@@ -6,7 +6,7 @@ require_once "../../includes/DatabaseManager.php";
 //connections
 $dbm = new DatabaseManager();
 
-//get record of user from DB
+//get record of backup codes from DB
 $backupsRecord = $dbm->getRecordsFromTable("2fa_backup_codes", "email", $_SESSION['email']);
 
 if (isset($_POST['submit'])) {
