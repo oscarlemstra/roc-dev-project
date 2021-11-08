@@ -32,6 +32,8 @@ body {
     width: 25%;
     min-width: 350px;
     height: fit-content;
+    height: -moz-max-content;
+    height: intrinsic;
 
     padding: 3em;
 
