@@ -39,9 +39,11 @@ if (isset($_POST['submit'])) {
         if ($backupsRecord) {
             //if there are backup codes in DB
             header('location: ../home');
+            exit();
         } else {
             //if there aren't any backup codes in DB
             header('location: ../totp-recovery-codes');
+            exit();
         }
 
     } else {
@@ -64,12 +66,16 @@ function JSC($input) {
 <head>
     <meta charset="UTF-8">
     <title>totp login</title>
+<!--    <link rel="stylesheet" href="../../styles/login-signup-style.css">-->
 </head>
 <body>
+<div class="container">
 <form action="index.php" method="post">
-    <input type="text" inputmode="numeric" pattern="[0-9]*" name="pass-code">
-    <button type="submit" name="submit">submit</button>
+    <h1>google authenticator</h1>
+    <a href="../totp-recovery">telefoon kwijt?</a>
+    <input type="text" inputmode="numeric" pattern="[0-9]*" name="pass-code" required>
+    <input type="submit" value="submit" class="submitenabled" id="submit">
 </form>
-<a href="../totp-recovery">telefoon kwijt?</a>
+</div>
 </body>
 </html>

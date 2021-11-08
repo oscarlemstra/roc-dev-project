@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
 <form action="index.php" method="post">
-    <input type="text" inputmode="numeric" pattern="[0-9]*" name="backup-code">
+    <input type="text" inputmode="numeric" pattern="[0-9]*" name="backup-code" required>
     <button type="submit" name="submit">submit</button>
 </form>
 </body>
