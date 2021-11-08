@@ -9,7 +9,7 @@ $dbm = new DatabaseManager();
 //get record of backup codes from DB
 $backupsRecord = $dbm->getRecordsFromTable("2fa_backup_codes", "email", $_SESSION['email']);
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['backup-code'])) {
     $correctCode = false;
 
     //check code in post for each code in DB
@@ -40,11 +40,15 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <title>totp-recovery</title>
+    <link rel="stylesheet" href="../../styles/login-signup-style.css">
 </head>
 <body>
-<form action="index.php" method="post">
-    <input type="text" inputmode="numeric" pattern="[0-9]*" name="backup-code" required>
-    <button type="submit" name="submit">submit</button>
-</form>
+    <div class="container">
+        <form action="index.php" method="post">
+            <h1>recovery</h1>
+            <input type="text" inputmode="numeric" pattern="[0-9]*" name="backup-code" required>
+            <input type="submit" value="submit" class="submitenabled" id="submit">
+        </form>
+    </div>
 </body>
 </html>

@@ -18,7 +18,7 @@ $userRecord = $dbm->getRecordsFromTable("user", "email", $_SESSION['email']);
 $backupsRecord = $dbm->getRecordsFromTable("2fa_backup_codes", "email", $_SESSION['email']);
 
 //SUBMIT is pressed
-if (isset($_POST['submit'])) {
+if (isset($_POST['pass-code'])) {
 
     //use secret from DB if it exists, else use secret from session
     if ($userRecord) {
@@ -39,12 +39,11 @@ if (isset($_POST['submit'])) {
         if ($backupsRecord) {
             //if there are backup codes in DB
             header('location: ../home');
-            exit();
         } else {
             //if there aren't any backup codes in DB
             header('location: ../totp-recovery-codes');
-            exit();
         }
+        exit();
 
     } else {
         //if incorrect passcode
@@ -66,7 +65,7 @@ function JSC($input) {
 <head>
     <meta charset="UTF-8">
     <title>totp login</title>
-<!--    <link rel="stylesheet" href="../../styles/login-signup-style.css">-->
+    <link rel="stylesheet" href="../../styles/login-signup-style.css">
 </head>
 <body>
 <div class="container">
