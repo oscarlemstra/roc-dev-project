@@ -51,9 +51,10 @@ passwordElement2.addEventListener('input', checkPwdValidity);
 function checkEmailValidity() {
     error = false;
 
+    let validDomains = ['talnet.nl', 'student.rocvf.nl'];
     emailAdress = emailElement.value.split('@')
     arrayLength = emailAdress.length;
-    if (emailAdress[arrayLength - 1] !== 'talnet.nl' && !error) {
+    if (validDomains.includes(emailAdress[arrayLength - 1]) && !error) {
         error = true;
         errorMessage = 'email is niet een school email adress'
     }
