@@ -51,6 +51,12 @@ passwordElement2.addEventListener('input', checkPwdValidity);
 function checkEmailValidity() {
     error = false;
 
+    if (emailElement.value === '') {
+        errorElement.classList.add('displayNone')
+        errorElement.innerHTML = '';
+        return;
+    }
+
     let validDomains = ['talnet.nl', 'student.rocvf.nl'];
     emailAdress = emailElement.value.split('@')
     arrayLength = emailAdress.length;
