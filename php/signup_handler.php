@@ -4,19 +4,19 @@ require_once('../includes/DatabaseManager.php');
 $dbm = new DatabaseManager();
 
 // a .inc.php file is a file that is put inside the includes folder
-// includes are .php files that are require'd in another file. such as this one
+// includes are .php files that are required in another file. such as this one
 require_once('../includes/signup_error_handling.php');
 require_once('../includes/email_send.php');
 
 $email = $_POST['email'];
 
 $pwd = $_POST['password'];
-$confirmpwd = $_POST['confirmPassword'];
+$confirmed = $_POST['confirmPassword'];
 
 
 // these 2 functions check if the email and password (pwd) are valid inside the signup-error-handling.php
 // if the function is returns any value
-//      send the user to signup page with a error message
+//      send the user to signup page with an error message
 //
 // if the functions returns false
 //      continue with the rest of the code
@@ -28,7 +28,7 @@ if ($result) {
 }
 
 
-$result = pwdCheck($pwd, $confirmpwd, $email);
+$result = pwdCheck($pwd, $confirmed, $email);
 if ($result) {
     $_SESSION['errorMessage'] = $result;
     header('location: ../pages/signup');

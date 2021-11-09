@@ -1,4 +1,5 @@
 
+/*
 @font-face {
     font-family: 'eau';
     src: url('../fonts/eau.woff2') format('woff2'),
@@ -51,7 +52,7 @@ form h1 {
     font-weight: 500;
 }
 
-form a {
+a {
     text-decoration: none;
     color: rgb(66, 0, 219);
     font-size: 80%;
