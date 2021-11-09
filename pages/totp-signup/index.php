@@ -1,9 +1,13 @@
-<?php
+<?php session_start();
 
-session_start();
-$_SESSION['email'] = "user@email.com";
+//$email = "user@email.com";
+if (isset($_SESSION['signup']['email'])) {
+    $email = $_SESSION['signup']['email'];
+} else {
+    $email = $_SESSION['login'];
+}
 
-require_once "../../includes/DatabaseManager.php";
+
 require_once "../../vendor/autoload.php";
 require_once "../../vendor/sonata-project/google-authenticator/src/FixedBitNotation.php";
 require_once "../../vendor/sonata-project/google-authenticator/src/GoogleAuthenticator.php";
@@ -11,26 +15,16 @@ require_once "../../vendor/sonata-project/google-authenticator/src/GoogleQrUrl.p
 use Google\Authenticator\GoogleAuthenticator;
 
 //connections
-$dbm = new DatabaseManager();
 $g = new GoogleAuthenticator();
-
-//get record of user from DB
-$userRecord = $dbm->getRecordsFromTable("user", "email", $_SESSION['email']);
-
-//if user already exists and secret is set, go to login page
-if($userRecord && $userRecord[0]['secret'] != NULL) {
-    header('location: ../totp-login');
-    exit();
-}
 
 //generate secret for user
 $secret = $g->generateSecret();
 
 //store secret in session
-$_SESSION['secret'] = $secret;
+$_SESSION['signup']['secret'] = $secret;
 
 //generate qr code with secret
-$link = Sonata\GoogleAuthenticator\GoogleQrUrl::generate($_SESSION['email'], $secret, 'roc-dev');
+$link = Sonata\GoogleAuthenticator\GoogleQrUrl::generate($email, $secret, 'roc-dev');
 ?>
 
 <!DOCTYPE html>
@@ -42,10 +36,11 @@ $link = Sonata\GoogleAuthenticator\GoogleQrUrl::generate($_SESSION['email'], $se
 </head>
 <body>
 <div class="container">
-    <?php echo $secret."<br>"; // - DEBUG ?>
     <img alt ="qr code laadt niet? herlaadt pagina" src="<?php echo $link?>">
     <br>
-    <a href="../totp-login">klik dit als je de qr-code hebt gescand</a>
+    <form action="index.php">
+        <input type="submit" value="submit" class="submitenabled" id="submit">
+    </form>
 </div>
 </body>
 </html>

@@ -1,5 +1,6 @@
-<?php
-session_start();
+<?php session_start();
+
+$email = $_SESSION['signup']['email'];
 
 require_once "../../includes/DatabaseManager.php";
 require_once "../../vendor/otp-generator.php";
@@ -8,22 +9,22 @@ require_once "../../vendor/otp-generator.php";
 $dbm = new DatabaseManager();
 
 //get record of backup codes from DB
-$backupsRecord = $dbm->getRecordsFromTable("2fa_backup_codes", "email", $_SESSION['email']);
+$backupsRecord = $dbm->getRecordsFromTable("2fa_backup_codes", "email", $email);
 
 //generate codes
 $codes = generateNumericOTPs(10,6);
 
 if($backupsRecord) {
     //if record exists in DB, update codes
-    for ($i = 0; $i < 5; $i++) {
+    for ($i = 0; $i <= 5; $i++) {
         $j = $i + 1;
-        $dbm->updateRecordsFromTable("2fa_backup-codes", "code_".$j, $codes[$i], "email", $_SESSION['email']);
+        $dbm->updateRecordsFromTable("2fa_backup_codes", "code_".$j, $codes[$i], "email", $email);
     }
 } else {
     //if record does not exist in DB, insert
 
     $insertArray = [
-        "email" => $_SESSION['email'],
+        "email" => $email,
         "code_1" => $codes[0],
         "code_2" => $codes[1],
         "code_3" => $codes[2],
@@ -58,7 +59,9 @@ function displayArray($arr) {
     <br>
     bewaar deze codes op een veilige plek!
     <br>
-    <a href="../home">naar homepage</a>
+    <form action="index.php" method="post">
+        <input type="submit" value="next" class="submitenabled" id="submit">
+    </form>
 </div>
 </body>
 </html>
