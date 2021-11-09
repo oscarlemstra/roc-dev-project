@@ -73,7 +73,6 @@ CREATE TABLE IF NOT EXISTS `roc_dev`.`user` (
   `name` VARCHAR(45) NULL,
   `email` VARCHAR(80) NOT NULL,
   `password` CHAR(128) NOT NULL,
-  `salt` CHAR(128) NOT NULL,
   `secret` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`user_id`),
   INDEX `fk_user_user_role_idx` (`user_role_id` ASC),
