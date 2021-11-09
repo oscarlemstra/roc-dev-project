@@ -54,7 +54,7 @@ function checkEmailValidity() {
     let validDomains = ['talnet.nl', 'student.rocvf.nl'];
     emailAdress = emailElement.value.split('@')
     arrayLength = emailAdress.length;
-    if (validDomains.includes(emailAdress[arrayLength - 1]) && !error) {
+    if (!validDomains.includes(emailAdress[arrayLength - 1]) && !error) {
         error = true;
         errorMessage = 'email is niet een school email adress'
     }
