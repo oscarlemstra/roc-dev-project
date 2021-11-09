@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="../../php/verification_handler.php" method="post">
+        <form action="../../php/email_verification_handler.php" method="post">
             <h1>verificatie</h1>
 
             <input type="text" name="verification_code" placeholder="Verificatie code" id="verification_code" required>
