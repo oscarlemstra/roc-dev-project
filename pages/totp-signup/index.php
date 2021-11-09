@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+$_SESSION['email'] = "user@email.com";
 
 require_once "../../includes/DatabaseManager.php";
 require_once "../../vendor/autoload.php";
@@ -16,8 +17,8 @@ $g = new GoogleAuthenticator();
 //get record of user from DB
 $userRecord = $dbm->getRecordsFromTable("user", "email", $_SESSION['email']);
 
-//if user already exists, go to login page
-if($userRecord) {
+//if user already exists and secret is set, go to login page
+if($userRecord && $userRecord[0]['secret'] != NULL) {
     header('location: ../totp-login');
     exit();
 }
@@ -30,8 +31,6 @@ $_SESSION['secret'] = $secret;
 
 //generate qr code with secret
 $link = Sonata\GoogleAuthenticator\GoogleQrUrl::generate($_SESSION['email'], $secret, 'roc-dev');
-
-echo $secret."<br>"; // - DEBUG
 ?>
 
 <!DOCTYPE html>
@@ -42,10 +41,11 @@ echo $secret."<br>"; // - DEBUG
     <link rel="stylesheet" href="../../styles/login-signup-style.css">
 </head>
 <body>
-
-<img alt ="qr code laadt niet? herlaadt pagina" src="<?php echo $link?>">
-<br>
-<a href="../totp-login">klik dit als je de qr-code hebt gescand</a>
-
+<div class="container">
+    <?php echo $secret."<br>"; // - DEBUG ?>
+    <img alt ="qr code laadt niet? herlaadt pagina" src="<?php echo $link?>">
+    <br>
+    <a href="../totp-login">klik dit als je de qr-code hebt gescand</a>
+</div>
 </body>
 </html>

@@ -6,31 +6,33 @@ require_once "../../includes/DatabaseManager.php";
 //connections
 $dbm = new DatabaseManager();
 
-//get record of backup codes from DB
+//get record of user and backup codes from DB
+$userRecord = $dbm->getRecordsFromTable("user", "email", $_SESSION['email']);
 $backupsRecord = $dbm->getRecordsFromTable("2fa_backup_codes", "email", $_SESSION['email']);
 
+//default state
+$correctCode = false;
+
 if (isset($_POST['backup-code'])) {
-    $correctCode = false;
 
     //check code in post for each code in DB
     for ($i = 1; $i < 7; $i++) {
+        //if correct backup code
         if ($_POST['backup-code'] === $backupsRecord[0]["code_".$i]) {
-            //if correct backup code
-            echo '<a href="../totp-recovery-codes">genereer nieuwe backup codes?</a><br>';
-            echo '<a href="../home">naar homepage</a><br>';
-            $correctCode = true;
 
-            //overwrite used code with NULL
+            //overwrite used code and secret with NULL
             $dbm->updateRecordsFromTable("2fa_backup_codes", "code_".$i, NULL, "code_".$i, $_POST['backup-code']);
+            $dbm->updateRecordsFromTable("user", "secret", NULL, "email", $_SESSION['email']);
 
-            break;
+            //go to totp-signup
+            header('location: ../totp-signup');
+            exit();
         }
     }
 
     //if code in post doesn't match with any codes in DB
-    if(!$correctCode) {
-        echo "no!";
-    }
+    $_SESSION['errorMessage'] = 'incorrecte code';
+    header('location: ../totp-recovery');
 }
 
 ?>

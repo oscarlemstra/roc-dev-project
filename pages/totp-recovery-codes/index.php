@@ -50,12 +50,15 @@ function displayArray($arr) {
 <head>
     <meta charset="UTF-8">
     <title>recovery codes</title>
+    <link rel="stylesheet" href="../../styles/login-signup-style.css">
 </head>
 <body>
-<?php displayArray($codes); ?>
-<br>
-bewaar deze codes op een veilige plek!
-<br>
-<a href="../home">naar homepage</a>
+<div class="container">
+    <?php displayArray($codes); ?>
+    <br>
+    bewaar deze codes op een veilige plek!
+    <br>
+    <a href="../home">naar homepage</a>
+</div>
 </body>
 </html>

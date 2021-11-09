@@ -8,7 +8,8 @@ used for:
 - login
 - signup
 
-Path:
+P    <link rel="stylesheet" href="../../styles/login-signup-style.css">
+th:
 ../pages/login/index.php
 ../pages/signup/index.php
  
@@ -17,9 +18,9 @@ Path:
 
 @font-face {
     font-family: 'eau';
-    src: url('../font/eau.woff2') format('woff2'),
-         url('../font/eau.woff') format('woff'),
-         url('../font/eau.ttf')  format('truetype');
+    src: url('../fonts/eau.woff2') format('woff2'),
+         url('../fonts/eau.woff') format('woff'),
+         url('../fonts/eau.ttf')  format('truetype');
 }
 
 * {
@@ -27,7 +28,7 @@ Path:
     padding: 0;
     box-sizing: border-box;
 
-    --unfocused-color: rgba(238, 115, 38);
+    --unfocused-color: rgb(238, 115, 38);
     --focused-color: #ee7326;
 
     --error-background: #ec6666;
@@ -67,7 +68,7 @@ form h1 {
     font-weight: 500;
 }
 
-form a {
+a {
     text-decoration: none;
     color: rgb(66, 0, 219);
     font-size: 80%;

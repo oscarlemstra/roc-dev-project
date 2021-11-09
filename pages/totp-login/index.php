@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+$_SESSION['email'] = "user@email.com";
 
 use Google\Authenticator\GoogleAuthenticator;
 require_once "../../vendor/autoload.php";
