@@ -20,7 +20,7 @@
             <input type="password" name="password" placeholder="Wachtwoord" id="pwd" required>
             <input type="password" name="confirmPassword" placeholder="Confirm Wachtwoord" id="pwd2" required>
 
-            <input type="submit" value="submit" class="submitenabled" id="submit">
+            <input type="submit" value="submit" name="submit" class="submitenabled" id="submit">
         </form>
         <div class='error displayNone' id='error'></div>
         <?php
