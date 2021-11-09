@@ -16,10 +16,17 @@ const submitButton = document.getElementById('submit');
 // to avoid multiple error messages this will check if a error made by PHP code is already made
 // and then get the right element
 let errorElement;
-if (document.getElementById('error2')) {
-    errorElement = document.getElementById('error2');
+if (document.getElementById('error')) {
+    errorElement = document.getElementById('error');
 } else {
-    errorElement = document.getElementById('error')
+    let myElem = document.createElement('div');
+    myElem.classList.add('error');
+    myElem.classList.add('displayNone');
+    myElem.setAttribute("id", "error");
+
+    document.getElementsByClassName('container')[0].appendChild(myElem);
+    
+    errorElement = document.getElementById('error');
 }
 
 // default values
