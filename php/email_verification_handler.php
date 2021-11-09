@@ -7,7 +7,7 @@ $record = $dbm->getRecordsFromTable("email_verification_code", "email", $_SESSIO
 
 if ($_POST['verification_code'] === $record[0]['code']) {
     $dbm->deleteRecordsFromTable("email_verification_code", "email", $_SESSION['signup']['email']);
-    header('location: ../pages/study-progression');
+    header('location: ../pages/totp-signup');
     exit();
 }
 else {
