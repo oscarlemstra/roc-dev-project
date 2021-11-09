@@ -19,6 +19,7 @@ a {
 
 .text-center {
   text-align: center;
+  margin: 0;
 }
 
 .text-center-margin {
@@ -187,14 +188,22 @@ p {
   margin: 10px 0 0 10px;
 }
 
-.progression-meter-filler {
-  background-color: #ee7326;
-  width: 5vw;
+.progression-meter {
+  box-sizing: content-box;
   height: 18.4px;
+  position: relative;
+  margin: 0 0 0 0;
+  background: linear-gradient(to right, #ee7326 5%, #B7B7B7 0);
+  padding: 0;
+  text-align: center;
 }
 
-.progression-meter-empty {
-  background-color: #B7B7B7;
-  width: 100vw;
-}
-
+/*
+.progression-meter-empty-test > .progression-meter-filler-test {
+  display: block;
+  height: 100%;
+  width: 5%;
+  background-color: #ee7326;
+  position: relative;
+  overflow: hidden;
+}*/

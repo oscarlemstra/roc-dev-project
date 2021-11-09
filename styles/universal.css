@@ -3,7 +3,7 @@ CSS door Sander Borgman en Kenny
  */
 
 
-/* Mobile */
+/* Universal */
 * {
     padding: 0;
     margin: 0;
@@ -63,6 +63,8 @@ a {
     background-color: white;
     align-content: center;
 }
+
+/* Mobile */
 
 .header {
     height: 106px;
@@ -191,6 +193,26 @@ p {
     margin: 10px 0 0 10px;
 }
 
+.progression-meter {
+    box-sizing: content-box;
+    height: 18.4px;
+    position: relative;
+    margin: 0 0 0 0;
+    background: linear-gradient(to right, #ee7326 5%, #B7B7B7 0);
+    padding: 0;
+    text-align: center;
+}
+
+/*
+.progression-meter-empty-test > .progression-meter-filler-test {
+  display: block;
+  height: 100%;
+  width: 5%;
+  background-color: #ee7326;
+  position: relative;
+  overflow: hidden;
+}*/
+
 /* Tablet */
 @media all and (min-width: 768px) {
     .planning-and-grades {
@@ -244,6 +266,15 @@ p {
 
 }
 
+.progression-meter {
+    box-sizing: content-box;
+    height: 18.4px;
+    position: relative;
+    margin: 0 0 0 0;
+    background: linear-gradient(to right, #ee7326 5%, #B7B7B7 0);
+    padding: 0;
+    text-align: center;
+}
 
 /* Desktop */
 
