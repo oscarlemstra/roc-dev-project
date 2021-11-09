@@ -31,16 +31,39 @@ session_start();
         <a class="color-roc-white-text" href="#">Vakken</a>
     </div>
 
-    <div class="planning">
-        <h2 class="color-roc-orange-text">Planning van vandaag</h2>
-        <h3>Datum: <?php //hier komt de datum van de planning. wat er nu staat is gewoon testtext ?> 27/10/2021</h3>
-        <br>
-        <?php //dit is het punt dat we de tickets uit de database zouden moeten halen
-              //en dan het op een rijtje onderelkaar echo-en
-              //dus bvbmet een foreach die elke vak als een div echo-ed
-              //als er teveel ruimte is echo maar een <br> erbij of voeg wat padding/margin toe   ?>
-        <p>Rekenen - H1 - 3 pnt</p><p>Databases ontwerpen - DeeBeeTrain - 6pnt</p><p>roc-dev-project - study progression - 6pnt</p>
-        <a href="#"><div class="color-roc-orange planning-create-button"><p class="text-align-middle">Edit/Create Planning</p></div></a>
+    <div class="planning-and-grades">
+
+        <div class="planning">
+            <h2 class="color-roc-orange-text">Planning van vandaag</h2>
+            <h3>Datum: <?php //hier komt de datum van de planning. wat er nu staat is gewoon testtext ?> 27/10/2021</h3>
+            <br>
+            <?php //dit is het punt dat we de tickets uit de database zouden moeten halen
+            //en dan het op een rijtje onderelkaar echo-en
+            //dus bvbmet een foreach die elke vak als een div echo-ed
+            //als er teveel ruimte is echo maar een <br> erbij of voeg wat padding/margin toe   ?>
+            <p>Rekenen - H1 - 3 pnt</p><p>Databases ontwerpen - DeeBeeTrain - 6pnt</p><p>roc-dev-project - study progression - 6pnt</p>
+            <a href="#"><div class="color-roc-orange planning-create-button"><p class="text-align-middle">Edit/Create Planning</p></div></a>
+        </div>
+
+        <div class="grades">
+            <h2 class="color-roc-orange-text">Cijfers</h2>
+
+            <br>
+            <?php //Hier komen de cijfers van alle vakken te staan dit kan makkelijk met een foreach ?>
+            <div class="grade-container">
+                <p>HTML :</p>
+                <p class="grade">G</p>
+            </div>
+            <div class="grade-container">
+                <p>Java :</p>
+                <p class="grade">V</p>
+            </div>
+            <div class="grade-container">
+                <p>JavaScript :</p>
+                <p class="grade">V</p>
+            </div>
+        </div>
+
     </div>
 
     <div class="subjects">
@@ -82,25 +105,6 @@ session_start();
         </div>
         <div class="panel">test<br>maar<br>met<br>breakpoints</div>
 
-    </div>
-
-    <div class="grades">
-        <h2 class="color-roc-orange-text">Cijfers</h2>
-
-        <br>
-        <?php //Hier komen de cijfers van alle vakken te staan dit kan makkelijk met een foreach ?>
-        <div class="grade-container">
-            <p>HTML :</p>
-            <p class="grade">G</p>
-        </div>
-        <div class="grade-container">
-            <p>Java :</p>
-            <p class="grade">V</p>
-        </div>
-        <div class="grade-container">
-            <p>JavaScript :</p>
-            <p class="grade">V</p>
-        </div>
     </div>
 
     <div class="progression-meter">

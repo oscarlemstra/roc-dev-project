@@ -102,8 +102,8 @@ a {
 }
 
 .planning h2,
-h3,
-p {
+.planning h3,
+.planning p {
     margin: 10px 0 0 10px;
 }
 
@@ -189,8 +189,10 @@ p {
     margin-right: 20px;
 }
 
-.grades h2 {
-    margin: 10px 0 0 10px;
+.grades h2,
+.grades p {
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .progression-meter {
@@ -216,6 +218,33 @@ p {
 
 /* Tablet */
 @media all and (min-width: 768px) {
+    .header {
+        height: 106px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.199);
+    }
+
+    .logo {
+        width: 242px;
+        height: 106px;
+    }
+
+    .hamburger {
+        float: right;
+        /* margin: 25px 25px 0 0; */
+        padding: 24px 15px;
+    }
+
+    .hamburger:active {
+        background-color: #d66822;
+    }
+
+    .hamburger-menu {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
     .planning-and-grades {
         display: grid;
         grid-template-columns: 5% 45% 45% 5%;
@@ -232,6 +261,25 @@ p {
         border-radius: 10px;
     }
 
+    .planning h2,
+    .planning h3,
+    .planning p {
+        margin: 10px 0 0 10px;
+    }
+
+    .planning-create-button {
+        margin: 20px auto 0 auto;
+        width: 204px;
+        height: 69px;
+        border-radius: 10px;
+    }
+
+    .text-align-middle {
+        margin: 0;
+        padding: 1.5em 1.5em;
+        text-align: center;
+    }
+
     .grades {
         grid-area: grades;
         width: 320px;
@@ -240,6 +288,22 @@ p {
         border: rgba(153, 153, 153, 0.322) solid 1px;
         border-radius: 10px;
     }
+
+    .grade-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .grade {
+        margin-right: 20px;
+    }
+
+    .grades h2,
+    .grades p {
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+
 
     .subjects {
         display: grid;
@@ -262,20 +326,56 @@ p {
         background-color: #f8f9fa;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
+        /*    border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;*/
         box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     }
 
-}
+    .subject-color-container {
+    }
 
-.progression-meter {
-    box-sizing: content-box;
-    height: 18.4px;
-    position: sticky;
-    bottom: 0;
-    margin: 0 0 0 0;
-    background: linear-gradient(to right, #ee7326 5%, #B7B7B7 0);
-    padding: 0;
-    text-align: center;
+    .subject-container__text {
+        flex-grow: 1;
+    }
+
+    .subject-container > * {
+    }
+
+    .subject-color-container {
+        width: 53px;
+        height: 13px;
+        margin: 7px 0 0 15px;
+        border-radius: 200px;
+    }
+
+    .subject-text-lower {
+        padding-top: 35px;
+    }
+
+    .panel {
+        padding: 0 18px;
+        text-align: center;
+        background-color: #f8f9fa;
+        width: 290px;
+        max-height: 0;
+        margin: 0 auto 0 auto;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+
+    .progression-meter {
+        box-sizing: content-box;
+        height: 18.4px;
+        position: sticky;
+        bottom: 0;
+        margin: 0 0 0 0;
+        background: linear-gradient(to right, #ee7326 5%, #B7B7B7 0);
+        padding: 0;
+        text-align: center;
+    }
 }
 
 /* Desktop */
