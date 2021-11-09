@@ -32,7 +32,9 @@ body {
 .container {
     width: 25%;
     min-width: 350px;
-    height: fit-content;
+    height: intrinsic;
+    height: -webkit-fit-content;
+    height: -moz-max-content;
 
     padding: 3em;
 
