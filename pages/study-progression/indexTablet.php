@@ -30,6 +30,8 @@ session_start();
         <br>
         <a class="color-roc-white-text" href="#">Vakken</a>
     </div>
+    
+    <div class="planning-and-grades">
 
     <div class="planning">
         <h2 class="color-roc-orange-text">Planning van vandaag</h2>
@@ -41,47 +43,6 @@ session_start();
         //als er teveel ruimte is echo maar een <br> erbij of voeg wat padding/margin toe   ?>
         <p>Rekenen - H1 - 3 pnt</p><p>Databases ontwerpen - DeeBeeTrain - 6pnt</p><p>roc-dev-project - study progression - 6pnt</p>
         <a href="#"><div class="color-roc-orange planning-create-button"><p class="text-align-middle">Edit/Create Planning</p></div></a>
-    </div>
-
-    <div class="subjects">
-        <!--dit is een template voor de vakcontainer
-        zodra hierbij php gebruikt gaat worden raad ik aan om het op teroepen en echo-en met een foreach-->
-        <div class="subject-container">
-            <div class="subject-color-container color-kerntaak-frontend"></div>
-            <div class="subject-container__text">
-                <h2 class="text-center">HTML</h2>
-                <p class="text-center">5 Weken<br>Programmeren<br>(Frontend)</p>
-            </div>
-        </div>
-        <div class="panel">test</div>
-
-        <div class="subject-container">
-            <div class="subject-color-container color-kerntaak-backend"></div>
-            <div class="subject-container__text">
-                <h2 class="text-center">PHP</h2>
-                <p class="text-center">5 Weken<br>Programmeren<br>(Backend)</p>
-            </div>
-        </div>
-        <div class="panel">test 2</div>
-
-        <div class="subject-container">
-            <div class="subject-color-container color-kerntaak-keuzedeel"></div>
-            <div class="subject-container__text" >
-                <h2 class="text-center">Verdieping Software</h2>
-                <p class="text-center">5 Weken<br>Programmeren<br>(Keuzedeel)</p>
-            </div>
-        </div>
-        <div class="panel">test maar het heeft heel veel tekst maar echt hoor echt veel tekst moet je eens kijken naar dit</div>
-
-        <div class="subject-container">
-            <div class="subject-color-container color-kerntaak-regulier"></div>
-            <div class="subject-container__text">
-                <h2 class="text-center">Nederlands</h2>
-                <p class="text-center">5 Weken<br>Regulier</p>
-            </div>
-        </div>
-        <div class="panel">test<br>maar<br>met<br>breakpoints</div>
-
     </div>
 
     <div class="grades">
@@ -101,6 +62,71 @@ session_start();
             <p>JavaScript :</p>
             <p class="grade">V</p>
         </div>
+    </div>
+
+</div>
+    
+    <div class="subjects">
+        <!--dit is een template voor de vakcontainer
+        zodra hierbij php gebruikt gaat worden raad ik aan om het op teroepen en echo-en met een foreach-->
+        <div class="row-container">
+        <div class="subject-container">
+            <div class="subject-color-container color-kerntaak-frontend"></div>
+            <div class="subject-container__text">
+                <h2 class="text-center">HTML</h2>
+                <p class="text-center">5 Weken<br>Programmeren<br>(Frontend)</p>
+            </div>
+        </div>
+        <div class="panel">test</div>
+    </div>
+
+        <div class="row-container">
+        <div class="subject-container">
+            <div class="subject-color-container color-kerntaak-backend"></div>
+            <div class="subject-container__text">
+                <h2 class="text-center">PHP</h2>
+                <p class="text-center">5 Weken<br>Programmeren<br>(Backend)</p>
+            </div>
+        </div>
+        <div class="panel">test 2</div>
+        </div>
+
+        <div class="row-container">
+        <div class="subject-container">
+            <div class="subject-color-container color-kerntaak-keuzedeel"></div>
+            <div class="subject-container__text" >
+                <h2 class="text-center">Verdieping Software</h2>
+                <p class="text-center">5 Weken<br>Programmeren<br>(Keuzedeel)</p>
+            </div>
+        </div>
+        <div class="panel">test maar het heeft heel veel tekst maar echt hoor echt veel tekst moet je eens kijken naar dit</div>
+    </div>
+
+        <div class="row-container">
+        <div class="subject-container">
+            <div class="subject-color-container color-kerntaak-regulier"></div>
+            <div class="subject-container__text">
+                <h2 class="text-center">Nederlands</h2>
+                <p class="text-center">5 Weken<br>Regulier</p>
+            </div>
+        </div>
+        <div class="panel">test<br>maar<br>met<br>breakpoints</div>
+    </div>
+
+        <div class="row-container">
+            <div class="subject-container">
+                <div class="subject-color-container color-kerntaak-backend"></div>
+                <div class="subject-container__text">
+                    <h2 class="text-center">Java</h2>
+                    <p class="text-center">5 Weken<br>Programmeren<br>(Backend)</p>
+                </div>
+            </div>
+            <div class="panel">test numero 5</div>
+        </div>
+    </div>
+
+    <div class="progression-meter">
+        <p>5%</p>
     </div>
 
 </div>

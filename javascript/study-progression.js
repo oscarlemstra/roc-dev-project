@@ -29,8 +29,12 @@ for (
     let panel = this.nextElementSibling;
     if (panel.style.maxHeight) {
       panel.style.maxHeight = null;
+/*      accordion[currentAccordion].setAttribute("style","borderBottomLeftRadius: 10px;")
+      accordion[currentAccordion].setAttribute("style","borderBottomRightRadius: 10px;")*/
     } else {
       panel.style.maxHeight = panel.scrollHeight + "px";
+/*      accordion[currentAccordion].setAttribute("style","borderBottomLeftRadius: 0;")
+      accordion[currentAccordion].setAttribute("style","borderBottomRightRadius: 0;")*/
     }
   });
 }
