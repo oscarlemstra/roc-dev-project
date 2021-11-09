@@ -17,6 +17,7 @@ const submitButton = document.getElementById('submit');
 // this code will make another error message when it see's a error in the $_SESSION variable
 // to avoid multiple error messages this will check if a error made by PHP code is already exists
 // and then store that element
+// if not it will make a error message element
 let errorElement;
 if (document.getElementById('error')) {
     errorElement = document.getElementById('error');
@@ -50,9 +51,10 @@ passwordElement2.addEventListener('input', checkPwdValidity);
 function checkEmailValidity() {
     error = false;
 
+    let validDomains = ['talnet.nl', 'student.rocvf.nl'];
     emailAdress = emailElement.value.split('@')
     arrayLength = emailAdress.length;
-    if (emailAdress[arrayLength - 1] !== 'talnet.nl' && !error) {
+    if (validDomains.includes(emailAdress[arrayLength - 1]) && !error) {
         error = true;
         errorMessage = 'email is niet een school email adress'
     }
