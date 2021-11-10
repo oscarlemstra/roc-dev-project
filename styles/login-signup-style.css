@@ -65,7 +65,7 @@ input[type = 'email'], input[type = 'password'], input[type = 'text'] {
     margin: 25px auto 0 auto;
     padding: 14px 10px;
 
-    width: 70%;
+    width: 80%;
     min-width: 100px;
 
     text-align: center;
@@ -89,8 +89,8 @@ input[type = 'submit'] {
     margin: 25px auto 0 auto;
     padding: 14px 10px;
  
-    width: 50%;
-    min-width: 100px;
+    width: 60%;
+    min-width: 120px;
 
     text-align: center;
 
