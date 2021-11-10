@@ -1,7 +1,7 @@
 <?php
 
 //sends an email with a code to verify your email that you have given
-function sendEmail_emailVerificationCode($email, $dbm) {
+function sendEmail_emailVerificationCode($email, $dbm, $pwdRlink = 'empty') {
 
     $code = rand(100000, 999999);
     $date = date("Y-m-d");
@@ -25,7 +25,10 @@ function sendEmail_emailVerificationCode($email, $dbm) {
     $message = str_replace("[USERNAME]", "student" /* <- Username here */, $message);
 
     // verification code
-    $message = str_replace("[CODE]", $code /* <- number here */, $message);
+    $message = str_replace("[CODE]", $code, $message);
+
+    // password reset
+    $message = str_replace("[LOCATION]", $pwdRlink, $message);
     
 
     // Set content-type header for sending HTML email 
