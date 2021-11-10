@@ -76,7 +76,7 @@ a {
 .hamburger {
   float: right;
   /* margin: 25px 25px 0 0; */
-  margin: 24px 15px;
+  margin: 10px 10px;
 }
 
 .hamburger:active {
@@ -126,9 +126,12 @@ p {
 }
 
 .planning-create-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 20px auto 0 auto;
-  width: 204px;
-  height: 69px;
+  width: 200px;
+  height: 30px;
   border-radius: 10px;
 }
 
