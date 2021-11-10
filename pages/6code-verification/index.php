@@ -20,7 +20,7 @@
         <div class='error displayNone' id='error'></div>
         <?php
             if (isset($_SESSION['errorMessage'])) {
-                echo "<div class='error' id='error2'>" . $_SESSION['errorMessage'] . "</div>";
+                echo "<div class='error' id='error'>" . $_SESSION['errorMessage'] . "</div>";
                 unset($_SESSION['errorMessage']);
             }
         ?>
