@@ -1,6 +1,7 @@
 <?php session_start();
 
-$email = $_SESSION['signup']['email'];
+//use signup email if isset, else use login
+$email = $_SESSION['signup']['email'] ?? $_SESSION['login']['email'];
 
 require_once "../../includes/DatabaseManager.php";
 require_once "../../vendor/otp-generator.php";
@@ -8,7 +9,8 @@ require_once "../../vendor/otp-generator.php";
 //connections
 $dbm = new DatabaseManager();
 
-//get record of backup codes from DB
+//get record of user and backup codes from DB
+$userRecord = $dbm->getRecordsFromTable("user", "email", $email);
 $backupsRecord = $dbm->getRecordsFromTable("2fa_backup_codes", "email", $email);
 
 //generate codes
@@ -58,9 +60,9 @@ function displayArray($arr) {
     <?php displayArray($codes); ?>
     <br>
     bewaar deze codes op een veilige plek!
-    <br>
-    <form action="index.php" method="post">
-        <input type="submit" value="next" class="submitenabled" id="submit">
+    <br> <br> <br>
+    <form action="<?php /* make account if it doesn't exist, else go home */if(!$userRecord) {echo '../../php/make_account.php';} else {echo '../home';} ?>">
+        <input type="submit" value="naar home" class="submitenabled" id="submit">
     </form>
 </div>
 </body>

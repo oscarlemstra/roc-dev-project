@@ -1,12 +1,7 @@
 <?php session_start();
 
-//$email = "user@email.com";
-if (isset($_SESSION['signup']['email'])) {
-    $email = $_SESSION['signup']['email'];
-} else {
-    $email = $_SESSION['login'];
-}
-
+//use signup email if isset, else use login
+$email = $_SESSION['signup']['email'] ?? $_SESSION['login']['email'];
 
 require_once "../../vendor/autoload.php";
 require_once "../../vendor/sonata-project/google-authenticator/src/FixedBitNotation.php";
@@ -37,9 +32,9 @@ $link = Sonata\GoogleAuthenticator\GoogleQrUrl::generate($email, $secret, 'roc-d
 <body>
 <div class="container">
     <img alt ="qr code laadt niet? herlaadt pagina" src="<?php echo $link?>">
-    <br>
-    <form action="index.php">
-        <input type="submit" value="submit" class="submitenabled" id="submit">
+    <br> <br> <br>
+    <form action="../totp-login">
+        <input type="submit" value="volgende" class="submitenabled" id="submit">
     </form>
 </div>
 </body>

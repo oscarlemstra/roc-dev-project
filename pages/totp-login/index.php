@@ -1,6 +1,7 @@
 <?php session_start();
 
-$email = $_SESSION['signup']['email'];
+//use signup email if isset, else use login
+$email = $_SESSION['signup']['email'] ?? $_SESSION['login']['email'];
 
 require_once "../../vendor/autoload.php";
 require_once "../../vendor/sonata-project/google-authenticator/src/FixedBitNotation.php";
@@ -27,14 +28,9 @@ if (isset($_POST['pass-code'])) {
         $secret = $_SESSION['signup']['secret'];
     }
 
-//    show on-screen - DEBUG
-//    JSC("submitted code: " . $_POST['pass-code']);
-//    JSC("correct code: " . $g->getCode($secret));
-
     //check code
     if ($g->checkCode($secret, $_POST['pass-code'])) {
         //if correct passcode
-
 
         if ($backupsRecord && $userRecord) {
             //if backup and user exist
@@ -54,13 +50,6 @@ if (isset($_POST['pass-code'])) {
     }
 }
 
-
-//for debugging
-//function JSC($input) {
-//    echo "<pre>";
-//    print_r($input);
-//    echo "</pre>";
-//}
 ?>
 
 <!DOCTYPE html>
@@ -76,7 +65,7 @@ if (isset($_POST['pass-code'])) {
     <h1>google authenticator</h1>
     <a href="../totp-recovery">telefoon kwijt?</a>
     <input type="text" inputmode="numeric" pattern="[0-9]*" name="pass-code" required>
-    <input type="submit" value="submit" class="submitenabled" id="submit">
+    <input type="submit" value="verstuur" class="submitenabled" id="submit">
 </form>
     <?php
     if(isset($_SESSION["errorMessage"])) {
