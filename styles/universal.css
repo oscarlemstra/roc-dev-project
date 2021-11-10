@@ -1,5 +1,5 @@
 /*
-CSS door Sander Borgman en Kenny
+CSS door Sander Borgman en Kenny Meijer
  */
 
 /* Universal */
@@ -61,11 +61,15 @@ a {
 .container {
   background-color: white;
   align-content: center;
+  margin-bottom: 25px;
 }
 
 /* Mobile */
 
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 106px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.199);
 }
@@ -76,9 +80,11 @@ a {
 }
 
 .hamburger {
-  float: right;
-  /* margin: 25px 25px 0 0; */
   padding: 24px 15px;
+}
+
+.profile {
+  display: none;
 }
 
 .hamburger:active {
@@ -107,9 +113,12 @@ a {
 }
 
 .planning-create-button {
-  margin: 20px auto 0 auto;
-  width: 204px;
-  height: 69px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 30px;
+  margin: 20px auto;
   border-radius: 10px;
 }
 
@@ -139,13 +148,11 @@ a {
     border-bottom-right-radius: 10px;*/
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.subject-color-container {
-}
+
 .subject-container__text {
   flex-grow: 1;
 }
-.subject-container > * {
-}
+
 .subject-color-container {
   width: 53px;
   height: 13px;
@@ -217,33 +224,6 @@ a {
 
 /* Tablet */
 @media all and (min-width: 768px) {
-  .header {
-    height: 106px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.199);
-  }
-
-  .logo {
-    width: 242px;
-    height: 106px;
-  }
-
-  .hamburger {
-    float: right;
-    /* margin: 25px 25px 0 0; */
-    padding: 24px 15px;
-  }
-
-  .hamburger:active {
-    background-color: #d66822;
-  }
-
-  .hamburger-menu {
-    display: none;
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
-
   .planning-and-grades {
     display: grid;
     grid-template-columns: 5% 45% 45% 5%;
@@ -260,25 +240,6 @@ a {
     border-radius: 10px;
   }
 
-  .planning h2,
-  .planning h3,
-  .planning p {
-    margin: 10px 0 0 10px;
-  }
-
-  .planning-create-button {
-    margin: 20px auto 0 auto;
-    width: 204px;
-    height: 69px;
-    border-radius: 10px;
-  }
-
-  .text-align-middle {
-    margin: 0;
-    padding: 1.5em 1.5em;
-    text-align: center;
-  }
-
   .grades {
     grid-area: grades;
     width: 320px;
@@ -286,21 +247,6 @@ a {
     padding-bottom: 21px;
     border: rgba(153, 153, 153, 0.322) solid 1px;
     border-radius: 10px;
-  }
-
-  .grade-container {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .grade {
-    margin-right: 20px;
-  }
-
-  .grades h2,
-  .grades p {
-    margin-top: 10px;
-    margin-left: 10px;
   }
 
   .subjects {
@@ -311,69 +257,6 @@ a {
     grid-auto-rows: minmax(auto, auto);
     margin: 21px auto 0 auto;
   }
-
-  .subject-container {
-    display: flex;
-    overflow: hidden;
-    cursor: pointer;
-    gap: 5px;
-    width: 290px;
-    min-height: 150px;
-    margin: 20px auto 0 auto;
-    padding-top: 20px;
-    background-color: #f8f9fa;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    /*    border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;*/
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-
-  .subject-color-container {
-  }
-
-  .subject-container__text {
-    flex-grow: 1;
-  }
-
-  .subject-container > * {
-  }
-
-  .subject-color-container {
-    width: 53px;
-    height: 13px;
-    margin: 7px 0 0 15px;
-    border-radius: 200px;
-  }
-
-  .subject-text-lower {
-    padding-top: 35px;
-  }
-
-  .panel {
-    padding: 0 18px;
-    text-align: center;
-    background-color: #f8f9fa;
-    width: 290px;
-    max-height: 0;
-    margin: 0 auto 0 auto;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-  }
-
-  .progression-meter {
-    box-sizing: content-box;
-    height: 18.4px;
-    position: sticky;
-    bottom: 0;
-    margin: 0 0 0 0;
-    background: linear-gradient(to right, #ee7326 5%, #b7b7b7 0);
-    padding: 0;
-    text-align: center;
-  }
 }
 
 /* Desktop */
@@ -383,8 +266,7 @@ a {
     display: grid;
     grid-template-columns: 340px 1fr;
     gap: 15px;
-    margin-bottom: 97px;
-    /* position: relative; */
+    margin-bottom: 120px;
   }
 
   .header {
@@ -404,6 +286,7 @@ a {
   }
 
   .profile {
+    display: block;
     margin-right: 20px;
     border-radius: 50%;
     width: 50px;
@@ -435,14 +318,7 @@ a {
     margin: 0 50px;
   }
 
-  .progression-meter {
-    box-sizing: content-box;
-    height: 18.4px;
-    position: sticky;
-    bottom: 0;
-    margin: 0 0 0 0;
-    background: linear-gradient(to right, #ee7326 5%, #b7b7b7 0);
-    padding: 0;
-    text-align: center;
+  .grades {
+    height: auto;
   }
 }

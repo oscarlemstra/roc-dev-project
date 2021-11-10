@@ -41,6 +41,7 @@ session_start();
         <br>
         <a class="color-roc-white-text" href="#">Vakken</a>
     </div>
+    
     <div class="planning-and-grades">
 
 
@@ -53,7 +54,7 @@ session_start();
             //dus bvbmet een foreach die elke vak als een div echo-ed
             //als er teveel ruimte is echo maar een <br> erbij of voeg wat padding/margin toe   ?>
             <p>Rekenen - H1 - 3 pnt</p><p>Databases ontwerpen - DeeBeeTrain - 6pnt</p><p>roc-dev-project - study progression - 6pnt</p>
-            <a href="#"><div class="color-roc-orange planning-create-button"><p class="text-align-middle">Edit/Create Planning</p></div></a>
+            <a href="#"><div class="color-roc-orange planning-create-button"><span>Edit/Create Planning</span></div></a>
         </div>
 
         <div class="grades">

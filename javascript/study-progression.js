@@ -10,7 +10,7 @@ let currentAccordion;
 profile.addEventListener("click", openProfileMenu);
 
 function openProfileMenu() {
-  profileMenu.style.display = "block";
+  profileMenu.style.display = "flex";
   profile.addEventListener("click", closeProfileMenu);
   profile.removeEventListener("click", openProfileMenu);
 }
