@@ -62,7 +62,7 @@ input[type = 'email'], input[type = 'password'], input[type = 'text'] {
     background: none;
     display: block;
 
-    margin: 25px auto;
+    margin: 25px auto 0 auto;
     padding: 14px 10px;
 
     width: 70%;
@@ -86,7 +86,7 @@ input[type = 'submit'] {
     background: none;
     display: block;
 
-    margin: auto;
+    margin: 25px auto 0 auto;
     padding: 14px 10px;
  
     width: 50%;

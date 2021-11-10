@@ -11,13 +11,15 @@
 </head>
 <body>
     <div class="container">
-        <form action="../../php/login_handler.php" method="post">
+        <form method="post">
             <h1>Inloggen</h1>
             <a href="../signup">account registreren</a>
 
             <input type="email" name="email" placeholder="Email" id="email" required>
             <input type="password" name="password" placeholder="Wachtwoord" id="pwd" required>
-            <input type="submit" value="submit" class="submitenabled" id="submit">
+            <input type="submit" formaction="../../php/login_handler.php" value="submit" name="submit" class="submitenabled" id="submit">
+
+            <input type="submit" formaction="../wachtwoord-reset/" value="Wachtwoord reseten" name="submit" class="submitenabled pwdReset">
         </form>
         <?php
             if(isset($_SESSION["errorMessage"])) {
