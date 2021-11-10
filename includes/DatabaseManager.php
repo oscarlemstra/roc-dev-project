@@ -14,11 +14,16 @@ class DatabaseManager {
         return $dbh;
     }
 
-    public function checkConnectionToDatabase () {
+    public function checkConnectionToDatabase ($debug = false) {
         try {
             $this->databaseHandle();
         } catch (PDOException $e) {
-            print "Error!: " . $e->getMessage() . "<br/>";
+            if (!$debug) {
+                print "something went wrong!" . "<br/>";
+            }
+            else {
+                print "Error!: " . $e->getMessage() . "<br/>";
+            }
             die();
         }
     }
