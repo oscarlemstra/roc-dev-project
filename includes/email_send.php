@@ -56,7 +56,7 @@ function sendEmail_PasswordReset($email, $securetyString, $dbm) {
     $subject = "Email verificatie";
 
     
-    $message = file_get_contents("../template/email-verification.html");
+    $message = file_get_contents("../template/password-reset.html");
 
     // general changes
     $message = str_replace("[USERNAME]", "student" /* <- Username here */, $message);
