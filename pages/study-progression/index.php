@@ -33,7 +33,7 @@ session_start();
     </div>
 
     <div class="profile-menu">
-    <a class="color-roc-white-text text-center-margin" href="#">Stage</a>
+    <a class="color-roc-white-text" href="#">Stage</a>
         <br>
         <a class="color-roc-white-text" href="#">Studievoortgang</a>
         <br>
