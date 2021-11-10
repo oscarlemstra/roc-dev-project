@@ -3,7 +3,7 @@ CSS door Sander Borgman en Kenny
  */
 
 
-/* Mobile */
+/* Universal */
 * {
     padding: 0;
     margin: 0;
@@ -63,6 +63,8 @@ a {
     background-color: white;
     align-content: center;
 }
+
+/* Mobile */
 
 .header {
     height: 106px;
@@ -134,6 +136,8 @@ p {
     background-color: #f8f9fa;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    /*    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;*/
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .subject-color-container {
@@ -189,9 +193,90 @@ p {
     margin: 10px 0 0 10px;
 }
 
+.progression-meter {
+    box-sizing: content-box;
+    height: 18.4px;
+    position: sticky;
+    bottom: 0;
+    margin: 0 0 0 0;
+    background: linear-gradient(to right, #ee7326 5%, #B7B7B7 0);
+    padding: 0;
+    text-align: center;
+}
+
+/*
+.progression-meter-empty-test > .progression-meter-filler-test {
+  display: block;
+  height: 100%;
+  width: 5%;
+  background-color: #ee7326;
+  position: relative;
+  overflow: hidden;
+}*/
+
 /* Tablet */
+@media all and (min-width: 768px) {
+    .planning-and-grades {
+        display: grid;
+        grid-template-columns: 5% 45% 45% 5%;
+        grid-template-rows: auto;
+        grid-template-areas: ". planning grades .";
+    }
 
+    .planning {
+        grid-area: planning;
+        width: 320px;
+        margin: 21px auto 0 auto;
+        padding-bottom: 21px;
+        border: rgba(153, 153, 153, 0.322) solid 1px;
+        border-radius: 10px;
+    }
 
+    .grades {
+        grid-area: grades;
+        width: 320px;
+        margin: 21px auto 0 auto;
+        padding-bottom: 21px;
+        border: rgba(153, 153, 153, 0.322) solid 1px;
+        border-radius: 10px;
+    }
+
+    .subjects {
+        display: grid;
+        width: 620px;
+        grid-template-columns: repeat(2, 300px);
+        gap: 20px;
+        grid-auto-rows: minmax(auto, auto);
+        margin: 21px auto 0 auto;
+    }
+
+    .subject-container {
+        display: flex;
+        overflow: hidden;
+        cursor: pointer;
+        gap: 5px;
+        width: 290px;
+        min-height: 150px;
+        margin: 20px auto 0 auto;
+        padding-top: 20px;
+        background-color: #f8f9fa;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+}
+
+.progression-meter {
+    box-sizing: content-box;
+    height: 18.4px;
+    position: sticky;
+    bottom: 0;
+    margin: 0 0 0 0;
+    background: linear-gradient(to right, #ee7326 5%, #B7B7B7 0);
+    padding: 0;
+    text-align: center;
+}
 
 /* Desktop */
 

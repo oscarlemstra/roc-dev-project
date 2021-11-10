@@ -16,8 +16,9 @@ function emailCheck($email, $dbm) {
     }
     
     // check if email ends with 'talnet.nl' or 'student.rocvf.nl'
+    $validDomains = ['talnet.nl', 'student.rocvf.nl'];
     $splitEmail = explode("@", $email);
-    if ($splitEmail[count($splitEmail) - 1] !== "talnet.nl" && !$error) {
+    if ( in_array($splitEmail[count($splitEmail) - 1], $validDomains) && !$error) {
         $error = true;
         $errorMessage = 'email is niet een school email adress';
     }
