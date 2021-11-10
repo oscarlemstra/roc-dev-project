@@ -19,7 +19,7 @@
             <input type="password" name="password" placeholder="Wachtwoord" id="pwd" required>
             <input type="submit" formaction="../../php/login_handler.php" value="submit" name="submit" class="submitenabled" id="submit">
 
-            <input type="submit" formaction="../wachtwoord-reset/" value="Wachtwoord reseten" name="submit" class="submitenabled pwdReset">
+            <input type="submit" formaction="../wachtwoord-reset/" value="Wachtwoord reseten" name="submit" class="submitenabled password-reset-button">
         </form>
         <?php
             if(isset($_SESSION["errorMessage"])) {
