@@ -59,9 +59,8 @@ a {
 }
 
 .container {
-  background-color: white;
-  align-content: center;
-  margin-bottom: 25px;
+  background-color: #fff;
+  margin: 40px 20px;
 }
 
 /* Mobile */
@@ -266,7 +265,8 @@ a {
     display: grid;
     grid-template-columns: 340px 1fr;
     gap: 15px;
-    margin-bottom: 120px;
+    position: relative;
+    /* margin-bottom: 120px; */
   }
 
   .header {
@@ -308,8 +308,8 @@ a {
     background-color: #fff;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.075);
     position: absolute;
-    top: 110px;
-    right: 5px;
+    top: -30px;
+    right: -10px;
   }
 
   .profile-menu a {
@@ -317,18 +317,22 @@ a {
   }
 
   .planning-and-grades {
-    display: block;
+    display: flex;
+    flex-direction: column;
     grid-column: 1 / 2;
+    gap: 0;
   }
 
   .subjects {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     column-gap: 90px;
-    margin: 0 50px;
+    gap: 70px;
+    margin: 0 0 50px 50px;
   }
 
-  .grades {
-    height: auto;
+  .panel {
+    position: absolute;
   }
 }

@@ -14,13 +14,13 @@ session_start();
     <title>Study Progression</title>
 </head>
 <body>
+    <header class="header color-roc-orange">
+        <img class="logo" alt="ROC Logo" src="../../images/02_ROCvF_logo_PLAT_RGB%201.png">
+        <img class="hamburger" alt="hamburger" src="../../images/hamburger.png">
+        <div class="profile"></div>
+    </header>
 <div class="container">
 
-<div class="header color-roc-orange">
-    <img class="logo" alt="ROC Logo" src="../../images/02_ROCvF_logo_PLAT_RGB%201.png">
-    <img class="hamburger" alt="hamburger" src="../../images/hamburger.png">
-    <div class="profile"></div>
-</div>
 
     <div class="hamburger-menu color-roc-orange">
         <a class="color-roc-white-text text-center-margin" href="#">Stage</a>
@@ -33,7 +33,7 @@ session_start();
     </div>
 
     <div class="profile-menu">
-    <a class="color-roc-white-text" href="#">Stage</a>
+        <a class="color-roc-white-text" href="#">Stage</a>
         <br>
         <a class="color-roc-white-text" href="#">Studievoortgang</a>
         <br>
