@@ -15,8 +15,9 @@
             <h1>Account registreren</h1>
             <a href="../login">Inloggen</a>
 
-            <input type="text" name="student_nr" placeholder="Student nummer" id="student_nr" pattern="[0-9]{7}" required>
+            <input type="email" name="email" placeholder="Email" id="email" required>
             <input type="text" name="name" placeholder="Naam" id="name" required>
+            <input type="text" name="student_nr" placeholder="Student nummer" id="student_nr" required>
             <input type="text" name="class" placeholder="Klas" id="class" required>
 
             <input type="password" name="password" placeholder="Wachtwoord" id="pwd" required>
