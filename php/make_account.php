@@ -3,7 +3,7 @@
 require_once '../includes/DatabaseManager.php';
 $dbm = new DatabaseManager();
 
-//testing code
-print_r($dbm->checkConnectionToDatabase());
+$a = array("role"=>"test1");
 
-echo "wow";
+//testing code
+print($dbm->insertRecordToTable("user_role", $a));
