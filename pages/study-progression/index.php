@@ -10,7 +10,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../images/02_ROCvF_logo_PLAT_RGB%201.png" /> <!--needs a favicon here (roc-dev logo or software dev opleiding logo)-->
-    <link rel="stylesheet" href="../../styles/mobile.css">
+    <link rel="stylesheet" href="../../styles/universal.css">
     <title>Study Progression</title>
 </head>
 <body>
@@ -19,6 +19,7 @@ session_start();
 <div class="header color-roc-orange">
     <img class="logo" alt="ROC Logo" src="../../images/02_ROCvF_logo_PLAT_RGB%201.png">
     <img class="hamburger" alt="hamburger" src="../../images/hamburger.png">
+    <div class="profile"></div>
 </div>
 
     <div class="hamburger-menu color-roc-orange">
@@ -31,21 +32,56 @@ session_start();
         <a class="color-roc-white-text" href="#">Vakken</a>
     </div>
 
-    <div class="planning">
-        <h2 class="color-roc-orange-text">Planning van vandaag</h2>
-        <h3>Datum: <?php //hier komt de datum van de planning. wat er nu staat is gewoon testtext ?> 27/10/2021</h3>
+    <div class="profile-menu">
+    <a class="color-roc-white-text" href="#">Stage</a>
         <br>
-        <?php //dit is het punt dat we de tickets uit de database zouden moeten halen
-              //en dan het op een rijtje onderelkaar echo-en
-              //dus bvbmet een foreach die elke vak als een div echo-ed
-              //als er teveel ruimte is echo maar een <br> erbij of voeg wat padding/margin toe   ?>
-        <p>Rekenen - H1 - 3 pnt</p><p>Databases ontwerpen - DeeBeeTrain - 6pnt</p><p>roc-dev-project - study progression - 6pnt</p>
-        <a href="#"><div class="color-roc-orange planning-create-button"><p class="text-align-middle">Edit/Create Planning</p></div></a>
+        <a class="color-roc-white-text" href="#">Studievoortgang</a>
+        <br>
+        <a class="color-roc-white-text" href="#">Cijfers</a>
+        <br>
+        <a class="color-roc-white-text" href="#">Vakken</a>
+    </div>
+    
+    <div class="planning-and-grades">
+
+
+        <div class="planning">
+            <h2 class="color-roc-orange-text">Planning van vandaag</h2>
+            <h3>Datum: <?php //hier komt de datum van de planning. wat er nu staat is gewoon testtext ?> 27/10/2021</h3>
+            <br>
+            <?php //dit is het punt dat we de tickets uit de database zouden moeten halen
+            //en dan het op een rijtje onderelkaar echo-en
+            //dus bvbmet een foreach die elke vak als een div echo-ed
+            //als er teveel ruimte is echo maar een <br> erbij of voeg wat padding/margin toe   ?>
+            <p>Rekenen - H1 - 3 pnt</p><p>Databases ontwerpen - DeeBeeTrain - 6pnt</p><p>roc-dev-project - study progression - 6pnt</p>
+            <a href="#"><div class="color-roc-orange planning-create-button"><span>Edit/Create Planning</span></div></a>
+        </div>
+
+        <div class="grades">
+            <h2 class="color-roc-orange-text">Cijfers</h2>
+
+            <br>
+            <?php //Hier komen de cijfers van alle vakken te staan dit kan makkelijk met een foreach ?>
+            <div class="grade-container">
+                <p>HTML :</p>
+                <p class="grade">G</p>
+            </div>
+            <div class="grade-container">
+                <p>Java :</p>
+                <p class="grade">V</p>
+            </div>
+            <div class="grade-container">
+                <p>JavaScript :</p>
+                <p class="grade">V</p>
+            </div>
+        </div>
+
     </div>
 
     <div class="subjects">
     <!--dit is een template voor de vakcontainer
     zodra hierbij php gebruikt gaat worden raad ik aan om het op teroepen en echo-en met een foreach-->
+    <div>
         <div class="subject-container">
             <div class="subject-color-container color-kerntaak-frontend"></div>
             <div class="subject-container__text">
@@ -54,7 +90,9 @@ session_start();
             </div>
         </div>
         <div class="panel">test</div>
+    </div>
 
+    <div>
         <div class="subject-container">
             <div class="subject-color-container color-kerntaak-backend"></div>
             <div class="subject-container__text">
@@ -63,6 +101,9 @@ session_start();
             </div>
         </div>
         <div class="panel">test 2</div>
+    </div>
+
+    <div>
 
         <div class="subject-container">
             <div class="subject-color-container color-kerntaak-keuzedeel"></div>
@@ -72,6 +113,9 @@ session_start();
             </div>
         </div>
         <div class="panel">test maar het heeft heel veel tekst maar echt hoor echt veel tekst moet je eens kijken naar dit</div>
+    </div>
+
+    <div>
 
         <div class="subject-container">
             <div class="subject-color-container color-kerntaak-regulier"></div>
@@ -81,33 +125,15 @@ session_start();
             </div>
         </div>
         <div class="panel">test<br>maar<br>met<br>breakpoints</div>
+    </div>
 
     </div>
 
-    <div class="grades">
-        <h2 class="color-roc-orange-text">Cijfers</h2>
-
-        <br>
-        <?php //Hier komen de cijfers van alle vakken te staan dit kan makkelijk met een foreach ?>
-        <div class="grade-container">
-            <p>HTML :</p>
-            <p class="grade">G</p>
-        </div>
-        <div class="grade-container">
-            <p>Java :</p>
-            <p class="grade">V</p>
-        </div>
-        <div class="grade-container">
-            <p>JavaScript :</p>
-            <p class="grade">V</p>
-        </div>
-    </div>
-
-    <div class="progression-meter">
-        <p>5%</p>
-    </div>
-
-
+    
+    
+</div>
+<div class="progression-meter">
+    <p>5%</p>
 </div>
 <script src="../../javascript/study-progression.js"></script>
 </body>

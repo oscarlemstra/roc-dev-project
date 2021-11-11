@@ -99,8 +99,8 @@ a {
 }
 
 .planning h2,
-h3,
-p {
+.planning h3,
+.planning p {
   margin: 10px 0 0 10px;
 }
 
@@ -113,7 +113,7 @@ p {
 
 .text-align-middle {
   margin: 0;
-  padding: 1.5em 1.5em;
+  padding: 1em 1.5em;
   text-align: center;
 }
 
@@ -184,8 +184,10 @@ p {
   margin-right: 20px;
 }
 
-.grades h2 {
-  margin: 10px 0 0 10px;
+.grades h2,
+.grades p {
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .progression-meter {
