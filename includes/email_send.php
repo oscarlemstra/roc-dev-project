@@ -61,7 +61,7 @@ function sendEmail_PasswordReset($email, $securetyString, $dbm) {
     // general changes
     $message = str_replace("[USERNAME]", "student" /* <- Username here */, $message);
 
-    // verification code
+    // url replacement
     $message = str_replace("[DESTINATION]", $destination, $message);
     
 
