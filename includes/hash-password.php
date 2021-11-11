@@ -6,7 +6,10 @@ function hashPassword($userID, $userPassword) {
     $salt = hash('md5', $hashedID . $hashedUnsaltedPWD);
 
     $hashedPWD = hash('sha512', $userPassword);
-    $finalHashedPWD = hash('sha512', $salt . $hashedPWD);
+
+    $pepper = 'tr54t5fyu67hyu6j7gtr5f4gt5hyu67iuhkjdaoifkjsaoxhjlzLKMCSiovdshfDSOIfhdSIviszhSugvzuhuiuvhuhfiudzAbkjoioidsiuFDAoihsuvshuvshuohfe';
+
+    $finalHashedPWD = hash('sha512', $salt . $hashedPWD . $pepper);
 
     return $finalHashedPWD;
 }

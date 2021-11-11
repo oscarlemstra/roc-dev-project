@@ -27,11 +27,16 @@
             $_SESSION['errorMessage'] = $result;
         } else {
             $userID = $dbm->getRecordsFromTable("user", "email", $email)[0]['user_id'];
+
             $hashedPwd = hashPassword($userID, $pwd);
 
             $dbm->updateRecordsFromTable('user', 'password', $hashedPwd, 'email', $email);
+
+            $scriptResult = true;
         }
     }
+
+    $scriptResult = false;
 ?>
 
 <!DOCTYPE html>
@@ -45,14 +50,19 @@
 </head>
 <body>
     <div class="container">
-        <form method="post">
-            <h1>zet een nieuwe wachtwoord</h1>
-            
-            <input type="password" placeholder="wachtwoord" name="password-1" id="pwd">
-            <input type="password" placeholder="wachtwoord" name="password-2" id="pwd2">
+        <?php
+            if (!$scriptResult) {
+                echo '<form method="post">';
+                    echo ' <h1>zet een nieuwe wachtwoord</h1>';
 
-            <input type="submit" value="submit" name="submit" id="submit">
-        </form>
+                    echo '<input type="password" placeholder="wachtwoord" name="password-1" id="pwd">';
+                    echo '<input type="password" placeholder="wachtwoord" name="password-2" id="pwd2">';
+
+                    echo '<input type="submit" value="submit" name="submit" id="submit">';
+                echo '</form>';
+            }
+        ?>
+        
         <?php
             // this code isnt needed but i'll still keep it
             if(isset($_SESSION["errorMessage"])) {
