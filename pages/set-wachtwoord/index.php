@@ -22,10 +22,11 @@
     $password_reset_code_id = $userRecord[0]['password_reset_code_id'];
 
     $record = $dbm->getRecordsFromTable("password_reset_code", "password_reset_code_id", $password_reset_code_id);
-    if ($record[0]['code'] !== $securetyKey) {
+    if ($record[0]['code'] !== $securetyKey || $record[0]['code'] === 'empty_field') {
         echo "dit is niet de juiste URL";
         exit();
     }
+    if ($record[0]['code'] === 'empty_field')
     
     if (isset($_POST['submit'])) {
 
@@ -43,7 +44,7 @@
             $dbm->updateRecordsFromTable('user', 'password', $hashedPwd, 'email', $email);
 
             // emtpy code in database
-            $dbm->updateRecordsFromTable('password_reset_code', 'code', '', 'password_reset_code_id', $password_reset_code_id);
+            $dbm->updateRecordsFromTable('password_reset_code', 'code', 'empty_field', 'password_reset_code_id', $password_reset_code_id);
 
             $scriptResult = true;
         }
