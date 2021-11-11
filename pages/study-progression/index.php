@@ -104,7 +104,6 @@ session_start();
     </div>
 
     <div>
-
         <div class="subject-container">
             <div class="subject-color-container color-kerntaak-keuzedeel"></div>
             <div class="subject-container__text" >
@@ -116,7 +115,6 @@ session_start();
     </div>
 
     <div>
-
         <div class="subject-container">
             <div class="subject-color-container color-kerntaak-regulier"></div>
             <div class="subject-container__text">
