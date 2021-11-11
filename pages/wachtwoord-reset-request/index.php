@@ -57,6 +57,7 @@
     }
 
 
+    // function to generate a random string with any length
     function RandomString($limit) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $randstring = '';
