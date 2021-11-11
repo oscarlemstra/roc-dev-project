@@ -64,7 +64,7 @@
 <body>
     <div class="container">
         <form method="post">
-            <h1>Wachtwoord Reset</h1>
+            <h2>Wachtwoord Reset</h2>
             <p>een email is gestuurd naar <?php echo $_POST['email']; ?>. <br/>volg de instructies op de email en log daarna weer in</p>
             <a href="">opnieuw stuuren</a><br>
             <a href="../login/">login</a>
