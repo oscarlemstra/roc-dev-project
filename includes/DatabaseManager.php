@@ -10,7 +10,13 @@ class DatabaseManager {
 
     //functions for connecting to database
     private function databaseHandle () {
-        $dbh = new PDO('mysql:host='.$this->host.';dbname='.$this->dbname.';port='.$this->port, $this->user, $this->pass);
+        try {
+            $dbh = new PDO('mysql:host='.$this->host.';dbname='.$this->dbname.';port='.$this->port, $this->user, $this->pass);
+        }
+        catch(Exception $e) {
+            echo "unable to establish connection to database.";
+            die();
+        }
         return $dbh;
     }
 
