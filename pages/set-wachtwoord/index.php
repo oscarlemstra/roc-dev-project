@@ -64,7 +64,7 @@
             }
             else
             {
-                echo '<h1>wachtwoord succesvol reset</h1>';
+                echo '<h2>wachtwoord succesvol reset</h2>';
                 echo '<a href="../login/">login</a>';
             }
         ?>
