@@ -10,6 +10,8 @@ class DatabaseManager {
 
     //functions for connecting to database
     private function databaseHandle () {
+        // het is handiger om hier een try catch toe te voegen
+        // we kunnen de checkConnectionToDatabase function houden maar dit is ook goed om te hebben.
         try {
             $dbh = new PDO('mysql:host='.$this->host.';dbname='.$this->dbname.';port='.$this->port, $this->user, $this->pass);
         }
