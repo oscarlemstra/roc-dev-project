@@ -38,8 +38,23 @@
         exit();
     }
     
-    // if email didnt fail put securety code into database
-    $dbm->updateRecordsFromTable("password_reset_code", "code", $securetyString, "email", $_POST['email']);
+    // if email didnt fail:
+    //   check if password_reset_code already has a entry for the user
+    //     if no: make one
+    //     if yes: update record
+    $userRecord = $dbm->getRecordsFromTable("user", "email", $email);
+    $password_reset_code_id = $userRecord[0]['password_reset_code_id'];
+
+    $row = $dbm->getRecordsFromTable('password_reset_code', 'password_reset_code_id', $password_reset_code_id);
+
+    if ($row) {
+        $dbm->updateRecordsFromTable("password_reset_code", "code", $securetyString, "password_reset_code_id", $password_reset_code_id);
+    } else {
+        $array = array(
+            'code' => $securetyString
+        );
+        $dbm->insertRecordToTable('password_reset_code', $array);
+    }
 
 
     function RandomString($limit) {

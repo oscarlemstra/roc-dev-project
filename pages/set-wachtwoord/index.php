@@ -7,13 +7,21 @@
     require_once '../../includes/DatabaseManager.php';
     $dbm = new DatabaseManager();
 
+    if ( !isset($_GET['e']) || !isset($_GET['s']) ) {
+        echo 'missing parameters';
+        exit();
+    }
+
     $encryptedEmail = $_GET['e'];
     $securetyKey = $_GET['s'];
 
     $email = encrypt_decrypt($encryptedEmail, 'decrypt');
 
     // validate securety key authenticity
-    $record = $dbm->getRecordsFromTable("password_reset_code", "email", $email);
+    $userRecord = $dbm->getRecordsFromTable("user", "email", $email);
+    $password_reset_code_id = $userRecord[0]['password_reset_code_id'];
+
+    $record = $dbm->getRecordsFromTable("password_reset_code", "password_reset_code_id", $password_reset_code_id);
     if ($record[0]['code'] !== $securetyKey) {
         echo "dit is niet de juiste URL";
         exit();
@@ -33,6 +41,9 @@
             $hashedPwd = hashPassword($userID, $pwd);
 
             $dbm->updateRecordsFromTable('user', 'password', $hashedPwd, 'email', $email);
+
+            // emtpy code in database
+            $dbm->updateRecordsFromTable('password_reset_code', 'code', '', 'password_reset_code_id', $password_reset_code_id);
 
             $scriptResult = true;
         }
