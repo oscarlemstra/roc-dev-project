@@ -4,6 +4,8 @@
     require_once '../../includes/signup_error_handling.php';
     require_once '../../includes/encrypt-decrypt.php';
     require_once '../../includes/hash-password.php';
+    require_once '../../includes/DatabaseManager.php';
+    $dbm = new DatabaseManager();
 
     $encryptedEmail = $_GET['e'];
     $securetyKey = $_GET['s'];
@@ -11,7 +13,7 @@
     $email = encrypt_decrypt($encryptedEmail, 'decrypt');
 
     // validate securety key authenticity
-    $record = $dbm->getRecordsFromTable("password_reset_code", "email", $_POST['email']);
+    $record = $dbm->getRecordsFromTable("password_reset_code", "email", $email);
     if ($record[0]['code'] !== $securetyKey) {
         echo "dit is niet de juiste URL";
         exit();
@@ -35,8 +37,7 @@
             $scriptResult = true;
         }
     }
-
-    $scriptResult = false;
+    else { $scriptResult = false; }
 ?>
 
 <!DOCTYPE html>
@@ -60,6 +61,11 @@
 
                     echo '<input type="submit" value="submit" name="submit" id="submit">';
                 echo '</form>';
+            }
+            else
+            {
+                echo '<h1>wachtwoord succesvol reset</h1>';
+                echo '<a href="../login/">login</a>';
             }
         ?>
         
