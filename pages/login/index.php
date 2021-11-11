@@ -14,7 +14,7 @@
         <form method="post">
             <h1>Inloggen</h1>
             <a href="../signup">account registreren</a>
-            <input type="submit" formaction="../wachtwoord-reset/" value="Wachtwoord reseten" name="submit" class="password-reset-button">
+            <input type="submit" formaction="../wachtwoord-reset-request/" value="Wachtwoord reseten" name="submit" class="password-reset-button">
 
             <input type="email" name="email" placeholder="Email" id="email" required>
             <input type="password" name="password" placeholder="Wachtwoord" id="pwd">

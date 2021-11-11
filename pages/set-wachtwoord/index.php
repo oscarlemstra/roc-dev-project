@@ -3,6 +3,7 @@
 
     require_once '../../includes/signup_error_handling.php';
     require_once '../../includes/encrypt-decrypt.php';
+    require_once '../../includes/hash-password.php';
 
     $encryptedEmail = $_GET['e'];
     $securetyKey = $_GET['s'];
@@ -24,12 +25,12 @@
         $result = pwdCheck($pwd, $confirmedpwd, $email);
         if ($result) {
             $_SESSION['errorMessage'] = $result;
-        }
+        } else {
+            $userID = $dbm->getRecordsFromTable("user", "email", $email)[0]['user_id'];
+            $hashedPwd = hashPassword($userID, $pwd);
 
-        if (!$result) {
-            $dbm->updateRecordsFromTable('user', 'password', $pwd, 'email', $email);
+            $dbm->updateRecordsFromTable('user', 'password', $hashedPwd, 'email', $email);
         }
-
     }
 ?>
 
