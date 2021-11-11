@@ -64,19 +64,19 @@ a {
 }
 
 .header {
-  height: 106px;
+  height: 80px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.199);
 }
 
 .logo {
-  width: 242px;
-  height: 106px;
+  width: 180px;
+  height: 80px;
 }
 
 .hamburger {
   float: right;
   /* margin: 25px 25px 0 0; */
-  padding: 24px 15px;
+  margin: 10px 10px;
 }
 
 .hamburger:active {
@@ -88,6 +88,27 @@ a {
   flex-direction: column;
   text-align: center;
   padding: 20px;
+}
+
+.profile {
+  display: none;
+  margin-right: 20px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #999;
+  cursor: pointer;
+}
+
+.profile-menu {
+  display: none;
+  width: 200px;
+  height: 250px;
+  background-color: #fff;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.075);
+  position: absolute;
+  top: 90px;
+  right: 5px;
 }
 
 .planning {
@@ -105,9 +126,12 @@ p {
 }
 
 .planning-create-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 20px auto 0 auto;
-  width: 204px;
-  height: 69px;
+  width: 200px;
+  height: 30px;
   border-radius: 10px;
 }
 
@@ -133,7 +157,7 @@ p {
   background-color: #f8f9fa;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.08);
 }
 .subject-color-container {
 }
@@ -162,7 +186,7 @@ p {
   margin: 0 auto 0 auto;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.075);
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
@@ -188,6 +212,17 @@ p {
   margin: 10px 0 0 10px;
 }
 
+.progression-meter {
+  box-sizing: content-box;
+  height: 18.4px;
+  position: sticky;
+  bottom: 0;
+  margin: 0 0 0 0;
+  background: linear-gradient(to right, #ee7326 5%, #b7b7b7 0);
+  padding: 0;
+  text-align: center;
+}
+
 /* Tablet */
 
 /* Desktop */
@@ -198,14 +233,23 @@ p {
     grid-template-columns: 340px 1fr;
     gap: 25px;
     margin: 0 auto;
+    position: relative;
   }
 
   .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     grid-column: 1 / -1;
+    position: relative;
   }
 
   .header.color-roc-orange {
     background-color: #fff;
+  }
+
+  .profile {
+    display: block;
   }
 
   .hamburger {
@@ -213,7 +257,10 @@ p {
   }
 
   .hamburger-menu {
-    grid-column: 1 / -1;
+    /* grid-column: 2 / -1; */
+    /* position: absolute;
+    top: 110px;
+    right: 10px; */
   }
 
   .subjects {
@@ -222,6 +269,12 @@ p {
     gap: 25px;
   }
 
-  .subject-container {
+  .sub-con {
+    position: relative;
+  }
+
+  .panel {
+    position: absolute;
+    transform: translate(13.5%);
   }
 }
