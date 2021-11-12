@@ -79,22 +79,39 @@ class DatabaseManager {
         $counter = 1;
         $columnNames = "";
         $columnValues = "";
+        //$columnValuesQ = "";
 
         foreach ($values as $key => $value) {
             if ($counter !== $arrayLength) {
                 $columnNames .= $key . ", ";
                 $columnValues .= "'" . $value . "', ";
+                //$columnValuesQ .= "'" . "?" . "', ";
             }
             else {
                 $columnNames .= $key;
                 $columnValues .= "'" . $value . "'";
+                //$columnValuesQ .= "'" . "?" . "'";
             }
 
             $counter++;
         }
 
-        $query = "INSERT INTO $tableName ($columnNames) VALUES ($columnValues)";
 
-        $this->databaseHandle()->query($query);
+        $sql = "INSERT INTO $tableName ($columnNames) /* OUTPUT INSERTED.user_role_id */ VALUES ($columnValues)";
+        $query = $this->databaseHandle()->prepare($sql);
+
+        try {
+            //$this->databaseHandle()->beginTransaction();
+            $query->execute();
+            //$this->databaseHandle()->commit();
+            //print $this->databaseHandle()->lastInsertId();
+            //$returnValue = $query->fetch(PDO::FETCH_ASSOC);
+        }
+        catch (PDOException $e) {
+            //$this->databaseHandle()->rollBack();
+            print "ERROR!: " . $e->getMessage() . "</br>";
+        }
+
+        //return $returnValue;
     }
 }
