@@ -43,7 +43,14 @@ if(!sendEmail_emailVerificationCode($email, $dbm)) {
 }
 
 
-$signup = array("email"=>$_POST['email'], "password"=>$_POST['password']);
-$_SESSION['signup'] = $signup;
+$_SESSION['signup'] = [
+    "email"=>$_POST['email'],
+    "first_name"=>$_POST['first_name'],
+    "tussenvoegsel"=>$_POST['tussenvoegsel'],
+    "last_name"=>$_POST['last_name'],
+    "student_nr"=>$_POST['student_nr'],
+    "class"=>$_POST['class'],
+    "password"=>$_POST['password'],
+];
 
 header('location: ../pages/6code-verification');
