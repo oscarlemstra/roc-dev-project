@@ -19,6 +19,7 @@ session_start();
     <div class="header color-roc-orange">
         <img class="logo" alt="ROC Logo" src="../../images/02_ROCvF_logo_PLAT_RGB%201.png">
         <img class="hamburger" alt="hamburger" src="../../images/hamburger.png">
+        <div class="profile"></div>
     </div>
 
     <div class="hamburger-menu color-roc-orange">
@@ -30,6 +31,8 @@ session_start();
         <br>
         <a class="color-roc-white-text" href="#">Vakken</a>
     </div>
+
+    <div class="profile-menu"></div>
 
     <div class="planning">
         <h2 class="color-roc-orange-text">Planning van vandaag</h2>
@@ -46,7 +49,7 @@ session_start();
     <div class="subjects">
         <!--dit is een template voor de vakcontainer
         zodra hierbij php gebruikt gaat worden raad ik aan om het op teroepen en echo-en met een foreach-->
-        <div>
+        <div class="sub-con">
 
             <div class="subject-container">
                 <div class="subject-color-container color-kerntaak-frontend"></div>
@@ -55,7 +58,7 @@ session_start();
                     <p class="text-center">5 Weken<br>Programmeren<br>(Frontend)</p>
                 </div>
             </div>
-            <div class="panel">test</div>
+            <div class="panel">test maar het heeft heel veel tekst maar echt hoor echt veel tekst moet je eens kijken naar dit</div>
         </div>
 
         <div>
@@ -115,6 +118,10 @@ session_start();
         </div>
     </div>
 
+    
+</div>
+<div class="progression-meter">
+    <p>5%</p>
 </div>
 <script src="../../javascript/study-progression.js"></script>
 </body>
