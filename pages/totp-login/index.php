@@ -16,7 +16,6 @@ $g = new GoogleAuthenticator();
 
 //get record of user and backup codes from DB
 $userRecord = $dbm->getRecordsFromTable("user", "email", $email);
-$backupsRecord = $dbm->getRecordsFromTable("2fa_backup_codes", "email", $email);
 
 //SUBMIT is pressed
 if (isset($_POST['pass-code'])) {
@@ -32,22 +31,28 @@ if (isset($_POST['pass-code'])) {
     if ($g->checkCode($secret, $_POST['pass-code'])) {
         //if correct passcode
 
-        if ($backupsRecord && $userRecord) {
-            //if backup and user exist
-            header('location: ../home');
-        } else {
-            //if there aren't any backup codes in DB
-            header('location: ../totp-recovery-codes');
+        if ($userRecord) {
+            //if user exists in DB
 
+            if ($_SESSION['secret']) {
+                //if secret in session, update DB
+                $dbm->updateRecordsFromTable("user", "secret", $_SESSION['signup']['secret'], "email", $email);
+            }
+
+            $_SESSION['logged_in'] = true;
+            header('location: ../home');
+
+        } else {
+            //if user doesn't exist, continue signup process
+            header('location: ../totp-recovery-codes');
         }
-        exit();
 
     } else {
         //show error
         $_SESSION['errorMessage'] = "incorrecte code";
         header("location: index.php");
-        exit();
     }
+    exit();
 }
 
 ?>
