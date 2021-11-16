@@ -42,15 +42,16 @@
     //   check if password_reset_code already has a entry for the user
     //     if no: make one
     //     if yes: update record
-    $userRecord = $dbm->getRecordsFromTable("user", "email", $email);
-    $password_reset_code_id = $userRecord[0]['password_reset_code_id'];
+    $userRecord = $dbm->getRecordsFromTable('user', 'email', $email);
+    $userId = $userRecord[0]['user_id'];
 
-    $row = $dbm->getRecordsFromTable('password_reset_code', 'password_reset_code_id', $password_reset_code_id);
+    $row = $dbm->getRecordsFromTable('password_reset_code', 'user_id', $userId);
 
     if ($row) {
-        $dbm->updateRecordsFromTable("password_reset_code", "code", $securetyString, "password_reset_code_id", $password_reset_code_id);
+        $dbm->updateRecordsFromTable('password_reset_code', 'code', $securetyString, 'user_id', $userId);
     } else {
         $array = array(
+            'user_id' => $userId,
             'code' => $securetyString
         );
         $dbm->insertRecordToTable('password_reset_code', $array);

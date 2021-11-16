@@ -19,10 +19,9 @@
 
 
     // validate securety key authenticity
-    $userRecord = $dbm->getRecordsFromTable("user", "email", $email);
-    $password_reset_code_id = $userRecord[0]['password_reset_code_id'];
+    $userID = $dbm->getRecordsFromTable("user", "email", $email)[0]['user_id'];
 
-    $record = $dbm->getRecordsFromTable("password_reset_code", "password_reset_code_id", $password_reset_code_id);
+    $record = $dbm->getRecordsFromTable("password_reset_code", "user_id", $userID);
     if ($record[0]['code'] !== $securetyKey || $record[0]['code'] === 'empty_field') {
         echo "dit is niet de juiste URL";
         exit();
@@ -38,14 +37,12 @@
         if ($result) {
             $_SESSION['errorMessage'] = $result;
         } else {
-            $userID = $dbm->getRecordsFromTable("user", "email", $email)[0]['user_id'];
-
             // hash password and update it in database
             $hashedPwd = hashPassword($userID, $pwd);
             $dbm->updateRecordsFromTable('user', 'password', $hashedPwd, 'email', $email);
 
             // emtpy code in database
-            $dbm->updateRecordsFromTable('password_reset_code', 'code', 'empty_field', 'password_reset_code_id', $password_reset_code_id);
+            $dbm->updateRecordsFromTable('password_reset_code', 'code', 'empty_field', 'user_id', $userID);
 
             // $scriptResult is used later in this file to check if i need to show the form or the messages saying it succesfully changed
             $scriptResult = true;
