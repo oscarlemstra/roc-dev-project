@@ -10,21 +10,21 @@
     // check if email exists
     if ($_POST['email'] === '') {
         $_SESSION['errorMessage'] = 'email is niet ingevuld';
-        header('location: ./login');
+        header('location: ../login');
         exit();
     }
 
     // filter email to check if it has a valid email format
     if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         $_SESSION['errorMessage'] = 'dit is geen email';
-        header('location: ./login');
+        header('location: ../login');
         exit();
     }
 
     // check if account with thie email exists
     if (!$dbm->getRecordsFromTable("user", "email", $_POST['email'])) {
         $_SESSION['errorMessage'] = 'deze email heeft geen account';
-        header('location: ./login');
+        header('location: ../login');
         exit();
     }
 
