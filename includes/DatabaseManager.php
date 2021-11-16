@@ -31,7 +31,7 @@ class DatabaseManager {
 
     //get functions
     public function getAllRecordsFromTable ($tableName) {
-        $query = "SELECT * FROM $tableName";
+        $query = "SELECT * FROM `$tableName`";
         $records = array();
 
         foreach ($this->databaseHandle()->query($query) as $row) {
@@ -42,7 +42,7 @@ class DatabaseManager {
 
     
     public function getRecordsFromTable ($tableName, $columnName, $columnValue) {
-        $query = "SELECT * FROM $tableName WHERE $columnName = '$columnValue'";
+        $query = "SELECT * FROM `$tableName` WHERE `$columnName` = '$columnValue'";
         $records = array();
 
         foreach ($this->databaseHandle()->query($query) as $row) {
@@ -54,7 +54,7 @@ class DatabaseManager {
 
     //update function
     public function updateRecordsFromTable ($tableName, $columnName, $newColumnValue, $searchColumn, $searchColumnValue) {
-        $query = "UPDATE $tableName SET $columnName = '$newColumnValue' WHERE $searchColumn = '$searchColumnValue'";
+        $query = "UPDATE `$tableName` SET `$columnName` = '$newColumnValue' WHERE `$searchColumn` = '$searchColumnValue'";
 
         $this->databaseHandle()->query($query);
     }
@@ -62,7 +62,7 @@ class DatabaseManager {
 
     //delete function
     public function deleteRecordsFromTable ($tableName, $columnName, $columnValue) {
-        $query = "DELETE FROM $tableName WHERE $columnName = '$columnValue'";
+        $query = "DELETE FROM `$tableName` WHERE `$columnName` = '$columnValue'";
 
         $this->databaseHandle()->query($query);
     }
@@ -79,39 +79,29 @@ class DatabaseManager {
         $counter = 1;
         $columnNames = "";
         $columnValues = "";
-        //$columnValuesQ = "";
 
         foreach ($values as $key => $value) {
             if ($counter !== $arrayLength) {
-                $columnNames .= $key . ", ";
+                $columnNames .= "`" . $key . "`, ";
                 $columnValues .= "'" . $value . "', ";
-                //$columnValuesQ .= "'" . "?" . "', ";
             }
             else {
-                $columnNames .= $key;
+                $columnNames .= "`" . $key . "`";
                 $columnValues .= "'" . $value . "'";
-                //$columnValuesQ .= "'" . "?" . "'";
             }
 
             $counter++;
         }
 
 
-        $sql = "INSERT INTO $tableName ($columnNames) /* OUTPUT INSERTED.user_role_id */ VALUES ($columnValues)";
+        $sql = "INSERT INTO `$tableName` ($columnNames) VALUES ($columnValues)";
         $query = $this->databaseHandle()->prepare($sql);
 
         try {
-            //$this->databaseHandle()->beginTransaction();
             $query->execute();
-            //$this->databaseHandle()->commit();
-            //print $this->databaseHandle()->lastInsertId();
-            //$returnValue = $query->fetch(PDO::FETCH_ASSOC);
         }
         catch (PDOException $e) {
-            //$this->databaseHandle()->rollBack();
             print "ERROR!: " . $e->getMessage() . "</br>";
         }
-
-        //return $returnValue;
     }
 }
