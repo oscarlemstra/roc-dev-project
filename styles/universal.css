@@ -60,7 +60,7 @@ a {
 
 .container {
   background-color: #fff;
-  margin: 40px 20px;
+  margin-bottom: 40px;
 }
 
 /* Mobile */
@@ -79,7 +79,7 @@ a {
 }
 
 .hamburger {
-  padding: 24px 15px;
+  padding: 15px 15px;
 }
 
 .profile {
@@ -270,6 +270,8 @@ a {
     grid-template-columns: 340px 1fr;
     gap: 15px;
     position: relative;
+    margin: 40px 20px;
+    height: 100vh;
   }
 
   .header {
@@ -326,10 +328,11 @@ a {
   .subjects {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    /* grid-template-rows: auto; */
     column-gap: 90px;
     gap: 70px;
     margin: 0 0 50px 50px;
+    height: 50vh;
   }
 
   .panel {

@@ -124,6 +124,57 @@ session_start();
         </div>
         <div class="panel">test<br>maar<br>met<br>breakpoints</div>
     </div>
+    <div>
+        <div class="subject-container">
+            <div class="subject-color-container color-kerntaak-regulier"></div>
+            <div class="subject-container__text">
+                <h2 class="text-center">Nederlands</h2>
+                <p class="text-center">5 Weken<br>Regulier</p>
+            </div>
+        </div>
+        <div class="panel">test<br>maar<br>met<br>breakpoints</div>
+    </div>
+    <div>
+        <div class="subject-container">
+            <div class="subject-color-container color-kerntaak-regulier"></div>
+            <div class="subject-container__text">
+                <h2 class="text-center">Nederlands</h2>
+                <p class="text-center">5 Weken<br>Regulier</p>
+            </div>
+        </div>
+        <div class="panel">test<br>maar<br>met<br>breakpoints</div>
+    </div>
+    <div>
+        <div class="subject-container">
+            <div class="subject-color-container color-kerntaak-regulier"></div>
+            <div class="subject-container__text">
+                <h2 class="text-center">Nederlands</h2>
+                <p class="text-center">5 Weken<br>Regulier</p>
+            </div>
+        </div>
+        <div class="panel">test<br>maar<br>met<br>breakpoints</div>
+    </div>
+    <div>
+        <div class="subject-container">
+            <div class="subject-color-container color-kerntaak-regulier"></div>
+            <div class="subject-container__text">
+                <h2 class="text-center">Nederlands</h2>
+                <p class="text-center">5 Weken<br>Regulier</p>
+            </div>
+        </div>
+        <div class="panel">test<br>maar<br>met<br>breakpoints</div>
+    </div>
+    <div>
+        <div class="subject-container">
+            <div class="subject-color-container color-kerntaak-regulier"></div>
+            <div class="subject-container__text">
+                <h2 class="text-center">Nederlands</h2>
+                <p class="text-center">5 Weken<br>Regulier</p>
+            </div>
+        </div>
+        <div class="panel">test<br>maar<br>met<br>breakpoints</div>
+    </div>
+
 
     </div>
 
