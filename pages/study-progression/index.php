@@ -124,6 +124,7 @@ session_start();
         </div>
         <div class="panel">test<br>maar<br>met<br>breakpoints</div>
     </div>
+
     <div>
         <div class="subject-container">
             <div class="subject-color-container color-kerntaak-regulier"></div>
@@ -134,6 +135,7 @@ session_start();
         </div>
         <div class="panel">test<br>maar<br>met<br>breakpoints</div>
     </div>
+
     <div>
         <div class="subject-container">
             <div class="subject-color-container color-kerntaak-regulier"></div>
@@ -144,6 +146,7 @@ session_start();
         </div>
         <div class="panel">test<br>maar<br>met<br>breakpoints</div>
     </div>
+
     <div>
         <div class="subject-container">
             <div class="subject-color-container color-kerntaak-regulier"></div>
@@ -154,6 +157,7 @@ session_start();
         </div>
         <div class="panel">test<br>maar<br>met<br>breakpoints</div>
     </div>
+
     <div>
         <div class="subject-container">
             <div class="subject-color-container color-kerntaak-regulier"></div>
@@ -164,6 +168,7 @@ session_start();
         </div>
         <div class="panel">test<br>maar<br>met<br>breakpoints</div>
     </div>
+    
     <div>
         <div class="subject-container">
             <div class="subject-color-container color-kerntaak-regulier"></div>
