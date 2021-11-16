@@ -50,7 +50,7 @@ function sendEmail_PasswordReset($email, $securetyString, $dbm) {
     require_once './encrypt-decrypt.php';
 
     $destinationCode = encrypt_decrypt('encrypt', $email);
-    $destination = "http://localhost/pages/set-wachtwoord?e=".$destinationCode."&s=".$securetyString;
+    $destination = "http://localhost/pages/wachtwoord-reset?e=".$destinationCode."&s=".$securetyString;
 
     $to = $email;
     $subject = "Email verificatie";
