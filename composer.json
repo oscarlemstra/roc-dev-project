@@ -1,5 +1,6 @@
 {
     "require": {
-        "sonata-project/google-authenticator": "^1.1"
+        "sonata-project/google-authenticator": "^1.1",
+      "ext-mysqli": "*"
     }
 }
