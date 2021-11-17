@@ -10,11 +10,10 @@ $dbm = new DatabaseManager();
 
 //get record of user and backup codes from DB
 $userRecord = $dbm->getRecordsFromTable("user", "email", $email);
-$backupsRecord = $dbm->getRecordsFromTable("2fa_backup_codes", "email", $email);
+$backup_id = $userRecord[0]['2fa_backup_codes_id'];
+$backupsRecord = $dbm->getRecordsFromTable("2fa_backup_codes", "2fa_backup_codes_id", $backup_id);
 
-//default state
-$correctCode = false;
-
+//if button is pressed
 if (isset($_POST['backup-code'])) {
 
     //check code in post for each code in DB
