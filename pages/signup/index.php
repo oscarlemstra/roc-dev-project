@@ -26,7 +26,6 @@ $_SESSION['signup']['user_role'] = "student";
                     <input type="text" name="tussenvoegsel" placeholder="Tussenvoegsels" id="tussenvoegsel">
                     <input type="text" name="last_name" placeholder="Achternaam" id="last_name" required>
                 </div>
-
                 <div class="flex-item">
                     <input type="text" name="student_nr" placeholder="Student nummer" id="student_nr" required>
                     <input type="text" name="class" placeholder="Klas" id="class" required>
