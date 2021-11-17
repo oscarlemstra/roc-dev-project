@@ -28,7 +28,17 @@ $_SESSION['signup']['user_role'] = "student";
                 </div>
                 <div class="flex-item">
                     <input type="text" name="student_nr" placeholder="Student nummer" id="student_nr" required>
-                    <input type="text" name="group" placeholder="Klas" id="group" required>
+                    <select name="class" id="klassen">
+                        <option value="" selected disabled hidden>klas</option>
+                        <?php
+                            require_once '../../includes/DatabaseManager.php';
+                            $dbm = new DatabaseManager();
+                            $result = $dbm->getAllRecordsFromTable('group');
+                            foreach ($result as $row) {
+                                echo "<option value='" . $row['name'] . "'>" . $row['name'] . "</option>";
+                            }
+                        ?>
+                    </select>
 
                     <input type="password" name="password" placeholder="Wachtwoord" id="pwd" required>
                     <input type="password" name="confirmPassword" placeholder="Herhaal Wachtwoord" id="pwd2" required>
