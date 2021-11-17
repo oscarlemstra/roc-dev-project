@@ -83,7 +83,7 @@ a {
     }
 }
 
-input[type = 'email'], input[type = 'password'], input[type = 'text'] {
+input, select {
     background: none;
     display: block;
 
@@ -102,7 +102,7 @@ input[type = 'email'], input[type = 'password'], input[type = 'text'] {
 
     transition: 0.25s;
 }
-input[type = 'email']:focus, input[type = 'password']:focus, input[type = 'text']:focus {
+input:focus, select:focus {
     width: 90%;
     border: 2px solid var(--focused-color);
 }
@@ -139,13 +139,13 @@ input[class="password-reset-button"] {
 @media screen and (min-width: 600px) {
     @media screen and (max-height: 850px) {
         input[type = 'email'], input[type = 'password'], input[type = 'text'] {
-            width: 80%;
+            width: 75%;
         }
         input[type = 'email']:focus, input[type = 'password']:focus, input[type = 'text']:focus {
-            width: 100%;
+            width: 90%;
         }
         input[type = 'submit'] {
-            width: 30%;
+            width: 35%;
         }
     }
 }
