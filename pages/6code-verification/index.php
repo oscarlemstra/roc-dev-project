@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../styles/login-signup-style.css">
-    <title>verificatie</title>
+    <title>email verificatie</title>
 </head>
 <body>
     <div class="container">
         <form action="../../php/email_verification_handler.php" method="post">
-            <h1>verificatie</h1>
+            <h1>email verificatie</h1>
 
             <input type="text" name="verification_code" placeholder="Verificatie code" id="verification_code" required>
             <input type="submit" value="submit" class="submitenabled" id="submit">
