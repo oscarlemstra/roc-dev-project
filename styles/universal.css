@@ -48,11 +48,11 @@ a {
   background-color: black;
 }
 
-.color-kerntaak-frontend {
+.color-kerntaak-programmeren {
   background-color: #04d900;
 }
 
-.color-kerntaak-backend {
+.color-kerntaak-generiek {
   background-color: #0090cd;
 }
 
@@ -60,8 +60,12 @@ a {
   background-color: #ffff00;
 }
 
-.color-kerntaak-keuzedeel {
+.color-kerntaak-stage {
   background-color: #df0000;
+}
+
+.color-kerntaak-examen {
+  background-color: #ee7326;
 }
 
 .container {
@@ -207,7 +211,8 @@ a {
 .progression-meter {
   box-sizing: content-box;
   height: 18.4px;
-  position: sticky;
+  position: fixed;
+  width: 100%;
   bottom: 0;
   margin: 0 0 0 0;
   background: linear-gradient(to right, #ee7326 0%, #b7b7b7 0);
