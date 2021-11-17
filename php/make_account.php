@@ -14,10 +14,14 @@ require_once "../includes/DatabaseManager.php";
 //connections
 $dbm = new DatabaseManager();
 
-//prepare insert array
-$insertArray = [
-    "user_role_id" => $_SESSION['signup']['user_role_id'],
-    "group_id" => $_SESSION['signup']['group_id'],
+//get user_role record and group record
+$userRoleRecord = $dbm->getRecordsFromTable("user_role", "role", $_SESSION['signup']['user_role']);
+$groupRecord = $dbm->getRecordsFromTable("group", "name", $_SESSION['signup']['class']);
+
+//prepare user insert array
+$userInsertArray = [
+    "user_role_id" => $userRoleRecord[0]['user_role_id'],
+    "group_id" => $groupRecord[0]['group_id'],
     "student_nr" => $_SESSION['signup']['student_nr'],
     "first_name" => $_SESSION['signup']['first_name'],
     "tussenvoegsel" => $_SESSION['signup']['tussenvoegsel'],
@@ -28,24 +32,20 @@ $insertArray = [
 ];
 
 //insert into user table
-//$dbm->insertRecordToTable("user", $insertArray);
+$dbm->insertRecordToTable("user", $userInsertArray);
+
 
 //get user record
-//$userRecord = $dbm->getRecordsFromTable("user", "email", $_SESSION['signup']['email']);
+$userRecord = $dbm->getRecordsFromTable("user", "email", $_SESSION['signup']['email']);
 
-//update backup insert array
-//$backupInsertArray = ['user_id' => $userRecord[0]['user_id']] + $_SESSION['backupInsertArray'];
+//prepare backup insert array
+$backupInsertArray = ['user_id' => $userRecord[0]['user_id']] + $_SESSION['backupInsertArray'];
 
 //insert into 2fa backup table
-//$dbm->insertRecordToTable();
-
-//print_r($backupInsertArray);
-echo "<pre>";
-print_r($_SESSION);
-echo "</pre>";
+$dbm->insertRecordToTable('2fa_backup_codes', $backupInsertArray);
 
 
 //go to homepage
-//$_SESSION['logged-in'] = true;
-//header('location: ../pages/home');
-//exit();
+$_SESSION['logged-in'] = true;
+header('location: ../pages/study-progression');
+exit();

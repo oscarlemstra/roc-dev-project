@@ -26,8 +26,6 @@ if (isset($_POST['backup-code'])) {
             $dbm->updateRecordsFromTable("user", "secret", NULL, "email", $_SESSION['email']);
 
             //go to totp-signup
-            $_SESSION['login']['email'] = $email;
-            $_SESSION['signup']['email'] = NULL;
             header('location: ../totp-signup');
             exit();
         }
