@@ -25,7 +25,7 @@
     <form action="pages/signup/" method="post">
         <input type="submit" value="Registratie student" class="submitenabled" id="submit">
     </form>
-    <form action="pages/signup/" method="post">
+    <form action="" method="post">
         <input type="submit" value="Registratie docent" class="submitenabled" id="submit">
     </form>
 </div>

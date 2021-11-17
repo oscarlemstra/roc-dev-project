@@ -41,7 +41,7 @@ $insertArray = [
 
 //print_r($backupInsertArray);
 echo "<pre>";
-print_r($_SESSION['signup']);
+print_r($_SESSION);
 echo "</pre>";
 
 

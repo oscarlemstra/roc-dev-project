@@ -1,4 +1,7 @@
-<?php session_start() ?>
+<?php session_start();
+
+$_SESSION['signup']['user_role'] = "student";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
