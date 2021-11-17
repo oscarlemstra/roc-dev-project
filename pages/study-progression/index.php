@@ -119,12 +119,10 @@ $userSubjects = $dbm->getRecordsFromTable("user_has_subject", "user_id", 1);
         }
     }
     
-    $count = 0;
 
     foreach($userSubjects as $record) {
         $subject = $dbm->getRecordsFromTable("subject", "subject_id", $record['subject_id']);
         $subjectType = $dbm->getRecordsFromTable("subject_type", "type_id", $subject[0]['type_id']);
-        $count++;
 
         // begin 1
         echo "<div>";
@@ -153,10 +151,21 @@ $userSubjects = $dbm->getRecordsFromTable("user_has_subject", "user_id", 1);
     
 </div>
 <div class="progression-meter">
-    <p class="progression"><?php
-    ?>50%</p>
+    <p class="progression"><?php 
+        $subjectCount = count($userSubjects);
+        $i = 0;
+
+        foreach ($userSubjects as $row) {
+            if ($row['finished']) {
+                $i++;
+            }
+        }
+
+        $result = 100 / $subjectCount * $i;
+
+        echo round($result)."%";
+    ?></p>
 </div>
 <script src="../../javascript/study-progression.js"></script>
 </body>
 </html>
-
