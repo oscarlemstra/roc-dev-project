@@ -96,6 +96,7 @@ session_start();
                 <h2 class="text-center">HTML</h2>
                 <p class="text-center">5 Weken<br>Programmeren<br>(Frontend)</p>
             </div>
+            <img src="../../images/tick-mark.png" alt="checkmark" class="checkmark done">
         </div>
         <div class="panel">test</div>
     </div>
@@ -107,6 +108,7 @@ session_start();
                 <h2 class="text-center">PHP</h2>
                 <p class="text-center">5 Weken<br>Programmeren<br>(Backend)</p>
             </div>
+            <img src="../../images/tick-mark.png" alt="checkmark" class="checkmark done">
         </div>
         <div class="panel">test 2</div>
     </div>
@@ -118,6 +120,7 @@ session_start();
                 <h2 class="text-center">Verdieping Software</h2>
                 <p class="text-center">5 Weken<br>Programmeren<br>(Keuzedeel)</p>
             </div>
+            <img src="../../images/tick-mark.png" alt="checkmark" class="checkmark">
         </div>
         <div class="panel">test maar het heeft heel veel tekst maar echt hoor echt veel tekst moet je eens kijken naar dit</div>
     </div>
@@ -129,6 +132,7 @@ session_start();
                 <h2 class="text-center">Nederlands</h2>
                 <p class="text-center">5 Weken<br>Regulier</p>
             </div>
+            <img src="../../images/tick-mark.png" alt="checkmark" class="checkmark">
         </div>
         <div class="panel">test<br>maar<br>met<br>breakpoints</div>
     </div>
@@ -140,6 +144,7 @@ session_start();
                 <h2 class="text-center">Nederlands</h2>
                 <p class="text-center">5 Weken<br>Regulier</p>
             </div>
+            <img src="../../images/tick-mark.png" alt="checkmark" class="checkmark">
         </div>
         <div class="panel">test<br>maar<br>met<br>breakpoints</div>
     </div>
@@ -151,6 +156,7 @@ session_start();
                 <h2 class="text-center">Nederlands</h2>
                 <p class="text-center">5 Weken<br>Regulier</p>
             </div>
+            <img src="../../images/tick-mark.png" alt="checkmark" class="checkmark">
         </div>
         <div class="panel">test<br>maar<br>met<br>breakpoints</div>
     </div>
@@ -162,6 +168,7 @@ session_start();
                 <h2 class="text-center">Nederlands</h2>
                 <p class="text-center">5 Weken<br>Regulier</p>
             </div>
+            <img src="../../images/tick-mark.png" alt="checkmark" class="checkmark">
         </div>
         <div class="panel">test<br>maar<br>met<br>breakpoints</div>
     </div>
@@ -173,6 +180,7 @@ session_start();
                 <h2 class="text-center">Nederlands</h2>
                 <p class="text-center">5 Weken<br>Regulier</p>
             </div>
+            <img src="../../images/tick-mark.png" alt="checkmark" class="checkmark">
         </div>
         <div class="panel">test<br>maar<br>met<br>breakpoints</div>
     </div>
@@ -184,6 +192,7 @@ session_start();
                 <h2 class="text-center">Nederlands</h2>
                 <p class="text-center">5 Weken<br>Regulier</p>
             </div>
+            <img src="../../images/tick-mark.png" alt="checkmark" class="checkmark">
         </div>
         <div class="panel">test<br>maar<br>met<br>breakpoints</div>
     </div>
