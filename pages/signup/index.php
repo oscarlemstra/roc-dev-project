@@ -15,17 +15,23 @@
             <h1>Account registreren</h1>
             <a href="../login">Inloggen</a>
 
-            <input type="email" name="email" placeholder="Email" id="email" required>
+            <div class="flex-parent">
+                <div class="flex-item">
+                    <input type="email" name="email" placeholder="Email" id="email" required>
 
-            <input type="text" name="first_name" placeholder="Voornaam" id="first_name" required>
-            <input type="text" name="tussenvoegsel" placeholder="Tussenvoegsels" id="tussenvoegsel" required>
-            <input type="text" name="last_name" placeholder="Achternaam" id="last_name" required>
+                    <input type="text" name="first_name" placeholder="Voornaam" id="first_name" required>
+                    <input type="text" name="tussenvoegsel" placeholder="Tussenvoegsels" id="tussenvoegsel" required>
+                    <input type="text" name="last_name" placeholder="Achternaam" id="last_name" required>
+                </div>
 
-            <input type="text" name="student_nr" placeholder="Student nummer" id="student_nr" required>
-            <input type="text" name="class" placeholder="Klas" id="class" required>
+                <div class="flex-item">
+                    <input type="text" name="student_nr" placeholder="Student nummer" id="student_nr" required>
+                    <input type="text" name="class" placeholder="Klas" id="class" required>
 
-            <input type="password" name="password" placeholder="Wachtwoord" id="pwd" required>
-            <input type="password" name="confirmPassword" placeholder="Herhaal Wachtwoord" id="pwd2" required>
+                    <input type="password" name="password" placeholder="Wachtwoord" id="pwd" required>
+                    <input type="password" name="confirmPassword" placeholder="Herhaal Wachtwoord" id="pwd2" required>
+                </div>
+            </div>
 
             <input type="submit" value="Maak account" class="submitenabled" id="submit">
         </form>

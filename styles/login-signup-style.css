@@ -30,6 +30,7 @@ body {
 .container {
     width: 25%;
     min-width: 350px;
+    max-width: 50%;
     height: intrinsic;
     height: -webkit-fit-content;
     height: -moz-max-content;
@@ -56,6 +57,11 @@ a {
     text-decoration: none;
     color: rgb(66, 0, 219);
     font-size: 80%;
+}
+
+.flex-parent {
+    display: flex;
+    flex-direction: column;
 }
 
 input[type = 'email'], input[type = 'password'], input[type = 'text'] {

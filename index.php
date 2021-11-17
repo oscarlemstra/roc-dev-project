@@ -19,13 +19,13 @@
 </head>
 <body>
 <div class="container">
-    <form action="pages/login/index.php" method="post">
+    <form action="pages/login/" method="post">
         <input type="submit" value="Login" class="submitenabled" id="submit">
     </form>
-    <form action="pages/signup/index.php" method="post">
+    <form action="pages/signup/" method="post">
         <input type="submit" value="Registratie student" class="submitenabled" id="submit">
     </form>
-    <form action="pages/signup/index.php" method="post">
+    <form action="pages/signup/" method="post">
         <input type="submit" value="Registratie docent" class="submitenabled" id="submit">
     </form>
 </div>
