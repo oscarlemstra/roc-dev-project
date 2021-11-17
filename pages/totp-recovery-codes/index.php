@@ -1,32 +1,34 @@
 <?php session_start();
 
 //use signup email if isset, else use login
-$email = $_SESSION['signup']['email'] ?? $_SESSION['login']['email'];
+//$email = $_SESSION['signup']['email'] ?? $_SESSION['login']['email'];
 
-require_once "../../includes/DatabaseManager.php";
+//require_once "../../includes/DatabaseManager.php";
 require_once "../../vendor/otp-generator.php";
 
 //connections
-$dbm = new DatabaseManager();
+//$dbm = new DatabaseManager();
 
-//get record of user and backup codes from DB
-$userRecord = $dbm->getRecordsFromTable("user", "email", $email);
-$backupsRecord = $dbm->getRecordsFromTable("2fa_backup_codes", "email", $email);
 
-//generate codes
+////get record of user and backup codes from DB
+//$userRecord = $dbm->getRecordsFromTable("user", "email", $email);
+//$backupsRecord = $dbm->getRecordsFromTable("2fa_backup_codes", "email", $email);
+
+////generate codes
 $codes = generateNumericOTPs(10,6);
 
-if($backupsRecord) {
-    //if record exists in DB, update codes
-    for ($i = 0; $i <= 5; $i++) {
-        $j = $i + 1;
-        $dbm->updateRecordsFromTable("2fa_backup_codes", "code_".$j, $codes[$i], "email", $email);
-    }
-} else {
+
+//if($backupsRecord) {
+//    //if record exists in DB, update codes
+//    for ($i = 0; $i <= 5; $i++) {
+//        $j = $i + 1;
+//        $dbm->updateRecordsFromTable("2fa_backup_codes", "code_".$j, $codes[$i], "email", $email);
+//    }
+//} else {
     //if record does not exist in DB, insert
 
-    $insertArray = [
-        "email" => $email,
+    $_SESSION['backupInsertArray'] = [
+//        "email" => $email,
         "code_1" => $codes[0],
         "code_2" => $codes[1],
         "code_3" => $codes[2],
@@ -35,8 +37,8 @@ if($backupsRecord) {
         "code_6" => $codes[5]
     ];
 
-    $dbm->insertRecordToTable("2fa_backup_codes", $insertArray);
-}
+//    $dbm->insertRecordToTable("2fa_backup_codes", $insertArray);
+//}
 
 
 //display values in array below each other
@@ -61,7 +63,7 @@ function displayArray($arr) {
     <br>
     bewaar deze codes op een veilige plek!
     <br> <br> <br>
-    <form action="<?php /* make account if it doesn't exist, else go home */if(!$userRecord) {echo '../../php/make_account.php';} else {echo '../home';} ?>">
+    <form action="../../php/make_account.php">
         <input type="submit" value="naar home" class="submitenabled" id="submit">
     </form>
 </div>
