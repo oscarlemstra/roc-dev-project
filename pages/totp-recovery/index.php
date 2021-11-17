@@ -16,10 +16,13 @@ $backupsRecord = $dbm->getRecordsFromTable("2fa_backup_codes", "2fa_backup_codes
 //if button is pressed
 if (isset($_POST['backup-code'])) {
 
+    //hash code in post
+    $hashedPostPW = hashPassword($userRecord[0]['user_id'], $_POST['backup-code']);
+
     //check code in post for each code in DB
     for ($i = 1; $i <= 6; $i++) {
         //if correct backup code
-        if ($_POST['backup-code'] === $backupsRecord[0]["code_".$i]) {
+        if ($hashedPostPW === $backupsRecord[0]["code_".$i]) {
 
             //overwrite used code and secret with NULL
             $dbm->updateRecordsFromTable("2fa_backup_codes", "code_".$i, NULL, "code_".$i, $_POST['backup-code']);

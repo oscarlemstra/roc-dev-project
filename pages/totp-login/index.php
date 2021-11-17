@@ -62,7 +62,7 @@ if (isset($_POST['pass-code'])) {
 <body>
 <div class="container">
 <form action="index.php" method="post">
-    <h1>google authenticator</h1>
+    <h1>2-factor authentication</h1>
     <a href="../totp-recovery">telefoon kwijt?</a>
     <input type="text" inputmode="numeric" pattern="[0-9]*" name="pass-code" required>
     <input type="submit" value="verstuur" class="submitenabled" id="submit">

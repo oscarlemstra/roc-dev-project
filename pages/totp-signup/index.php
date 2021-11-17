@@ -32,7 +32,10 @@ $link = Sonata\GoogleAuthenticator\GoogleQrUrl::generate($email, $secret, 'roc-d
 <body>
 <div class="container">
     <img alt ="qr code laadt niet? herlaadt pagina" src="<?php echo $link?>">
-    <br> <br> <br>
+    <br>
+    <?php echo $secret ?>
+    <br>
+    <p>scan deze qr-code met een authenticator app <br>(of voeg handmatig de secret toe)</p>
     <form action="../totp-login">
         <input type="submit" value="volgende" class="submitenabled" id="submit">
     </form>
