@@ -20,35 +20,30 @@ $userRecord = $dbm->getRecordsFromTable("user", "email", $email);
 //SUBMIT is pressed
 if (isset($_POST['pass-code'])) {
 
-    //use secret from DB if it exists, else use secret from session
-    if ($userRecord) {
-        $secret = $userRecord[0]['secret'];
-    } else {
-        $secret = $_SESSION['signup']['secret'];
-    }
+    //use secret from session if isset, else use secret from DB
+    $secret = $_SESSION['signup']['secret'] ?? $userRecord[0]['secret'];
 
     //check code
     if ($g->checkCode($secret, $_POST['pass-code'])) {
         //if correct passcode
 
         if ($userRecord) {
-            //if user exists in DB
+            //if user exists in DB (login process)
 
-            if ($_SESSION['secret']) {
-                //if secret in session, update DB
+            if ($_SESSION['signup']['secret']) {
+                //if secret in session isset (recovery process)
                 $dbm->updateRecordsFromTable("user", "secret", $_SESSION['signup']['secret'], "email", $email);
             }
-
             $_SESSION['logged_in'] = true;
-            header('location: ../home');
+            header('location: ../study-progression');
 
         } else {
-            //if user doesn't exist, continue signup process
+            //signup process
             header('location: ../totp-recovery-codes');
         }
 
     } else {
-        //show error
+        //if incorrect passcode
         $_SESSION['errorMessage'] = "incorrecte code";
         header("location: index.php");
     }
