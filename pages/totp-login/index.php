@@ -58,6 +58,7 @@ if (isset($_POST['pass-code'])) {
     <meta charset="UTF-8">
     <title>totp login</title>
     <link rel="stylesheet" href="../../styles/login-signup-style.css">
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.jpg">
 </head>
 <body>
 <div class="container">

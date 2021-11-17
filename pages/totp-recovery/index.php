@@ -48,6 +48,7 @@ if (isset($_POST['backup-code'])) {
     <meta charset="UTF-8">
     <title>totp-recovery</title>
     <link rel="stylesheet" href="../../styles/login-signup-style.css">
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.jpg">
 </head>
 <body>
     <div class="container">

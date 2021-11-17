@@ -28,6 +28,7 @@ $link = Sonata\GoogleAuthenticator\GoogleQrUrl::generate($email, $secret, 'roc-d
     <meta charset="UTF-8">
     <title>totp signup</title>
     <link rel="stylesheet" href="../../styles/login-signup-style.css">
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.jpg">
 </head>
 <body>
 <div class="container">

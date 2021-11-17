@@ -23,6 +23,7 @@ $userSubjects = $dbm->getRecordsFromTable("user_has_subject", "user_id", 1);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../images/02_ROCvF_logo_PLAT_RGB%201.png" /> <!--needs a favicon here (roc-dev logo or software dev opleiding logo)-->
     <link rel="stylesheet" href="../../styles/universal.css">
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.jpg">
     <title>Study Progression</title>
 </head>
 <body>
