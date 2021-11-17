@@ -1,6 +1,6 @@
 /*
 CSS door Sander Borgman en Kenny Meijer
- */
+*/
 
 /* Universal */
 * {
@@ -19,6 +19,12 @@ a {
 }
 
 .text-center {
+  text-align: center;
+}
+
+.text-align-middle {
+  margin: 0;
+  padding: 1.5em 1.5em;
   text-align: center;
 }
 
@@ -42,11 +48,11 @@ a {
   background-color: black;
 }
 
-.color-kerntaak-frontend {
+.color-kerntaak-programmeren {
   background-color: #04d900;
 }
 
-.color-kerntaak-backend {
+.color-kerntaak-generiek {
   background-color: #0090cd;
 }
 
@@ -54,14 +60,17 @@ a {
   background-color: #ffff00;
 }
 
-.color-kerntaak-keuzedeel {
+.color-kerntaak-stage {
   background-color: #df0000;
 }
 
+.color-kerntaak-examen {
+  background-color: #ee7326;
+}
+
 .container {
-  background-color: white;
-  align-content: center;
-  margin-bottom: 25px;
+  background-color: #fff;
+  margin-bottom: 40px;
 }
 
 /* Mobile */
@@ -70,20 +79,25 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 106px;
+  height: 90px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.199);
 }
 
 .logo {
-  width: 242px;
-  height: 106px;
+  width: 220px;
+  height: 90px;
 }
 
+/* knop voor dropdown */
 .hamburger {
-  padding: 24px 15px;
+  padding: 15px 15px;
 }
 
 .profile {
+  display: none;
+}
+
+.profile-menu {
   display: none;
 }
 
@@ -122,12 +136,6 @@ a {
   border-radius: 10px;
 }
 
-.text-align-middle {
-  margin: 0;
-  padding: 1.5em 1.5em;
-  text-align: center;
-}
-
 .subjects {
   margin-top: 21px;
 }
@@ -144,9 +152,7 @@ a {
   background-color: #f8f9fa;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  /*    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;*/
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.15);
 }
 
 .subject-container__text {
@@ -158,6 +164,7 @@ a {
   height: 13px;
   margin: 7px 0 0 15px;
   border-radius: 200px;
+  border: 1px solid rgb(187, 187, 187);
 }
 
 .subject-text-lower {
@@ -173,7 +180,7 @@ a {
   margin: 0 auto 0 auto;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
@@ -204,12 +211,26 @@ a {
 .progression-meter {
   box-sizing: content-box;
   height: 18.4px;
-  position: sticky;
+  position: fixed;
+  width: 100%;
   bottom: 0;
   margin: 0 0 0 0;
-  background: linear-gradient(to right, #ee7326 5%, #b7b7b7 0);
+  background: linear-gradient(to right, #ee7326 0%, #b7b7b7 0);
   padding: 0;
   text-align: center;
+}
+
+.checkmark {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  filter: brightness(0);
+  opacity: 0;
+}
+
+.done {
+  filter: brightness(100);
+  opacity: 100%;
 }
 
 /*
@@ -261,19 +282,20 @@ a {
 
 /* Desktop */
 
-@media all and (min-width: 1200px) {
+@media all and (min-width: 1024px) {
   .container {
     display: grid;
     grid-template-columns: 340px 1fr;
-    gap: 15px;
-    margin-bottom: 120px;
+    /* grid-template-rows: 97fr 3fr; */
+    column-gap: 15px;
+    position: relative;
+    margin: 40px 20px 20px 20px;
   }
 
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    grid-column: 1 / -1;
     position: relative;
   }
 
@@ -308,8 +330,9 @@ a {
     background-color: #fff;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.075);
     position: absolute;
-    top: 110px;
-    right: 5px;
+    top: -30px;
+    right: -10px;
+    z-index: 1;
   }
 
   .profile-menu a {
@@ -317,18 +340,19 @@ a {
   }
 
   .planning-and-grades {
-    display: block;
-    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
   }
 
   .subjects {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 90px;
-    margin: 0 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px;
+    width: 90%;
+    margin: 0 0 80px 50px;
   }
 
-  .grades {
-    height: auto;
+  .panel {
+    position: absolute;
   }
 }

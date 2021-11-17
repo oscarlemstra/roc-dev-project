@@ -1,6 +1,18 @@
 <?php
 session_start();
 
+// if(!$_SESSION['logged_in']) {
+//     header("location: ../login");
+//     exit();
+// }
+
+require_once("../../includes/DatabaseManager.php");
+$dbm = new DatabaseManager();
+
+$userSubjects = $dbm->getRecordsFromTable("user_has_subject", "user_id", 1);
+
+// echo "<pre>"; print_r($userSubjects); echo "</pre>";
+
 ?>
 
 <!DOCTYPE html>
@@ -14,13 +26,13 @@ session_start();
     <title>Study Progression</title>
 </head>
 <body>
+    <header class="header color-roc-orange">
+        <img class="logo" alt="ROC Logo" src="../../images/02_ROCvF_logo_PLAT_RGB%201.png">
+        <img class="hamburger" alt="hamburger" src="../../images/hamburger.png">
+        <div class="profile"></div>
+    </header>
 <div class="container">
 
-<div class="header color-roc-orange">
-    <img class="logo" alt="ROC Logo" src="../../images/02_ROCvF_logo_PLAT_RGB%201.png">
-    <img class="hamburger" alt="hamburger" src="../../images/hamburger.png">
-    <div class="profile"></div>
-</div>
 
     <div class="hamburger-menu color-roc-orange">
         <a class="color-roc-white-text text-center-margin" href="#">Stage</a>
@@ -33,7 +45,7 @@ session_start();
     </div>
 
     <div class="profile-menu">
-    <a class="color-roc-white-text" href="#">Stage</a>
+        <a class="color-roc-white-text" href="#">Stage</a>
         <br>
         <a class="color-roc-white-text" href="#">Studievoortgang</a>
         <br>
@@ -81,61 +93,79 @@ session_start();
     <div class="subjects">
     <!--dit is een template voor de vakcontainer
     zodra hierbij php gebruikt gaat worden raad ik aan om het op teroepen en echo-en met een foreach-->
-    <div>
+    <!-- <div>
         <div class="subject-container">
             <div class="subject-color-container color-kerntaak-frontend"></div>
             <div class="subject-container__text">
                 <h2 class="text-center">HTML</h2>
+                <br>
                 <p class="text-center">5 Weken<br>Programmeren<br>(Frontend)</p>
             </div>
+            <img src="../../images/tick-mark.png" alt="checkmark" class="checkmark done">
         </div>
         <div class="panel">test</div>
-    </div>
+    </div> -->
 
-    <div>
-        <div class="subject-container">
-            <div class="subject-color-container color-kerntaak-backend"></div>
-            <div class="subject-container__text">
-                <h2 class="text-center">PHP</h2>
-                <p class="text-center">5 Weken<br>Programmeren<br>(Backend)</p>
-            </div>
-        </div>
-        <div class="panel">test 2</div>
-    </div>
+    <?php
+    function checkSecondaryType ($secondaryType) {
+        if ($secondaryType) {
+            return "<br>".$secondaryType;
+        }
+    }
 
-    <div>
+    function checkIfDone($done) {
+        if($done) {
+            return "done";
+        }
+    }
+    
 
-        <div class="subject-container">
-            <div class="subject-color-container color-kerntaak-keuzedeel"></div>
-            <div class="subject-container__text" >
-                <h2 class="text-center">Verdieping Software</h2>
-                <p class="text-center">5 Weken<br>Programmeren<br>(Keuzedeel)</p>
-            </div>
-        </div>
-        <div class="panel">test maar het heeft heel veel tekst maar echt hoor echt veel tekst moet je eens kijken naar dit</div>
-    </div>
+    foreach($userSubjects as $record) {
+        $subject = $dbm->getRecordsFromTable("subject", "subject_id", $record['subject_id']);
+        $subjectType = $dbm->getRecordsFromTable("subject_type", "type_id", $subject[0]['type_id']);
 
-    <div>
+        // begin 1
+        echo "<div>";
+            // begin 2
+            echo "<div class='subject-container'>";
+                echo "<div class='subject-color-container color-kerntaak-".$subjectType[0]['name']."'></div>";
+                // begin 3
+                echo "<div class='subject-container__text'>";
+                    echo "<h2 class='text-center'>". $subject[0]['name'] ."</h2><br>";
+                    echo "<p class='text-center'>". $subject[0]['hours'] ." uur<br>". $subjectType[0]['name'] . checkSecondaryType($subject[0]['secondary_type']) ."</p>";
+                //end 3
+                echo "</div>";
+                echo "<img src='../../images/tick-mark.png' alt='checkmark' class='checkmark ". checkIfDone($record["finished"]) ."'>";
+            // end 2
+            echo "</div>";
 
-        <div class="subject-container">
-            <div class="subject-color-container color-kerntaak-regulier"></div>
-            <div class="subject-container__text">
-                <h2 class="text-center">Nederlands</h2>
-                <p class="text-center">5 Weken<br>Regulier</p>
-            </div>
-        </div>
-        <div class="panel">test<br>maar<br>met<br>breakpoints</div>
-    </div>
-
+            echo "<div class='panel'>test</div>";
+        // end 1
+        echo "</div>";
+    }
+    ?>
+   
     </div>
 
     
     
 </div>
 <div class="progression-meter">
-    <p>5%</p>
+    <p class="progression"><?php 
+        $subjectCount = count($userSubjects);
+        $i = 0;
+
+        foreach ($userSubjects as $row) {
+            if ($row['finished']) {
+                $i++;
+            }
+        }
+
+        $result = 100 / $subjectCount * $i;
+
+        echo round($result)."%";
+    ?></p>
 </div>
 <script src="../../javascript/study-progression.js"></script>
 </body>
 </html>
-

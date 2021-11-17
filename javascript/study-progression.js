@@ -4,8 +4,13 @@ const hamburger = document.querySelector(".hamburger");
 const hamburgerMenu = document.querySelector(".hamburger-menu");
 const profile = document.querySelector(".profile");
 const profileMenu = document.querySelector(".profile-menu");
+const progression = document.querySelector(".progression");
 let accordion = document.getElementsByClassName("subject-container");
 let currentAccordion;
+
+let procent = progression.textContent;
+
+progression.style.background = `linear-gradient(to right, #ee7326 ${procent}, #b7b7b7 0 )`;
 
 profile.addEventListener("click", openProfileMenu);
 
