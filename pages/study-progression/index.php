@@ -193,9 +193,9 @@ session_start();
 
     
     
-    <div class="progression-meter">
-        <p class="progression">20%</p>
-    </div>
+</div>
+<div class="progression-meter">
+    <p class="progression">20%</p>
 </div>
 <script src="../../javascript/study-progression.js"></script>
 </body>

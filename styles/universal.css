@@ -270,7 +270,7 @@ a {
     /* grid-template-rows: 97fr 3fr; */
     column-gap: 15px;
     position: relative;
-    margin: 40px 20px 0 20px;
+    margin: 40px 20px 20px 20px;
   }
 
   .header {
@@ -338,10 +338,6 @@ a {
     /* height: 50%; */
     width: 90%;
     margin: 0 0 0 50px;
-  }
-
-  .progression-meter {
-    grid-column: 1 / -1;
   }
 
   .panel {
