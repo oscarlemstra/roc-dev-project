@@ -20,7 +20,7 @@
                     <input type="email" name="email" placeholder="Email" id="email" required>
 
                     <input type="text" name="first_name" placeholder="Voornaam" id="first_name" required>
-                    <input type="text" name="tussenvoegsel" placeholder="Tussenvoegsels" id="tussenvoegsel" required>
+                    <input type="text" name="tussenvoegsel" placeholder="Tussenvoegsels" id="tussenvoegsel">
                     <input type="text" name="last_name" placeholder="Achternaam" id="last_name" required>
                 </div>
 
