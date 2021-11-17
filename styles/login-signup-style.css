@@ -28,9 +28,8 @@ body {
 }
 
 .container {
-    width: 25%;
+    width: 20%;
     min-width: 350px;
-    max-width: 50%;
     height: intrinsic;
     height: -webkit-fit-content;
     height: -moz-max-content;
@@ -48,6 +47,10 @@ body {
     text-align: center;
 }
 
+form {
+    margin: 0;
+    padding: 0;
+}
 form h1 {
     text-transform: uppercase;
     font-weight: 500;
@@ -60,8 +63,24 @@ a {
 }
 
 .flex-parent {
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
+}
+.flex-item {
+    width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+    @media screen and (max-height: 850px) {
+        .container {
+            width: 30%;
+        }
+        .flex-parent {
+            flex-direction: row;
+        }
+    }
 }
 
 input[type = 'email'], input[type = 'password'], input[type = 'text'] {
@@ -116,6 +135,21 @@ input[class="password-reset-button"] {
     color: rgb(66, 0, 219);
     font-size: 80%;
 }
+
+@media screen and (min-width: 600px) {
+    @media screen and (max-height: 850px) {
+        input[type = 'email'], input[type = 'password'], input[type = 'text'] {
+            width: 80%;
+        }
+        input[type = 'email']:focus, input[type = 'password']:focus, input[type = 'text']:focus {
+            width: 100%;
+        }
+        input[type = 'submit'] {
+            width: 30%;
+        }
+    }
+}
+
 p {
     margin: 24px auto;
 }
