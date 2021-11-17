@@ -267,10 +267,10 @@ a {
   .container {
     display: grid;
     grid-template-columns: 340px 1fr;
-    gap: 15px;
+    /* grid-template-rows: 97fr 3fr; */
+    column-gap: 15px;
     position: relative;
-    margin: 40px 20px;
-    height: 100vh;
+    margin: 40px 20px 0 20px;
   }
 
   .header {
@@ -342,7 +342,6 @@ a {
 
   .progression-meter {
     grid-column: 1 / -1;
-    width: 100%;
   }
 
   .panel {
