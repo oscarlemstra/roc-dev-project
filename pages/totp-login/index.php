@@ -16,38 +16,38 @@ $g = new GoogleAuthenticator();
 
 //get record of user and backup codes from DB
 $userRecord = $dbm->getRecordsFromTable("user", "email", $email);
-$backupsRecord = $dbm->getRecordsFromTable("2fa_backup_codes", "email", $email);
 
 //SUBMIT is pressed
 if (isset($_POST['pass-code'])) {
 
-    //use secret from DB if it exists, else use secret from session
-    if ($userRecord) {
-        $secret = $userRecord[0]['secret'];
-    } else {
-        $secret = $_SESSION['signup']['secret'];
-    }
+    //use secret from session if isset, else use secret from DB
+    $secret = $_SESSION['signup']['secret'] ?? $userRecord[0]['secret'];
 
     //check code
     if ($g->checkCode($secret, $_POST['pass-code'])) {
         //if correct passcode
 
-        if ($backupsRecord && $userRecord) {
-            //if backup and user exist
-            header('location: ../home');
-        } else {
-            //if there aren't any backup codes in DB
-            header('location: ../totp-recovery-codes');
+        if ($userRecord) {
+            //if user exists in DB (login process)
 
+            if ($_SESSION['signup']['secret']) {
+                //if secret in session isset (recovery process)
+                $dbm->updateRecordsFromTable("user", "secret", $_SESSION['signup']['secret'], "email", $email);
+            }
+            $_SESSION['logged_in'] = true;
+            header('location: ../study-progression');
+
+        } else {
+            //signup process
+            header('location: ../totp-recovery-codes');
         }
-        exit();
 
     } else {
-        //show error
+        //if incorrect passcode
         $_SESSION['errorMessage'] = "incorrecte code";
         header("location: index.php");
-        exit();
     }
+    exit();
 }
 
 ?>
