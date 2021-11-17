@@ -10,8 +10,8 @@ $dbm = new DatabaseManager();
 
 //get record of user and backup codes from DB
 $userRecord = $dbm->getRecordsFromTable("user", "email", $email);
-$backup_id = $userRecord[0]['2fa_backup_codes_id'];
-$backupsRecord = $dbm->getRecordsFromTable("2fa_backup_codes", "2fa_backup_codes_id", $backup_id);
+$user_id = $userRecord[0]['user_id'];
+$backupsRecord = $dbm->getRecordsFromTable("2fa_backup_codes", "user_id", $user_id);
 
 //if button is pressed
 if (isset($_POST['backup-code'])) {
