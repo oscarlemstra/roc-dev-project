@@ -1,6 +1,6 @@
 <?php session_start();
-//$_SESSION['signup']['user_role_id'] = 1;
-//$_SESSION['signup']['group_id'] = 1;
+//$_SESSION['signup']['user_role'] = "student";
+//$_SESSION['signup']['group'] = "MMVAOO9B";
 //$_SESSION['signup']['student_nr'] = "1234567";
 //$_SESSION['signup']['first_name'] = "henk";
 //$_SESSION['signup']['tussenvoegsel'] = "van der";
@@ -16,7 +16,7 @@ $dbm = new DatabaseManager();
 
 //get user_role record and group record
 $userRoleRecord = $dbm->getRecordsFromTable("user_role", "role", $_SESSION['signup']['user_role']);
-$groupRecord = $dbm->getRecordsFromTable("group", "name", $_SESSION['signup']['class']);
+$groupRecord = $dbm->getRecordsFromTable("group", "name", $_SESSION['signup']['group']);
 
 //prepare user insert array
 $userInsertArray = [

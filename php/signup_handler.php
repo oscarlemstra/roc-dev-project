@@ -49,7 +49,7 @@ if ($_SESSION['signup']['user_role'] === "student") {
         "tussenvoegsel"=>$_POST['tussenvoegsel'],
         "last_name"=>$_POST['last_name'],
         "student_nr"=>$_POST['student_nr'],
-        "class"=>$_POST['class'],
+        "group"=>$_POST['group'],
         "password"=>$_POST['password'],
     ];
 }

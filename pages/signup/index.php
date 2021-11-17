@@ -28,7 +28,7 @@ $_SESSION['signup']['user_role'] = "student";
                 </div>
                 <div class="flex-item">
                     <input type="text" name="student_nr" placeholder="Student nummer" id="student_nr" required>
-                    <input type="text" name="class" placeholder="Klas" id="class" required>
+                    <input type="text" name="group" placeholder="Klas" id="group" required>
 
                     <input type="password" name="password" placeholder="Wachtwoord" id="pwd" required>
                     <input type="password" name="confirmPassword" placeholder="Herhaal Wachtwoord" id="pwd2" required>
