@@ -325,12 +325,19 @@ a {
   }
 
   .subjects {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 90px;
     gap: 70px;
     margin: 0 0 50px 50px;
-    height: 50vh;
+    height: 50vh; */
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 70px;
+    height: 60%;
+    width: 100%;
+    margin: 0 0 0 50px;
   }
 
   .panel {

@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-if(!$_SESSION['logged_in']) {
-    header("location: ../login");
-    exit();
-}
+// if(!$_SESSION['logged_in']) {
+//     header("location: ../login");
+//     exit();
+// }
 
 
 
