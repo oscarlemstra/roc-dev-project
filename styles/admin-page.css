@@ -1,0 +1,252 @@
+body {
+    font-family: sans-serif;
+}
+
+.color-roc-white-text {
+    color: white;
+}
+
+.color-roc-orange {
+    background-color: #ee7326;
+}
+
+.color-roc-orange-text {
+    color: #ee7326;
+}
+
+.color-roc-black {
+    background-color: black;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-child {
+    flex: 1;
+    /*border: 2px solid black;*/
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-top: 40px;
+    padding-left:40px;
+    padding-bottom: 40px;
+}
+
+.flex-child:first-child {
+    margin-bottom: 20px;
+}
+
+/*Header CSS*/
+
+.header {
+    height: 106px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.199);
+}
+
+.logo {
+    width: 242px;
+    height: 106px;
+}
+
+.hamburger {
+    float: right;
+    /* margin: 25px 25px 0 0; */
+    padding: 24px 15px;
+}
+
+.hamburger:active {
+    background-color: #d66822;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+.subject {
+    border: 0px;
+    width: 150px;
+    border-radius: 30px;
+    padding: 10px 10px 10px 10px;
+    background-color: #dedede;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.subject:hover {
+    background-color: #bababa;
+}
+
+/*Search bar CSS*/
+
+.search-bar {
+    width: auto;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+}
+
+.input-field {
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}
+
+#myUL {
+    /* Remove default list styling */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+@media all and (min-width: 768px) {
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .flex-child {
+        flex: 1;
+        /*border: 2px solid black;*/
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+        padding-top: 40px;
+        padding-left:40px;
+        padding-bottom: 40px;
+    }
+
+    .flex-child:first-child {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+
+    .subject {
+        border: 0px;
+        width: 150px;
+        border-radius: 30px;
+        padding: 10px 10px 10px 10px;
+        background-color: #dedede;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+        margin-bottom: 10px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .subject:hover {
+        background-color: #bababa;
+    }
+
+    .search-bar {
+        width: 150px;
+        padding: 10px 10px 10px 10px;
+        margin-bottom: 10px;
+    }
+
+    /*Search bar CSS*/
+
+    .input-field {
+        font-size: 16px; /* Increase font-size */
+        padding: 12px 20px 12px 40px; /* Add some padding */
+        border: 1px solid #ddd; /* Add a grey border */
+        margin-bottom: 12px; /* Add some space below the input */
+    }
+
+    #myUL {
+        /* Remove default list styling */
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /*Header CSS*/
+
+    .header {
+        height: 106px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.199);
+    }
+
+    .logo {
+        width: 242px;
+        height: 106px;
+    }
+
+    .hamburger {
+        float: right;
+        /* margin: 25px 25px 0 0; */
+        padding: 24px 15px;
+    }
+
+    .hamburger:active {
+        background-color: #d66822;
+    }
+
+    .hamburger-menu {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .flex-child {
+        flex: 1;
+        /*border: 2px solid black;*/
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+        padding-top: 40px;
+        padding-left:40px;
+        padding-bottom: 40px;
+    }
+
+    .flex-child:first-child {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+
+    .subject {
+        border: 0px;
+        width: 150px;
+        border-radius: 30px;
+        padding: 10px 10px 10px 10px;
+        background-color: #dedede;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+        margin-bottom: 10px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .subject:hover {
+        background-color: #bababa;
+    }
+
+    /*Search bar CSS*/
+
+    .search-bar {
+        width: 150px;
+        padding: 10px 10px 10px 10px;
+        margin-bottom: 10px;
+    }
+
+    .input-field {
+        font-size: 16px; /* Increase font-size */
+        padding: 12px 20px 12px 40px; /* Add some padding */
+        border: 1px solid #ddd; /* Add a grey border */
+        margin-bottom: 12px; /* Add some space below the input */
+    }
+
+    #myUL {
+        /* Remove default list styling */
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+}
