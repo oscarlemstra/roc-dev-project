@@ -15,7 +15,7 @@ function sendEmail_emailVerificationCode($email, $dbm) {
         $dbm->updateRecordsFromTable("email_verification_code", "code", $code, "email", $email);
     }
 
-    $naam = $dbm->getRecordsfromTable('user', 'email', $email)[0]['first_name'];
+    $naam = "student";
 
     $to = $email;
     $subject = "Email verificatie";

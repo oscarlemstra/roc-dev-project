@@ -43,7 +43,7 @@ if(!sendEmail_emailVerificationCode($email, $dbm)) {
 }
 
 if ($_SESSION['signup']['user_role'] === "student") {
-    $_SESSION['signup'] = [
+    $_SESSION['signup'] += [
         "email"=>$_POST['email'],
         "first_name"=>$_POST['first_name'],
         "tussenvoegsel"=>$_POST['tussenvoegsel'],

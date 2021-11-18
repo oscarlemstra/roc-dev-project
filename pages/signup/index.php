@@ -30,7 +30,7 @@ $_SESSION['signup']['user_role'] = "student";
                 </div>
                 <div class="flex-item">
                     <input type="text" name="student_nr" placeholder="Student nummer" id="student_nr" required>
-                    <select name="class" id="klassen">
+                    <select name="group" id="group">
                         <option value="" selected disabled hidden>klas</option>
                         <?php
                             require_once '../../includes/DatabaseManager.php';
