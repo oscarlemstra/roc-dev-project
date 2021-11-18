@@ -62,6 +62,10 @@
     <title>Wachtwoord herstellen</title>
 </head>
 <body>
+    <?php
+        // make an invisible div with id "email_vak" with the email
+        echo '<div style="display:none;" id="email_vak">' . $email . '</div>';
+    ?>
     <div class="container">
         <?php
             if (!$scriptResult) {
