@@ -4,6 +4,7 @@
 $email = $_SESSION['signup']['email'] ?? $_SESSION['login']['email'];
 
 require_once "../../includes/DatabaseManager.php";
+require_once "../../includes/hash-password.php";
 
 //connections
 $dbm = new DatabaseManager();
