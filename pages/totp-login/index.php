@@ -35,8 +35,7 @@ if (isset($_POST['pass-code'])) {
                 $dbm->updateRecordsFromTable("user", "secret", $_SESSION['signup']['secret'], "email", $email);
             }
             session_destroy();
-            $_SESSION['logged_in'] = true;
-            $_SESSION['ID'] = $userRecord[0]['user_id'];
+            $_SESSION['user_id'] = $userRecord[0]['user_id'];
             header('location: ../study-progression');
 
         } else {

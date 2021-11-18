@@ -10,7 +10,7 @@ $record = $dbm->getRecordsFromTable("user", "email", $_POST['email']);
 $userID = $record[0]['user_id'];
 $password = hashPassword($userID, $_POST['password']);
 
-if ($record && $password === $record[0]['hashed_password']) {
+if ($record && $password === $record[0]['password']) {
     $login = array("email"=>$_POST['email']);
     $_SESSION['login'] = $login;
 
