@@ -44,7 +44,7 @@
     //   check if password_reset_code already has a entry for the user
     //     if no: make one
     //     if yes: update record
-    $userRecord = $dbm->getRecordsFromTable('user', 'email', $email);
+    $userRecord = $dbm->getRecordsFromTable('user', 'email', $_POST['email']);
     $userId = $userRecord[0]['user_id'];
 
     $row = $dbm->getRecordsFromTable('password_reset_code', 'user_id', $userId);
@@ -86,7 +86,7 @@
         <form method="post">
             <h2>Wachtwoord Reset</h2>
             <p>een email is gestuurd naar <?php echo $_POST['email']; ?>. <br/>volg de instructies op de email en log daarna weer in</p>
-            <a href="">opnieuw stuuren</a><br>
+            <a href="">opnieuw sturen</a><br>
             <a href="../login/">login</a>
         </form>
         <?php
