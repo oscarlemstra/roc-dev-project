@@ -34,7 +34,7 @@
     $securetyString = RandomString(64);
     
     // send email. if it fails notify user and end the script
-    $encryptedEmail = encrypt_decrypt($_POST['email'], 'encrypt');
+    print $encryptedEmail = encrypt_decrypt($_POST['email'], 'encrypt');
     if (!sendEmail_PasswordReset($_POST['email'], $securetyString, $encryptedEmail, $dbm)) {
         echo '⚠ iets is gefaald. neem alstublieft contact op met de site eigenaar ⚠';
         exit();
@@ -54,7 +54,8 @@
     } else {
         $array = array(
             'user_id' => $userId,
-            'code' => $securetyString
+            'code' => $securetyString,
+            'creation_date'=> date("Y-m-d")
         );
         $dbm->insertRecordToTable('password_reset_code', $array);
     }
