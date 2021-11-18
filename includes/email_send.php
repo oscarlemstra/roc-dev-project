@@ -1,7 +1,7 @@
 <?php
 
 //sends an email with a code to verify your email that you have given
-function sendEmail_emailVerificationCode($email, $naam, $dbm) {
+function sendEmail_emailVerificationCode($email, $dbm) {
 
     $code = rand(100000, 999999);
     $date = date("Y-m-d");
@@ -22,7 +22,7 @@ function sendEmail_emailVerificationCode($email, $naam, $dbm) {
     $message = file_get_contents("../template/email-verification.html");
 
     // general changes
-    $message = str_replace("[USERNAME]", $naam, $message);
+    $message = str_replace("[USERNAME]", "student", $message);
 
     // verification code
     $message = str_replace("[CODE]", $code, $message);
