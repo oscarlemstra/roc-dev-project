@@ -10,6 +10,8 @@ require_once('../includes/email_send.php');
 
 $email = $_POST['email'];
 
+$name = $_POST['first_name'];
+
 $pwd = $_POST['password'];
 $confirmed = $_POST['confirmPassword'];
 
@@ -36,7 +38,7 @@ if ($result) {
 }
 
 
-if(!sendEmail_emailVerificationCode($email, $_POST['first_name'], $dbm)) {
+if(!sendEmail_emailVerificationCode($email, $name, $dbm)) {
     $_SESSION['errorMessage'] = 'het sturen van een email heeft gefaald. neem alstublieft contact op met de site-eigenaar';
     header('location: ../pages/signup');
     exit();
