@@ -10,6 +10,8 @@ require_once('../includes/email_send.php');
 
 $email = $_POST['email'];
 
+$name = $_POST['first_name'];
+
 $pwd = $_POST['password'];
 $confirmed = $_POST['confirmPassword'];
 
