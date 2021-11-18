@@ -26,7 +26,7 @@ if (isset($_POST['backup-code'])) {
         if ($hashedPostPW === $backupsRecord[0]["code_".$i]) {
 
             //overwrite used code and secret with NULL
-            $dbm->updateRecordsFromTable("2fa_backup_codes", "code_".$i, "", "code_".$i, $_POST['backup-code']);
+            $dbm->updateRecordsFromTable("2fa_backup_codes", "code_".$i, "", "user_id", $userRecord[0]['user_id']);
             $dbm->updateRecordsFromTable("user", "secret", "", "email", $_SESSION['login']['email']);
 
             //go to totp-signup
