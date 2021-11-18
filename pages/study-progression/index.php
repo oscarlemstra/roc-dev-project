@@ -1,10 +1,12 @@
-<?php
-session_start();
+<?php session_start();
 
  if(!isset($_SESSION['user_id'])) {
-     header("location: ../login");
-     exit();
+    //  header("location: ../login");
+    //  exit();
+    echo "hallo";
  }
+
+print_r($_SESSION);
 
 require_once("../../includes/DatabaseManager.php");
 $dbm = new DatabaseManager();
