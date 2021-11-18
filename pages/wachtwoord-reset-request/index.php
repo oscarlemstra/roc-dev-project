@@ -47,17 +47,12 @@
     $userRecord = $dbm->getRecordsFromTable('user', 'email', $_POST['email']);
     $userId = $userRecord[0]['user_id'];
 
-    $row = $dbm->getRecordsFromTable('password_reset_code', 'user_id', $userId);
+    $array = array(
+        'user_id' => $userId,
+        'code' => $securetyString
+    );
+    $dbm->insertRecordToTable('password_reset_code', $array);
 
-    if ($row) {
-        $dbm->updateRecordsFromTable('password_reset_code', 'code', $securetyString, 'user_id', $userId);
-    } else {
-        $array = array(
-            'user_id' => $userId,
-            'code' => $securetyString
-        );
-        $dbm->insertRecordToTable('password_reset_code', $array);
-    }
 
 
     // function to generate a random string with any length
