@@ -2,6 +2,7 @@
     session_start();
     
     require_once '../../includes/email_send.php';
+    require_once '../../includes/encrypt-decrypt.php';
     require_once '../../includes/DatabaseManager.php';
     $dbm = new DatabaseManager();
 
@@ -21,7 +22,7 @@
         exit();
     }
 
-    // check if account with thie email exists
+    // check if account with this email exists
     if (!$dbm->getRecordsFromTable("user", "email", $_POST['email'])) {
         $_SESSION['errorMessage'] = 'deze email heeft geen account';
         header('location: ../login');
@@ -33,7 +34,8 @@
     $securetyString = RandomString(64);
     
     // send email. if it fails notify user and end the script
-    if (!sendEmail_PasswordReset($_POST['email'], $securetyString, $dbm)) {
+    $encryptedEmail = encrypt_decrypt($_POST['email'], 'encrypt');
+    if (!sendEmail_PasswordReset($_POST['email'], $securetyString, $encryptedEmail, $dbm)) {
         echo '⚠ iets is gefaald. neem alstublieft contact op met de site eigenaar ⚠';
         exit();
     }
@@ -42,7 +44,7 @@
     //   check if password_reset_code already has a entry for the user
     //     if no: make one
     //     if yes: update record
-    $userRecord = $dbm->getRecordsFromTable('user', 'email', $email);
+    $userRecord = $dbm->getRecordsFromTable('user', 'email', $_POST['email']);
     $userId = $userRecord[0]['user_id'];
 
     $row = $dbm->getRecordsFromTable('password_reset_code', 'user_id', $userId);
@@ -52,7 +54,8 @@
     } else {
         $array = array(
             'user_id' => $userId,
-            'code' => $securetyString
+            'code' => $securetyString,
+            'creation_date'=> date("Y-m-d")
         );
         $dbm->insertRecordToTable('password_reset_code', $array);
     }
@@ -84,7 +87,7 @@
         <form method="post">
             <h2>Wachtwoord Reset</h2>
             <p>een email is gestuurd naar <?php echo $_POST['email']; ?>. <br/>volg de instructies op de email en log daarna weer in</p>
-            <a href="">opnieuw stuuren</a><br>
+            <a href="">opnieuw sturen</a><br>
             <a href="../login/">login</a>
         </form>
         <?php

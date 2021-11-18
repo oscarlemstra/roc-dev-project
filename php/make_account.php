@@ -44,7 +44,7 @@ $dbm->insertRecordToTable('2fa_backup_codes', $backupInsertArray);
 
 
 //go to homepage
-session_destroy();
+session_unset();
 $_SESSION['user_id'] = $userRecord[0]['user_id'];
 header('location: ../pages/study-progression');
 exit();

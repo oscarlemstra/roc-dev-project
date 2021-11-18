@@ -10,6 +10,8 @@ require_once('../includes/email_send.php');
 
 $email = $_POST['email'];
 
+$name = $_POST['first_name'];
+
 $pwd = $_POST['password'];
 $confirmed = $_POST['confirmPassword'];
 
@@ -43,7 +45,7 @@ if(!sendEmail_emailVerificationCode($email, $dbm)) {
 }
 
 if ($_SESSION['signup']['user_role'] === "student") {
-    $_SESSION['signup'] = [
+    $_SESSION['signup'] += [
         "email"=>$_POST['email'],
         "first_name"=>$_POST['first_name'],
         "tussenvoegsel"=>$_POST['tussenvoegsel'],

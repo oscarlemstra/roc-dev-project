@@ -4,6 +4,7 @@
 $email = $_SESSION['signup']['email'] ?? $_SESSION['login']['email'];
 
 require_once "../../includes/DatabaseManager.php";
+require_once "../../includes/hash-password.php";
 
 //connections
 $dbm = new DatabaseManager();
@@ -17,7 +18,7 @@ $backupsRecord = $dbm->getRecordsFromTable("2fa_backup_codes", "user_id", $user_
 if (isset($_POST['backup-code'])) {
 
     //hash code in post
-    $hashedPostPW = hashPassword($userRecord[0]['user_id'], $_POST['backup-code']);
+    $hashedPostPW = hashPassword($user_id, $_POST['backup-code']);
 
     //check code in post for each code in DB
     for ($i = 1; $i <= 6; $i++) {
@@ -25,8 +26,8 @@ if (isset($_POST['backup-code'])) {
         if ($hashedPostPW === $backupsRecord[0]["code_".$i]) {
 
             //overwrite used code and secret with NULL
-            $dbm->updateRecordsFromTable("2fa_backup_codes", "code_".$i, NULL, "code_".$i, $_POST['backup-code']);
-            $dbm->updateRecordsFromTable("user", "secret", NULL, "email", $_SESSION['email']);
+            $dbm->updateRecordsFromTable("2fa_backup_codes", "code_".$i, "", "user_id", $user_id);
+            $dbm->updateRecordsFromTable("user", "secret", "", "email", $_SESSION['login']['email']);
 
             //go to totp-signup
             header('location: ../totp-signup');

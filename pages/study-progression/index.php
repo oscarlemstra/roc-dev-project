@@ -1,10 +1,9 @@
-<?php
-session_start();
+<?php session_start();
 
- if(!isset($_SESSION['user_id'])) {
-     header("location: ../login");
-     exit();
- }
+if(!isset($_SESSION['user_id'])) {
+    header("location: ../login");
+    exit();
+}
 
 require_once("../../includes/DatabaseManager.php");
 $dbm = new DatabaseManager();
@@ -21,7 +20,6 @@ $userSubjects = $dbm->getRecordsFromTable("user_has_subject", "user_id", 1);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../../images/02_ROCvF_logo_PLAT_RGB%201.png" /> <!--needs a favicon here (roc-dev logo or software dev opleiding logo)-->
     <link rel="stylesheet" href="../../styles/universal.css">
     <link rel="icon" type="image/x-icon" href="../../images/favicon.jpg">
     <title>Study Progression</title>

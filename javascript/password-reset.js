@@ -11,6 +11,7 @@
 const passwordElement = document.getElementById('pwd');
 const passwordElement2 = document.getElementById('pwd2');
 const submitButton = document.getElementById('submit');
+const emailVak = document.getElementById('email_vak');
 
 // in the signup/index.php there is a couple lines of PHP code
 // this code will make another error message when it see's a error in the $_SESSION variable
@@ -90,7 +91,7 @@ function checkPwdValidity() {
     }
 
     // check if password contains the email name
-    let email = emailElement.value.toLowerCase()
+    let email = emailVak.innerHTML.toLowerCase();
     let name = email.substring(0, email.lastIndexOf("@")).toLowerCase()
     
     if (name !== '') {
