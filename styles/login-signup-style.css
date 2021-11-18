@@ -29,7 +29,7 @@ body {
 
 .container {
     width: 20%;
-    min-width: 350px;
+    min-width: 375px;
     height: intrinsic;
     height: -webkit-fit-content;
     height: -moz-max-content;

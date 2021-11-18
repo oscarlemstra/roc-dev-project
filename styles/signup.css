@@ -17,11 +17,7 @@
         .flex-parent {
             flex-direction: row;
         }
-    }
-}
 
-@media screen and (min-width: 600px) {
-    @media screen and (max-height: 850px) {
         input[type = 'email'],
         input[type = 'password'],
         input[type = 'text'],
