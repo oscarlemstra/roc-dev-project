@@ -47,11 +47,9 @@ function sendEmail_emailVerificationCode($email, $dbm) {
 }
 
 
-function sendEmail_PasswordReset($email, $securetyString, $dbm) {
+function sendEmail_PasswordReset($email, $securetyString, $destinationCode, $dbm) {
 
-    require_once './encrypt-decrypt.php';
 
-    $destinationCode = encrypt_decrypt('encrypt', $email);
     $destination = "http://localhost/pages/wachtwoord-reset?e=".$destinationCode."&s=".$securetyString;
 
     $naam = $dbm->getRecordsfromTable('user', 'email', $email)[0]['first_name'];
@@ -60,10 +58,10 @@ function sendEmail_PasswordReset($email, $securetyString, $dbm) {
     $subject = "Email verificatie";
 
     
-    $message = file_get_contents("../template/password-reset.html");
+    $message = file_get_contents("../../template/password-reset.html");
 
     // general changes
-    $message = str_replace("[USERNAME]", $naam /* <- Username here */, $message);
+    $message = str_replace("[USERNAME]", $naam, $message);
 
     // url replacement
     $message = str_replace("[DESTINATION]", $destination, $message);

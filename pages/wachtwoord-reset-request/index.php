@@ -2,6 +2,7 @@
     session_start();
     
     require_once '../../includes/email_send.php';
+    require_once '../../includes/encrypt-decrypt.php';
     require_once '../../includes/DatabaseManager.php';
     $dbm = new DatabaseManager();
 
@@ -21,7 +22,7 @@
         exit();
     }
 
-    // check if account with thie email exists
+    // check if account with this email exists
     if (!$dbm->getRecordsFromTable("user", "email", $_POST['email'])) {
         $_SESSION['errorMessage'] = 'deze email heeft geen account';
         header('location: ../login');
@@ -33,7 +34,8 @@
     $securetyString = RandomString(64);
     
     // send email. if it fails notify user and end the script
-    if (!sendEmail_PasswordReset($_POST['email'], $securetyString, $dbm)) {
+    $encryptedEmail = encrypt_decrypt($_POST['email'], 'encrypt');
+    if (!sendEmail_PasswordReset($_POST['email'], $securetyString, $encryptedEmail, $dbm)) {
         echo '⚠ iets is gefaald. neem alstublieft contact op met de site eigenaar ⚠';
         exit();
     }
