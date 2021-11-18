@@ -1,13 +1,4 @@
 <?php session_start();
-$_SESSION['signup']['user_role'] = "student";
-$_SESSION['signup']['group'] = "MMVAOO9B";
-$_SESSION['signup']['student_nr'] = "1234567";
-$_SESSION['signup']['first_name'] = "henk";
-$_SESSION['signup']['tussenvoegsel'] = "van der";
-$_SESSION['signup']['last_name'] = "laan";
-$_SESSION['signup']['email'] = "henk.vanderlaan@student.rocvf.nl";
-$_SESSION['signup']['password'] = "sldkjfslkfjslkfjsflksjdflksdjflksdjflskdfjsldkfjsdlkfjsdlfksdjflksdjflskdjfsldkfjsdlkfjsldkfjsdlkfjsdllskdfjslkdfjlskdfjlskdffff";
-$_SESSION['signup']['secret'] = "slkfjsdlkfj";
 
 require_once "../includes/DatabaseManager.php";
 require_once "../includes/hash-password.php";

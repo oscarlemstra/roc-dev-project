@@ -34,7 +34,9 @@ if (isset($_POST['pass-code'])) {
                 //if secret in session isset (recovery process)
                 $dbm->updateRecordsFromTable("user", "secret", $_SESSION['signup']['secret'], "email", $email);
             }
+            session_destroy();
             $_SESSION['logged_in'] = true;
+            $_SESSION['ID'] = $userRecord[0]['user_id'];
             header('location: ../study-progression');
 
         } else {
