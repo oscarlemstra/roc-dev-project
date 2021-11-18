@@ -10,6 +10,12 @@ let currentAccordion;
 
 let procent = progression.textContent;
 
+window.addEventListener("resize", function () {
+  if (window.innerWidth > 1024) {
+    hamburgerMenu.style.display = "none";
+  }
+});
+
 progression.style.background = `linear-gradient(to right, #ee7326 ${procent}, #b7b7b7 0 )`;
 
 profile.addEventListener("click", openProfileMenu);
