@@ -1,21 +1,26 @@
 <?php
 require_once('database.php');
 
+
 $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : 'not correct';
 
+if ($contentType === "application/json") {
 
+    //Receive the RAW post data.
+    $content = trim(file_get_contents("php://input"));
 
-//Receive the RAW post data.
-$content = trim(file_get_contents("php://input"));
+    $decoded = json_decode($content, true);
 
-$decoded = json_decode($content, true);
+    $query = 'UPDATE subject SET name = "'.$decoded['name'].'", hours = '.$decoded['hours'].' WHERE subject_id = '.$decoded['id'];
 
-$query = 'SELECT * FROM subject WHERE subject_id = '.$decoded->id;
-//$query = 'UPDATE subject SET name = '.$content->name.', hours = '.$content->hours.' [WHERE subject_id = 1]';
-$object = $connection->query($query); //dit levert altijd 1 resultaat op
-$result = $object->fetch_assoc();
+    $object = $connection->query($query); //dit levert altijd 1 resultaat op
 
-//echo json_encode($result);
+    $result = false;
 
+    if(mysqli_affected_rows($connection) >0 ) {
+        $result = true;
+    }
+
+}
 
 echo json_encode($result);

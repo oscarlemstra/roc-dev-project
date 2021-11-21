@@ -113,21 +113,27 @@ $dbm = new DatabaseManager();
                 });
         }
 
-        function saveToDatabase(name, hours) {
-            const test = {name: name, hours: hours}
+        function saveToDatabase(name, hours, id) {
+            const data = {name: name, hours: hours, id: id}
+            const resultElement = document.querySelector('.result');
             fetch('server_update_data.php', {
                 method: 'POST',
-                body: JSON.stringify(test),
+                body: JSON.stringify(data),
                 headers: {
                     'Content-type': 'application/json'
                 },
             })
-            .then((response) => response.json())
-            .then(data => {
-                console.log(data)
-                const html = `<h2>${data}</h2>`
-                resultElement.insertAdjacentHTML('beforeend', html);
-            });
+                .then((response) => response.json())
+                .then(data => {
+                    console.log(data);
+                    if (data === true) {
+                        const html = '<div id="savedMessage">Opgeslagen</div>';
+                        resultElement.insertAdjacentHTML('beforeend', html);
+                    } else {
+                        const html = '<p id="notSavedMessage">Er ging iets mis</p>';
+                        resultElement.insertAdjacentHTML('beforeend', html);
+                    }
+                });
         }
 
 

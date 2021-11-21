@@ -2,6 +2,28 @@ body {
     font-family: sans-serif;
 }
 
+#savedMessage {
+    width: 150px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: green;
+    text-align: center;
+    padding: 8px;
+    background: lightgreen;
+    border: 1px solid green;
+}
+
+#notSavedMessage {
+    width: 150px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: red;
+    text-align: center;
+    padding: 8px;
+    background: #ffcccb;
+    border: 1px solid red;
+}
+
 .color-roc-white-text {
     color: white;
 }
