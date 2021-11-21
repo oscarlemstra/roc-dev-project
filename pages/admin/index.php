@@ -56,14 +56,25 @@ $dbm = new DatabaseManager();
             </div>
             <ul id="myUL">
                 <script>
-                    const subjects_array = [{name: "Java", id: 1}, {name: "JavaScript", id: 2}, {name: "HTML/CSS", id: 3}, {name: "PHP", id: 4}]
-                    const subjectElement = document.querySelector('#myUL');
+                    fetch('server_get_names.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-type': 'application/json'
+                        },
+                    }).then((response) => response.json())
+                        .then(data => {
+                            const subjects_array = [];
+                            for (i = 0; i < data.length; i++) {
+                                subjects_array.push({name: data[i]['name'], id: data[i]['subject_id']})
+                            }
+                            const subjectElement = document.querySelector('#myUL');
 
-                    for (let i = 0; i < subjects_array.length; i++) {
-                        const html = `<li><button onclick="getDatabaseData(${subjects_array[i]['id']})" class="subject">${subjects_array[i]['name']}</button></li>`; //template literal
+                            for (let i = 0; i < subjects_array.length; i++) {
+                                const html = `<li><button onclick="getDatabaseData(${subjects_array[i]['id']})" class="subject">${subjects_array[i]['name']}</button></li>`; //template literal
 
-                        subjectElement.insertAdjacentHTML('beforeend', html);
-                    }
+                                subjectElement.insertAdjacentHTML('beforeend', html);
+                            }
+                        });
                 </script>
             </ul>
         </div>
@@ -74,10 +85,6 @@ $dbm = new DatabaseManager();
     </div>
 
     <script>
-
-        /* SELECT ELEMENTS */
-        const resultElement = document.querySelector('.result');
-        const subjectSelectElement = document.querySelectorAll('.subject');
 
         function getDatabaseData(DBid) {
               fetch('server.php', {
@@ -90,7 +97,7 @@ $dbm = new DatabaseManager();
                 .then((response) => response.json())
                 .then(data => {
                     const html = `
-<form name="update-data" action="javascript:saveToDatabase(subjectName.value, hours.value)" method="POST">
+<form name="update-data" action="javascript:saveToDatabase(subjectName.value, hours.value, ${DBid})" method="POST">
 <label for="name">Naam van vak</label>
 <br />
 <input class="input-field" type="text" id="subjectName" name="name" placeholder="Naam van vak" value="${data['name']}">
@@ -102,7 +109,7 @@ $dbm = new DatabaseManager();
 <button type="submit" class="subject">Opslaan</button>
 </form>
             `
-                    resultElement.insertAdjacentHTML('beforeend', html);
+                    document.getElementsByClassName('result')[0].innerHTML = html;
                 });
         }
 
