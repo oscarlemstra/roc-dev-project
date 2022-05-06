@@ -39,4 +39,4 @@ Gebruik bij de smtp server deze naam: **smtp-mail.outlook.com**
 <br>
 
 ### Selenium auto testen
-- hier komt nog linkje
+- Hier komt nog een linkje.
